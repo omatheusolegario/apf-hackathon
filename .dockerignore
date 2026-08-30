@@ -1,0 +1,17 @@
+.env
+.git
+.gitignore
+.DS_Store
+venv
+__pycache__
+*.pyc
+apf.db
+tmp
+deliverables
+flutter_app/.dart_tool
+flutter_app/build
+flutter_app/ios
+flutter_app/android
+flutter_app/linux
+flutter_app/macos
+flutter_app/windows

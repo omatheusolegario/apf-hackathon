@@ -11,8 +11,9 @@ os.environ["GROQ_API_KEY"] = ""
 sys.path.insert(0, os.path.dirname(__file__))
 
 from database import AsyncSessionLocal, init_db
+from database import _async_database_url
 from document_intelligence import scan_boleto
-from main import _handle_card_action, process_message
+from main import _handle_card_action, continue_in_app, process_message
 from seed import seed
 from telegram_integration import (
     consume_continuation,
@@ -31,6 +32,23 @@ def check(label: str, condition: bool) -> None:
 
 
 async def run() -> None:
+    check(
+        "URL Postgres seleciona driver assíncrono",
+        _async_database_url("postgresql://user:pass@host/db?sslmode=require")
+        == "postgresql+asyncpg://user:pass@host/db?sslmode=require",
+    )
+    check(
+        "parâmetro incompatível do Neon é removido",
+        "channel_binding" not in _async_database_url(
+            "postgresql://user:pass@host/db?sslmode=require&channel_binding=require"
+        ),
+    )
+    os.environ["APP_PUBLIC_URL"] = "https://app.example"
+    continuation_page = await continue_in_app("abc_123")
+    check(
+        "handoff possui fallback para web",
+        b"https://app.example/?token=abc_123" in continuation_page.body,
+    )
     await init_db()
     await seed()
 

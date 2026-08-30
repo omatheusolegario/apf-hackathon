@@ -628,6 +628,13 @@ async def process_message(
 @app.on_event("startup")
 async def startup():
     await init_db()
+    if (os.getenv("AUTO_SEED_DEMO") or "false").lower() == "true":
+        async with AsyncSessionLocal() as session:
+            demo_exists = await session.get(User, "demo") is not None
+        if not demo_exists:
+            from seed import seed
+            await seed()
+            print("✅ Base sintética de demonstração criada.")
     print("✅ Banco inicializado.")
 
 
@@ -1261,13 +1268,15 @@ async def continue_in_app(token: str):
     """Ponte HTTPS usada pelo botão do Telegram para abrir o app."""
     safe_token = re.sub(r"[^A-Za-z0-9_-]", "", token)
     deep_link = f"apf://continue?token={safe_token}"
+    web_app = (os.getenv("APP_PUBLIC_URL") or "").rstrip("/")
+    web_fallback = f"{web_app}/?token={safe_token}" if web_app else deep_link
     return HTMLResponse(
         "<!doctype html><html lang='pt-BR'><meta name='viewport' "
         "content='width=device-width,initial-scale=1'><title>Continuar no APF</title>"
-        f"<meta http-equiv='refresh' content='0;url={deep_link}'>"
+        f"<script>location.href='{deep_link}';setTimeout(()=>location.href='{web_fallback}',900);</script>"
         "<body style='font-family:system-ui;padding:32px;text-align:center'>"
         "<h2>Continuando com segurança no app Itaú</h2>"
-        f"<p><a href='{deep_link}'>Toque aqui se o app não abrir automaticamente</a></p>"
+        f"<p><a href='{web_fallback}'>Continuar no aplicativo web</a></p>"
         "<p>Nenhuma transação é confirmada pelo Telegram.</p></body></html>"
     )
 
