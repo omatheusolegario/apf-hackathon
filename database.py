@@ -11,15 +11,15 @@ def _async_database_url(raw_url: str) -> str:
     if raw_url.startswith("postgresql://"):
         raw_url = "postgresql+asyncpg://" + raw_url[len("postgresql://"):]
 
-    # O parâmetro channel_binding é específico de libpq/psycopg e não é
-    # reconhecido pelo asyncpg. O TLS continua obrigatório via sslmode.
+    # Parâmetros emitidos para libpq/psycopg precisam ser adaptados ao
+    # asyncpg. O TLS continua obrigatório, usando a chave `ssl`.
     if raw_url.startswith("postgresql+asyncpg://"):
         parts = urlsplit(raw_url)
-        query = [
-            (key, value)
-            for key, value in parse_qsl(parts.query)
-            if key != "channel_binding"
-        ]
+        query = []
+        for key, value in parse_qsl(parts.query):
+            if key == "channel_binding":
+                continue
+            query.append(("ssl" if key == "sslmode" else key, value))
         raw_url = urlunsplit(
             (parts.scheme, parts.netloc, parts.path, urlencode(query), parts.fragment)
         )

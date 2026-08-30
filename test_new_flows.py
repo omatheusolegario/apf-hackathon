@@ -35,7 +35,7 @@ async def run() -> None:
     check(
         "URL Postgres seleciona driver assíncrono",
         _async_database_url("postgresql://user:pass@host/db?sslmode=require")
-        == "postgresql+asyncpg://user:pass@host/db?sslmode=require",
+        == "postgresql+asyncpg://user:pass@host/db?ssl=require",
     )
     check(
         "parâmetro incompatível do Neon é removido",
