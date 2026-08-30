@@ -62,6 +62,7 @@ from transfers import (
 from proactive import run_proactive_scan
 from document_intelligence import scan_boleto
 from telegram_integration import (
+    configure_webhook,
     validate_webhook_secret,
     consume_continuation,
     telegram_payload,
@@ -638,6 +639,14 @@ async def startup():
             await seed()
             print("✅ Base sintética de demonstração criada.")
     print("✅ Banco inicializado.")
+    if os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("PUBLIC_BASE_URL"):
+        try:
+            result = await configure_webhook()
+            print("✅ Webhook do Telegram configurado.", result.get("ok", False))
+        except Exception as exc:
+            # O backend deve continuar disponível mesmo se o Telegram estiver
+            # temporariamente indisponível durante a inicialização.
+            print(f"⚠️ Webhook do Telegram não configurado: {exc}")
 
 
 @app.get("/")
