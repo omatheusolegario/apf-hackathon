@@ -245,7 +245,9 @@ async def get_grounding_data(session: AsyncSession, user_id: str, intent: str) -
     grounding["perfil_investidor"] = perfil
 
     # Resumo por categoria (últimos 30 dias) para grounding mais rico
-    trinta = (date.today() - timedelta(days=30)).isoformat()
+    # Mantenha o parâmetro como ``date``. SQLite aceita também uma string ISO,
+    # mas o PostgreSQL faz tipagem estrita e rejeita DATE >= VARCHAR.
+    trinta = date.today() - timedelta(days=30)
     cat_q = await session.execute(
         select(Transaction.categoria, func.sum(Transaction.valor), func.count())
         .where(

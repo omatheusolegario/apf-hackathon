@@ -50,7 +50,9 @@ async def detect_gastos_fixos(session: AsyncSession, user_id: str) -> List[Dict[
     Gastos fixos por categoria nos últimos 3 meses.
     Thresholds mais sensíveis: 6+ ocorrências, variação < 30%.
     """
-    tres_meses = (date.today() - timedelta(days=90)).isoformat()
+    # O bind precisa ser um ``date`` real para funcionar tanto no PostgreSQL
+    # quanto no SQLite usado pelos testes locais.
+    tres_meses = date.today() - timedelta(days=90)
     query = text("""
         SELECT categoria, AVG(valor) as valor_medio, COUNT(*) as frequencia,
                MIN(valor) as min_valor, MAX(valor) as max_valor
