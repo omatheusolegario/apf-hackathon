@@ -68,6 +68,8 @@ async def run():
     ok("restante usa saldo integral", remaining["valor"] == 2000.0, str(remaining))
     no_excess = _resolve_investment_amount("aplicar em cdb", 1200.0)
     ok("sem excedente não inventa R$ 800", no_excess["valor"] is None, str(no_excess))
+    custom_reserve = _resolve_investment_amount("aplicar em cdb", 5000.0, 3500.0)
+    ok("reserva configurável", custom_reserve["valor"] == 1500.0, str(custom_reserve))
 
     set_last_transfer("demo", {"tipo": "pix", "valor": 200.0, "favorecido": "João Silva"})
     d2 = parse_transfer("manda de novo", user_id="demo")

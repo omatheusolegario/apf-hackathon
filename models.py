@@ -108,6 +108,19 @@ class PixAutomatico(Base):
     user: Mapped["User"] = relationship(back_populates="pix_automaticos")
 
 
+class FinancialPreference(Base):
+    """Preferências financeiras editáveis sem alterar o cadastro bancário."""
+    __tablename__ = "financial_preferences"
+
+    user_id: Mapped[str] = mapped_column(
+        String(50), ForeignKey("users.id"), primary_key=True
+    )
+    reserva_seguranca: Mapped[float] = mapped_column(Float, default=2000.0)
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime, default=datetime.utcnow, onupdate=datetime.utcnow
+    )
+
+
 class BoletoPago(Base):
     __tablename__ = "boletos_pagos"
 

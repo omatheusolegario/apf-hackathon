@@ -6,3 +6,4 @@ __pycache__/
 flutter_app/build/
 flutter_app/.flutter-plugins*
 venv/
+.venv/

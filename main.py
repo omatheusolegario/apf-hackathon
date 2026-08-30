@@ -33,6 +33,7 @@ from models import (
     NotificationLog,
     PixAutomatico,
     BoletoPago,
+    FinancialPreference,
 )
 from llm import call_groq, validate_grounding
 from epc import run_epc
@@ -188,7 +189,9 @@ def _extract_valor(text: str, default: float = 187.40) -> float:
         return default
 
 
-def _resolve_investment_amount(text: str, saldo_disponivel: float) -> Dict[str, Any]:
+def _resolve_investment_amount(
+    text: str, saldo_disponivel: float, reserva_seguranca: float = 2000.0
+) -> Dict[str, Any]:
     """Interpreta o valor solicitado sem confundi-lo com a reserva sugerida.
 
     Pedidos explícitos sempre prevalecem. Na ausência deles, a recomendação
@@ -218,12 +221,24 @@ def _resolve_investment_amount(text: str, saldo_disponivel: float) -> Dict[str, 
         valor = float(raw) * (1000 if number.group(2) else 1)
         return {"valor": round(valor, 2), "origem": "valor_informado", "explicito": True}
 
-    excedente = max(0.0, round(saldo - 2000.0, 2))
+    reserva = max(0.0, round(float(reserva_seguranca or 0), 2))
+    excedente = max(0.0, round(saldo - reserva, 2))
     return {
         "valor": excedente if excedente > 0 else None,
         "origem": "excedente_sugerido",
         "explicito": False,
     }
+
+
+async def _get_financial_preference(
+    session: AsyncSession, user_id: str
+) -> FinancialPreference:
+    preference = await session.get(FinancialPreference, user_id)
+    if preference is None:
+        preference = FinancialPreference(user_id=user_id, reserva_seguranca=2000.0)
+        session.add(preference)
+        await session.flush()
+    return preference
 
 
 # ---------- Grounding ----------
@@ -571,7 +586,11 @@ async def process_message(
             })
         else:
             saldo_disponivel = float(saldo.get("disponivel") or 0)
-            amount = _resolve_investment_amount(text, saldo_disponivel)
+            preference = await _get_financial_preference(session, user_id)
+            reserva_seguranca = float(preference.reserva_seguranca)
+            amount = _resolve_investment_amount(
+                text, saldo_disponivel, reserva_seguranca
+            )
             valor_sugerido = amount["valor"]
             if amount["origem"] == "saldo_integral":
                 if not valor_sugerido:
@@ -603,14 +622,14 @@ async def process_message(
             elif valor_sugerido is None:
                 safe = (
                     "Seu saldo disponível não possui valor acima da reserva de segurança "
-                    "de **R$ 2.000,00**.\n\n"
+                    f"de **R$ {_fmt_brl(reserva_seguranca)}**.\n\n"
                     "Por isso, não sugeri uma aplicação automática. Se quiser investir mesmo "
                     "assim, informe o valor exato ou peça para aplicar todo o saldo."
                 )
             else:
                 safe = (
                     f"Há **R$ {_fmt_brl(float(valor_sugerido))}** acima da reserva de "
-                    "segurança de R$ 2.000,00.\n\n"
+                    f"segurança de R$ {_fmt_brl(reserva_seguranca)}.\n\n"
                     f"Sugestão alinhada ao seu perfil ({gate.get('perfil')}): "
                     f"{gate.get('produto')}. {gate.get('disclaimer', '')}"
                 )
@@ -627,6 +646,8 @@ async def process_message(
                     "disclaimer": gate.get("disclaimer"),
                     "valor_sugerido": valor_sugerido,
                     "valor_origem": amount["origem"],
+                    "saldo_disponivel": saldo_disponivel,
+                    "reserva_seguranca": reserva_seguranca,
                 },
             })
 
@@ -714,16 +735,16 @@ async def startup():
         if not demo_exists:
             from seed import seed
             await seed()
-            print("✅ Base sintética de demonstração criada.")
-    print("✅ Banco inicializado.")
+            print("Base sintética de demonstração criada.")
+    print("Banco inicializado.")
     if os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("PUBLIC_BASE_URL"):
         try:
             result = await configure_webhook()
-            print("✅ Webhook do Telegram configurado.", result.get("ok", False))
+            print("Webhook do Telegram configurado.", result.get("ok", False))
         except Exception as exc:
             # O backend deve continuar disponível mesmo se o Telegram estiver
             # temporariamente indisponível durante a inicialização.
-            print(f"⚠️ Webhook do Telegram não configurado: {exc}")
+            print(f"Webhook do Telegram não configurado: {exc}")
 
 
 @app.get("/")
@@ -1464,6 +1485,35 @@ async def update_consent(user_id: str, payload: dict, session: AsyncSession = De
     }
 
 
+@app.get("/user/{user_id}/preferences")
+async def get_preferences(
+    user_id: str, session: AsyncSession = Depends(get_session)
+):
+    if not await session.get(User, user_id):
+        raise HTTPException(status_code=404, detail="Usuário não encontrado")
+    preference = await _get_financial_preference(session, user_id)
+    await session.commit()
+    return {"reserva_seguranca": preference.reserva_seguranca}
+
+
+@app.post("/user/{user_id}/preferences")
+async def update_preferences(
+    user_id: str, payload: dict, session: AsyncSession = Depends(get_session)
+):
+    if not await session.get(User, user_id):
+        raise HTTPException(status_code=404, detail="Usuário não encontrado")
+    try:
+        reserva = round(float(payload.get("reserva_seguranca")), 2)
+    except (TypeError, ValueError) as exc:
+        raise HTTPException(status_code=422, detail="Informe uma reserva válida") from exc
+    if reserva < 0 or reserva > 10_000_000:
+        raise HTTPException(status_code=422, detail="Reserva fora do limite permitido")
+    preference = await _get_financial_preference(session, user_id)
+    preference.reserva_seguranca = reserva
+    await session.commit()
+    return {"ok": True, "reserva_seguranca": preference.reserva_seguranca}
+
+
 @app.delete("/user/{user_id}/data")
 async def delete_user_data(user_id: str, session: AsyncSession = Depends(get_session)):
     await session.execute(Transaction.__table__.delete().where(Transaction.user_id == user_id))
@@ -1472,6 +1522,11 @@ async def delete_user_data(user_id: str, session: AsyncSession = Depends(get_ses
     await session.execute(NotificationLog.__table__.delete().where(NotificationLog.user_id == user_id))
     await session.execute(PixAutomatico.__table__.delete().where(PixAutomatico.user_id == user_id))
     await session.execute(BoletoPago.__table__.delete().where(BoletoPago.user_id == user_id))
+    await session.execute(
+        FinancialPreference.__table__.delete().where(
+            FinancialPreference.user_id == user_id
+        )
+    )
     user = await session.get(User, user_id)
     if user:
         user.consent_padroes_pagamento = False

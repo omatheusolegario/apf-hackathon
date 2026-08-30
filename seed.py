@@ -299,7 +299,7 @@ async def seed():
 
         session.add_all(transactions)
         await session.commit()
-        print(f"✅ {len(transactions)} transações sintéticas criadas para o usuário '{USER_ID}'.")
+        print(f"{len(transactions)} transações sintéticas criadas para o usuário '{USER_ID}'.")
         print("Seed concluído com sucesso.")
 
 
