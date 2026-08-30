@@ -4,6 +4,8 @@ Protótipo: FastAPI + SQLite + Groq + Flutter.
 
 **Versão 0.6** — agente multimodal, omnichannel e protegido no servidor.
 
+Para preparar, executar e validar a branch `develop`, consulte [README-DEVELOP.md](README-DEVELOP.md).
+
 ## O que faz
 
 - Chat WebSocket com cards interativos
