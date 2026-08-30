@@ -14,6 +14,7 @@ from database import AsyncSessionLocal, init_db
 from database import _async_database_url
 from document_intelligence import scan_boleto
 from main import _handle_card_action, continue_in_app, process_message
+from llm import sanitize_user_facing
 from seed import seed
 from telegram_integration import (
     consume_continuation,
@@ -32,6 +33,14 @@ def check(label: str, condition: bool) -> None:
 
 
 async def run() -> None:
+    formatted = sanitize_user_facing(
+        "**Saldo**\n\n- Disponível: R$ 100\n- Reservado: R$ 20 \U0001f4b0"
+    )
+    check(
+        "formatação Markdown é preservada",
+        "**Saldo**" in formatted and "- Disponível" in formatted,
+    )
+    check("emojis são removidos", "\U0001f4b0" not in formatted)
     check(
         "URL Postgres seleciona driver assíncrono",
         _async_database_url("postgresql://user:pass@host/db?sslmode=require")

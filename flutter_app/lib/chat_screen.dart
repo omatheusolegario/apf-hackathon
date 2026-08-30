@@ -10,7 +10,8 @@ import 'privacy_screen.dart';
 import 'app_config.dart';
 import 'device_auth.dart';
 
-/// Renderiza texto com **negrito** simples (fallback se o LLM ainda mandar markdown).
+/// Renderiza o subconjunto de Markdown usado nas respostas do assistente:
+/// parágrafos, listas, **negrito** e *itálico*.
 class FormattedText extends StatelessWidget {
   final String text;
   final TextStyle? style;
@@ -22,24 +23,64 @@ class FormattedText extends StatelessWidget {
   Widget build(BuildContext context) {
     final base = (style ?? const TextStyle(fontSize: 15, height: 1.4))
         .copyWith(color: color ?? style?.color);
+    final blocks = text.split('\n');
+
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        for (final line in blocks)
+          if (line.trim().isEmpty)
+            const SizedBox(height: 10)
+          else if (RegExp(r'^\s*[-•*]\s+').hasMatch(line))
+            Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('•  ', style: base),
+                  Expanded(
+                    child: _inlineMarkdown(
+                      line.replaceFirst(RegExp(r'^\s*[-•*]\s+'), ''),
+                      base,
+                    ),
+                  ),
+                ],
+              ),
+            )
+          else
+            _inlineMarkdown(
+              line.replaceFirst(RegExp(r'^#{1,3}\s+'), ''),
+              RegExp(r'^#{1,3}\s+').hasMatch(line)
+                  ? base.copyWith(fontWeight: FontWeight.w700, fontSize: 16)
+                  : base,
+            ),
+      ],
+    );
+  }
+
+  Widget _inlineMarkdown(String value, TextStyle base) {
     final spans = <TextSpan>[];
-    final re = RegExp(r'\*\*(.+?)\*\*');
+    final re = RegExp(r'(\*\*|__)(.+?)\1|(?<!\*)\*([^*\n]+?)\*(?!\*)');
     int last = 0;
-    for (final m in re.allMatches(text)) {
+    for (final m in re.allMatches(value)) {
       if (m.start > last) {
-        spans.add(TextSpan(text: text.substring(last, m.start), style: base));
+        spans.add(TextSpan(text: value.substring(last, m.start), style: base));
       }
       spans.add(TextSpan(
-        text: m.group(1),
-        style: base.copyWith(fontWeight: FontWeight.w700),
+        text: m.group(2) ?? m.group(3),
+        style: base.copyWith(
+          fontWeight: m.group(2) != null ? FontWeight.w700 : null,
+          fontStyle: m.group(3) != null ? FontStyle.italic : null,
+        ),
       ));
       last = m.end;
     }
-    if (last < text.length) {
-      spans.add(TextSpan(text: text.substring(last), style: base));
+    if (last < value.length) {
+      spans.add(TextSpan(text: value.substring(last), style: base));
     }
     if (spans.isEmpty) {
-      return Text(text, style: base);
+      return Text(value, style: base);
     }
     return Text.rich(TextSpan(children: spans));
   }
