@@ -190,7 +190,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
             onChanged: (v) => setState(() => consentHabitos = v),
           ),
           SwitchListTile(
-            title: const Text('Saldo ocioso / sugestões de investimento'),
+            title: const Text('Dinheiro disponível para investir'),
             subtitle: const Text('Apenas renda fixa simples'),
             value: consentSaldo,
             activeThumbColor: const Color(0xFFFF6200),

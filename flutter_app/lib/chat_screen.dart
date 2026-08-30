@@ -1583,6 +1583,7 @@ class _InvestmentCardState extends State<_InvestmentCard> {
   late final TextEditingController _valueController;
   bool _reviewing = false;
   bool _submitting = false;
+  bool _cancelled = false;
   String? _error;
 
   Map<String, dynamic> get data => widget.data;
@@ -1652,7 +1653,7 @@ class _InvestmentCardState extends State<_InvestmentCard> {
 
   @override
   Widget build(BuildContext context) {
-    final hasSuggestion = data['valor_sugerido'] != null;
+    final hasSuggestion = data['valor_sugerido'] != null && !_cancelled;
     final balance = (data['saldo_disponivel'] as num?)?.toDouble() ?? 0;
     final reserve = (data['reserva_seguranca'] as num?)?.toDouble() ?? 0;
     final value = _value() ?? 0;
@@ -1670,6 +1671,16 @@ class _InvestmentCardState extends State<_InvestmentCard> {
           ? null
           : _reviewing
               ? [
+                  TextButton(
+                    onPressed: _submitting
+                        ? null
+                        : () => setState(() {
+                              _reviewing = false;
+                              _cancelled = true;
+                              _error = null;
+                            }),
+                    child: const Text('Cancelar'),
+                  ),
                   OutlinedButton(
                     onPressed: _submitting
                         ? null
@@ -1780,9 +1791,11 @@ class _InvestmentCardState extends State<_InvestmentCard> {
                   style: const TextStyle(color: Colors.red, fontSize: 12)),
             ),
           if (!hasSuggestion)
-            const Text(
-              'Informe um valor no chat para preparar uma aplicação.',
-              style: TextStyle(fontSize: 13, color: Colors.black54),
+            Text(
+              _cancelled
+                  ? 'Aplicação cancelada. Nenhuma movimentação foi realizada.'
+                  : 'Informe um valor no chat para preparar uma aplicação.',
+              style: const TextStyle(fontSize: 13, color: Colors.black54),
             ),
           const SizedBox(height: 10),
           Text(

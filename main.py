@@ -581,7 +581,7 @@ async def process_message(
             )
             cards.append({
                 "type": "suitability_blocked",
-                "title": "Bloqueado pelo gate de suitability (CVM)",
+                "title": "Não compatível com seu perfil",
                 "data": gate if isinstance(gate, dict) else {"mensagem": safe},
             })
         else:
