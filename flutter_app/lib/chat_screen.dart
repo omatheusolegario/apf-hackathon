@@ -109,6 +109,7 @@ class _ChatScreenState extends State<ChatScreen> {
   int _connectionEpoch = 0;
   String? _pendingContinuationToken;
   bool _proactiveLoaded = false;
+  bool _hasConnectedOnce = false;
 
   static String get wsUrl => AppConfig.webSocketUrl;
   static const String baseUrl = AppConfig.apiBaseUrl;
@@ -163,7 +164,14 @@ class _ChatScreenState extends State<ChatScreen> {
       _channel = channel;
       await channel.ready.timeout(const Duration(seconds: 5));
       if (!mounted || epoch != _connectionEpoch) return;
-      setState(() => _connected = true);
+      final restored = _hasConnectedOnce && !_connected;
+      setState(() {
+        _connected = true;
+        _hasConnectedOnce = true;
+      });
+      if (restored) {
+        _addSystemMessage('Conexão restabelecida. As operações estão disponíveis novamente.');
+      }
       _resumeContinuationIfReady();
       if (!_proactiveLoaded) {
         _proactiveLoaded = true;
@@ -226,6 +234,14 @@ class _ChatScreenState extends State<ChatScreen> {
   void _send([String? preset]) {
     final text = (preset ?? _controller.text).trim();
     if (text.isEmpty || _sending) return;
+    if (_channel == null || !_connected) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Sem conexão. A mensagem não foi enviada.'),
+        ),
+      );
+      return;
+    }
 
     setState(() {
       _messages.add(ChatMessage(text: text, isUser: true));
@@ -234,13 +250,7 @@ class _ChatScreenState extends State<ChatScreen> {
     });
     _scrollToBottom();
 
-    if (_channel != null && _connected) {
-      _channel!.sink.add(jsonEncode({'text': text, 'user_id': 'demo'}));
-    } else {
-      setState(() => _sending = false);
-      _addSystemMessage(
-          'Backend offline. Suba o uvicorn e toque no ícone de nuvem.');
-    }
+    _channel!.sink.add(jsonEncode({'text': text, 'user_id': 'demo'}));
   }
 
   void _sendAction(Map<String, dynamic> action) {
@@ -507,6 +517,23 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
       body: Column(
         children: [
+          if (!_connected)
+            Semantics(
+              liveRegion: true,
+              label: 'Aplicativo sem conexão. Operações financeiras bloqueadas.',
+              child: Container(
+                width: double.infinity,
+                color: const Color(0xFFFFF3E0),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                child: const Text(
+                  'Sem conexão. Consultas e operações estão bloqueadas enquanto reconectamos.',
+                  style: TextStyle(
+                      color: Color(0xFFE65100),
+                      fontWeight: FontWeight.w600),
+                ),
+              ),
+            ),
           Expanded(
             child: ListView.builder(
               controller: _scrollController,
@@ -579,7 +606,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 controller: _controller,
                 textInputAction: TextInputAction.send,
                 onSubmitted: (_) => _send(),
-                enabled: !_sending,
+                enabled: !_sending && _connected,
                 decoration: InputDecoration(
                   hintText: 'Pergunte sobre saldo, padrões, boletos…',
                   filled: true,
@@ -654,6 +681,7 @@ class ChatMessage {
   final bool isSystem;
   final String? intent;
   final List<Map<String, dynamic>> cards;
+  final DateTime createdAt;
 
   ChatMessage({
     required this.text,
@@ -661,7 +689,8 @@ class ChatMessage {
     this.isSystem = false,
     this.intent,
     this.cards = const [],
-  });
+    DateTime? createdAt,
+  }) : createdAt = createdAt ?? DateTime.now();
 }
 
 class MessageBubble extends StatelessWidget {
@@ -713,6 +742,13 @@ class MessageBubble extends StatelessWidget {
                 style: const TextStyle(fontSize: 15, height: 1.4),
               ),
             ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 6),
+            child: Text(
+              '${TimeOfDay.fromDateTime(message.createdAt).format(context)}${message.cards.isNotEmpty ? '  |  ${message.isUser ? 'enviado' : 'resposta recebida'}' : ''}',
+              style: const TextStyle(fontSize: 10, color: Colors.black45),
+            ),
+          ),
           ...message.cards.map((c) => _buildCard(context, c)),
         ],
       ),
@@ -763,7 +799,7 @@ class MessageBubble extends StatelessWidget {
   }
 }
 
-class _CardShell extends StatelessWidget {
+class _CardShell extends StatefulWidget {
   final String title;
   final IconData icon;
   final Color accent;
@@ -779,7 +815,15 @@ class _CardShell extends StatelessWidget {
   });
 
   @override
+  State<_CardShell> createState() => _CardShellState();
+}
+
+class _CardShellState extends State<_CardShell> {
+  bool _expanded = true;
+
+  @override
   Widget build(BuildContext context) {
+    final accent = widget.accent;
     return Container(
       width: MediaQuery.of(context).size.width * 0.88,
       margin: const EdgeInsets.only(top: 6, bottom: 8),
@@ -807,11 +851,11 @@ class _CardShell extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Icon(icon, size: 18, color: accent),
+                Icon(widget.icon, size: 18, color: accent),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
-                    title,
+                    widget.title,
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: accent,
@@ -819,17 +863,28 @@ class _CardShell extends StatelessWidget {
                     ),
                   ),
                 ),
+                IconButton(
+                  visualDensity: VisualDensity.compact,
+                  tooltip: _expanded ? 'Recolher detalhes' : 'Ver detalhes',
+                  onPressed: () => setState(() => _expanded = !_expanded),
+                  icon: Icon(
+                    _expanded ? Icons.expand_less : Icons.expand_more,
+                    color: accent,
+                  ),
+                ),
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(14, 12, 14, 8),
-            child: child,
-          ),
-          if (actions != null && actions!.isNotEmpty)
+          if (_expanded)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(14, 12, 14, 8),
+              child: widget.child,
+            ),
+          if (_expanded && widget.actions != null && widget.actions!.isNotEmpty)
             Padding(
               padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
-              child: Wrap(spacing: 8, runSpacing: 6, children: actions!),
+              child: Wrap(
+                  spacing: 8, runSpacing: 6, children: widget.actions!),
             ),
         ],
       ),
@@ -1512,7 +1567,7 @@ class _BalanceCard extends StatelessWidget {
   }
 }
 
-class _InvestmentCard extends StatelessWidget {
+class _InvestmentCard extends StatefulWidget {
   final String title;
   final Map<String, dynamic> data;
   final CardActionCallback? onAction;
@@ -1520,78 +1575,223 @@ class _InvestmentCard extends StatelessWidget {
   const _InvestmentCard(
       {required this.title, required this.data, this.onAction});
 
-  String _fmt(dynamic v) {
-    if (v == null) return '-';
-    final n = (v is num) ? v.toDouble() : double.tryParse(v.toString()) ?? 0;
-    return n.toStringAsFixed(2).replaceAll('.', ',');
+  @override
+  State<_InvestmentCard> createState() => _InvestmentCardState();
+}
+
+class _InvestmentCardState extends State<_InvestmentCard> {
+  late final TextEditingController _valueController;
+  bool _reviewing = false;
+  bool _submitting = false;
+  String? _error;
+
+  Map<String, dynamic> get data => widget.data;
+
+  @override
+  void initState() {
+    super.initState();
+    final value = (data['valor_sugerido'] as num?)?.toDouble();
+    _valueController = TextEditingController(
+      text: value?.toStringAsFixed(2).replaceAll('.', ',') ?? '',
+    );
+  }
+
+  @override
+  void dispose() {
+    _valueController.dispose();
+    super.dispose();
+  }
+
+  String _fmt(dynamic value) {
+    final number = value is num
+        ? value.toDouble()
+        : double.tryParse(value?.toString() ?? '') ?? 0;
+    return number.toStringAsFixed(2).replaceAll('.', ',');
+  }
+
+  double? _value() => double.tryParse(
+        _valueController.text.trim().replaceAll('.', '').replaceAll(',', '.'),
+      );
+
+  void _review() {
+    final value = _value();
+    final balance = (data['saldo_disponivel'] as num?)?.toDouble() ?? 0;
+    if (value == null || value <= 0) {
+      setState(() => _error = 'Informe um valor maior que zero.');
+      return;
+    }
+    if (value > balance) {
+      setState(() => _error = 'O valor supera o saldo disponível.');
+      return;
+    }
+    setState(() {
+      _error = null;
+      _reviewing = true;
+    });
+  }
+
+  Future<void> _confirm() async {
+    if (_submitting) return;
+    setState(() => _submitting = true);
+    final auth = await DeviceAuth.authenticate();
+    if (!mounted) return;
+    if (!auth.authenticated) {
+      setState(() {
+        _submitting = false;
+        _error = auth.message;
+      });
+      return;
+    }
+    widget.onAction?.call({
+      'type': 'apply_investment',
+      'produto': data['produto'] ?? widget.title,
+      'produto_id': data['produto_id'],
+      'valor': _value(),
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    final suggestedValue = data['valor_sugerido'];
+    final hasSuggestion = data['valor_sugerido'] != null;
+    final balance = (data['saldo_disponivel'] as num?)?.toDouble() ?? 0;
+    final reserve = (data['reserva_seguranca'] as num?)?.toDouble() ?? 0;
+    final value = _value() ?? 0;
+    final origin = data['valor_origem'] == 'valor_informado'
+        ? 'Valor solicitado por você'
+        : data['valor_origem'] == 'saldo_integral'
+            ? 'Todo o saldo solicitado por você'
+            : 'Valor sugerido pelo assistente';
+
     return _CardShell(
-      title: title,
+      title: widget.title,
       icon: Icons.trending_up_rounded,
       accent: const Color(0xFF00695C),
-      actions: suggestedValue == null
+      actions: !hasSuggestion
           ? null
-          : [
-              FilledButton(
-                onPressed: () {
-                  onAction?.call({
-                    'type': 'apply_investment',
-                    'produto': data['produto'] ?? title,
-                    'produto_id': data['produto_id'],
-                    'valor': suggestedValue,
-                  });
-                },
-                style: FilledButton.styleFrom(
-                    backgroundColor: const Color(0xFFFF6200)),
-                child: Text('Aplicar R\$ ${_fmt(suggestedValue)}'),
-              ),
-            ],
+          : _reviewing
+              ? [
+                  OutlinedButton(
+                    onPressed: _submitting
+                        ? null
+                        : () => setState(() => _reviewing = false),
+                    child: const Text('Editar valor'),
+                  ),
+                  FilledButton(
+                    onPressed: _submitting ? null : _confirm,
+                    style: FilledButton.styleFrom(
+                        backgroundColor: const Color(0xFFFF6200)),
+                    child: Text(_submitting
+                        ? 'Confirmando...'
+                        : 'Confirmar aplicação'),
+                  ),
+                ]
+              : [
+                  FilledButton(
+                    onPressed: _review,
+                    style: FilledButton.styleFrom(
+                        backgroundColor: const Color(0xFFFF6200)),
+                    child: const Text('Revisar aplicação'),
+                  ),
+                ],
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+            decoration: BoxDecoration(
+              color: const Color(0xFFE0F2F1),
+              borderRadius: BorderRadius.circular(6),
+            ),
+            child: Text(origin,
+                style: const TextStyle(
+                    fontSize: 12,
+                    color: Color(0xFF004D40),
+                    fontWeight: FontWeight.w600)),
+          ),
+          const SizedBox(height: 10),
           Text(data['descricao']?.toString() ?? '',
               style: const TextStyle(fontSize: 14)),
-          if (data['rendimento_estimado'] != null) ...[
-            const SizedBox(height: 6),
+          if (data['rendimento_estimado'] != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 6),
+              child: Text('Rendimento estimado: ${data['rendimento_estimado']}',
+                  style: const TextStyle(
+                      fontSize: 13, fontWeight: FontWeight.w500)),
+            ),
+          const SizedBox(height: 10),
+          if (hasSuggestion && !_reviewing) ...[
+            TextField(
+              controller: _valueController,
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
+              decoration: InputDecoration(
+                labelText: 'Valor da aplicação',
+                prefixText: 'R\$ ',
+                errorText: _error,
+                border: const OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 8),
             Text(
-              'Rendimento estimado: ${data['rendimento_estimado']}',
-              style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
+              'Saldo atual: R\$ ${_fmt(balance)}  |  Reserva: R\$ ${_fmt(reserve)}',
+              style: const TextStyle(fontSize: 12, color: Colors.black54),
             ),
           ],
-          const SizedBox(height: 8),
-          Wrap(
-            spacing: 8,
-            children: [
-              _chip('Risco: ${data['risco'] ?? '-'}', const Color(0xFF00695C)),
-              _chip(
-                  'Perfil: ${data['perfil'] ?? '-'}', const Color(0xFF455A64)),
-            ],
-          ),
-          const SizedBox(height: 8),
+          if (_reviewing)
+            Semantics(
+              label: 'Resumo financeiro antes da confirmação',
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: value == balance
+                      ? const Color(0xFFFFF3E0)
+                      : const Color(0xFFE8F5E9),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('Resumo antes de confirmar',
+                        style: TextStyle(fontWeight: FontWeight.w700)),
+                    const SizedBox(height: 6),
+                    Text('Valor: R\$ ${_fmt(value)}'),
+                    Text('Saldo atual: R\$ ${_fmt(balance)}'),
+                    Text('Saldo depois: R\$ ${_fmt(balance - value)}'),
+                    Text('Reserva configurada: R\$ ${_fmt(reserve)}'),
+                    if (value == balance)
+                      const Padding(
+                        padding: EdgeInsets.only(top: 6),
+                        child: Text(
+                          'Esta aplicação deixará o saldo disponível zerado.',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xFFE65100)),
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ),
+          if (_reviewing && _error != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 6),
+              child: Text(_error!,
+                  style: const TextStyle(color: Colors.red, fontSize: 12)),
+            ),
+          if (!hasSuggestion)
+            const Text(
+              'Informe um valor no chat para preparar uma aplicação.',
+              style: TextStyle(fontSize: 13, color: Colors.black54),
+            ),
+          const SizedBox(height: 10),
           Text(
             data['disclaimer']?.toString() ??
                 'Projeção estimada. Rentabilidade passada não garante rentabilidade futura.',
-            style: const TextStyle(fontSize: 11, color: Colors.black45),
+            style: const TextStyle(fontSize: 12, color: Colors.black54),
           ),
         ],
       ),
-    );
-  }
-
-  Widget _chip(String label, Color color) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(6),
-      ),
-      child: Text(label,
-          style: TextStyle(
-              fontSize: 11, color: color, fontWeight: FontWeight.w500)),
     );
   }
 }
