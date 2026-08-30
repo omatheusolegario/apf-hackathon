@@ -1,0 +1,8 @@
+.env
+apf.db
+__pycache__/
+*.pyc
+.dart_tool/
+flutter_app/build/
+flutter_app/.flutter-plugins*
+venv/

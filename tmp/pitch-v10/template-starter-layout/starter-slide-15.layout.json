@@ -1,0 +1,967 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/lu4teo",
+    "id": "lu4teo",
+    "slide": 15,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/g3ylobm5",
+      "id": "2",
+      "name": "Text 0",
+      "bbox": [
+        57.6,
+        38.4,
+        1164.48,
+        38.4
+      ],
+      "geometry": "rect",
+      "text": "PLANO DE IMPLEMENTAÇÃO",
+      "textPreview": "PLANO DE IMPLEMENTAÇÃO",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "PLANO DE IMPLEMENTAÇÃO"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "PLANO DE IMPLEMENTAÇÃO",
+          "runs": [
+            {
+              "index": 1,
+              "text": "PLANO DE IMPLEMENTAÇÃO",
+              "fontSize": 17.33,
+              "color": "#FF6600",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ho72hgnq",
+      "id": "3",
+      "name": "Text 1",
+      "bbox": [
+        57.6,
+        72,
+        1164.48,
+        86.4
+      ],
+      "geometry": "rect",
+      "text": "Duas propostas, dois apetites de inovação",
+      "textPreview": "Duas propostas, dois apetites de inovação",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Duas propostas, dois apetites de inovação"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Duas propostas, dois apetites de inovação",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Duas propostas, dois apetites de inovação",
+              "fontSize": 36,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2pg3q14v",
+      "id": "4",
+      "name": "Shape 2",
+      "bbox": [
+        57.6,
+        187.2,
+        566.4,
+        374.4
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4F5F7"
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3qpkj65g",
+      "id": "5",
+      "name": "Shape 3",
+      "bbox": [
+        57.6,
+        187.2,
+        566.4,
+        11.52
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#1B2A4A"
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4rylsbm1",
+      "id": "6",
+      "name": "Text 4",
+      "bbox": [
+        86.4,
+        211.2,
+        508.8,
+        38.4
+      ],
+      "geometry": "rect",
+      "text": "CONSERVADORA — CHAT NO APP ITAÚ",
+      "textPreview": "CONSERVADORA — CHAT NO APP ITAÚ",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "CONSERVADORA — CHAT NO APP ITAÚ"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "CONSERVADORA — CHAT NO APP ITAÚ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "CONSERVADORA — CHAT NO APP ITAÚ",
+              "fontSize": 16.67,
+              "color": "#1B2A4A",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ps72lgnm",
+      "id": "7",
+      "name": "Text 5",
+      "bbox": [
+        86.4,
+        264,
+        508.8,
+        65.28
+      ],
+      "geometry": "rect",
+      "text": "• Ambiente 100% controlado pelo banco — mesma sessão autenticada",
+      "textPreview": "• Ambiente 100% controlado pelo banco — mesma sessão autenticada",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "• Ambiente 100% controlado pelo banco — mesma sessão"
+          },
+          {
+            "index": 2,
+            "text": "autenticada"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "• Ambiente 100% controlado pelo banco — mesma sessão autenticada",
+          "runs": [
+            {
+              "index": 1,
+              "text": "• Ambiente 100% controlado pelo banco — mesma sessão autenticada",
+              "fontSize": 16,
+              "color": "#0E1B33"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ytcjeh4r",
+      "id": "8",
+      "name": "Text 6",
+      "bbox": [
+        86.4,
+        333.12,
+        508.8,
+        65.28
+      ],
+      "geometry": "rect",
+      "text": "• Execução completa: qualquer ação confirma na própria conversa",
+      "textPreview": "• Execução completa: qualquer ação confirma na própria conversa",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "• Execução completa: qualquer ação confirma na própria conversa"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "• Execução completa: qualquer ação confirma na própria conversa",
+          "runs": [
+            {
+              "index": 1,
+              "text": "• Execução completa: qualquer ação confirma na própria conversa",
+              "fontSize": 16,
+              "color": "#0E1B33"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/julk7m5c",
+      "id": "9",
+      "name": "Text 7",
+      "bbox": [
+        86.4,
+        402.24,
+        508.8,
+        65.28
+      ],
+      "geometry": "rect",
+      "text": "• Sem dependência de aprovação de terceiros",
+      "textPreview": "• Sem dependência de aprovação de terceiros",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "• Sem dependência de aprovação de terceiros"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "• Sem dependência de aprovação de terceiros",
+          "runs": [
+            {
+              "index": 1,
+              "text": "• Sem dependência de aprovação de terceiros",
+              "fontSize": 16,
+              "color": "#0E1B33"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/juhsn6tg",
+      "id": "10",
+      "name": "Text 8",
+      "bbox": [
+        86.4,
+        471.36,
+        508.8,
+        65.28
+      ],
+      "geometry": "rect",
+      "text": "• Menor risco regulatório — caminho de adoção mais imediata",
+      "textPreview": "• Menor risco regulatório — caminho de adoção mais imediata",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "• Menor risco regulatório — caminho de adoção mais imediata"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "• Menor risco regulatório — caminho de adoção mais imediata",
+          "runs": [
+            {
+              "index": 1,
+              "text": "• Menor risco regulatório — caminho de adoção mais imediata",
+              "fontSize": 16,
+              "color": "#0E1B33"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i98ru1sv",
+      "id": "11",
+      "name": "Shape 9",
+      "bbox": [
+        652.8,
+        187.2,
+        566.4,
+        374.4
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#0E1B33"
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5wjapgb6",
+      "id": "12",
+      "name": "Shape 10",
+      "bbox": [
+        652.8,
+        187.2,
+        566.4,
+        11.52
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FF6600"
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4vqtwba1",
+      "id": "13",
+      "name": "Text 11",
+      "bbox": [
+        681.6,
+        211.2,
+        508.8,
+        38.4
+      ],
+      "geometry": "rect",
+      "text": "ARROJADA — BOT EM MENSAGEIRO (TELEGRAM → WHATSAPP)",
+      "textPreview": "ARROJADA — BOT EM MENSAGEIRO (TELEGRAM → WHATSAPP)",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ARROJADA — BOT EM MENSAGEIRO (TELEGRAM →"
+          },
+          {
+            "index": 2,
+            "text": "WHATSAPP)"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ARROJADA — BOT EM MENSAGEIRO (TELEGRAM → WHATSAPP)",
+          "runs": [
+            {
+              "index": 1,
+              "text": "ARROJADA — BOT EM MENSAGEIRO (TELEGRAM → WHATSAPP)",
+              "fontSize": 16,
+              "color": "#FF6600",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v6hsjmt4",
+      "id": "14",
+      "name": "Text 12",
+      "bbox": [
+        681.6,
+        264,
+        508.8,
+        65.28
+      ],
+      "geometry": "rect",
+      "text": "• Encontra o cliente onde ele já passa o dia",
+      "textPreview": "• Encontra o cliente onde ele já passa o dia",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "• Encontra o cliente onde ele já passa o dia"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "• Encontra o cliente onde ele já passa o dia",
+          "runs": [
+            {
+              "index": 1,
+              "text": "• Encontra o cliente onde ele já passa o dia",
+              "fontSize": 15.33,
+              "color": "#E8ECF3"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u58rq1sj",
+      "id": "15",
+      "name": "Text 13",
+      "bbox": [
+        681.6,
+        333.12,
+        508.8,
+        65.28
+      ],
+      "geometry": "rect",
+      "text": "• Protótipo em Telegram representa o padrão de WhatsApp em produção",
+      "textPreview": "• Protótipo em Telegram representa o padrão de WhatsApp em produção",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "• Protótipo em Telegram representa o padrão de WhatsApp em"
+          },
+          {
+            "index": 2,
+            "text": "produção"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "• Protótipo em Telegram representa o padrão de WhatsApp em produção",
+          "runs": [
+            {
+              "index": 1,
+              "text": "• Protótipo em Telegram representa o padrão de WhatsApp em produção",
+              "fontSize": 15.33,
+              "color": "#E8ECF3"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h8zalwba",
+      "id": "16",
+      "name": "Text 14",
+      "bbox": [
+        681.6,
+        402.24,
+        508.8,
+        65.28
+      ],
+      "geometry": "rect",
+      "text": "• Ação de dinheiro sempre reabre o app via deep link, com biometria",
+      "textPreview": "• Ação de dinheiro sempre reabre o app via deep link, com biometria",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "• Ação de dinheiro sempre reabre o app via deep link, com biometria"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "• Ação de dinheiro sempre reabre o app via deep link, com biometria",
+          "runs": [
+            {
+              "index": 1,
+              "text": "• Ação de dinheiro sempre reabre o app via deep link, com biometria",
+              "fontSize": 15.33,
+              "color": "#E8ECF3"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w7q9srap",
+      "id": "17",
+      "name": "Text 15",
+      "bbox": [
+        681.6,
+        471.36,
+        508.8,
+        65.28
+      ],
+      "geometry": "rect",
+      "text": "• WhatsApp em produção depende de aprovação comercial da Meta",
+      "textPreview": "• WhatsApp em produção depende de aprovação comercial da Meta",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "• WhatsApp em produção depende de aprovação comercial da Meta"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "• WhatsApp em produção depende de aprovação comercial da Meta",
+          "runs": [
+            {
+              "index": 1,
+              "text": "• WhatsApp em produção depende de aprovação comercial da Meta",
+              "fontSize": 15.33,
+              "color": "#E8ECF3"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/72xsfmt8",
+      "id": "18",
+      "name": "Shape 16",
+      "bbox": [
+        57.6,
+        580.8,
+        1164.48,
+        86.4
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4F5F7"
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m1ormhsn",
+      "id": "19",
+      "name": "Text 17",
+      "bbox": [
+        86.4,
+        588.48,
+        1106.88,
+        72
+      ],
+      "geometry": "rect",
+      "text": "Mesma arquitetura do APF nos dois casos — muda só onde a conversa acontece. A escolha cabe ao Itaú.",
+      "textPreview": "Mesma arquitetura do APF nos dois casos — muda só onde a conversa acontece. A escolha cabe ao Itaú.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Mesma arquitetura do APF nos dois casos — muda só onde a conversa acontece. A escolha cabe ao Itaú."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Mesma arquitetura do APF nos dois casos — muda só onde a conversa acontece. A escolha cabe ao Itaú.",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Mesma arquitetura do APF nos dois casos — muda só onde a conversa acontece. A escolha cabe ao Itaú.",
+              "fontSize": 20,
+              "color": "#0E1B33",
+              "italic": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/axobyhcf",
+      "id": "20",
+      "name": "Text 18",
+      "bbox": [
+        1212.48,
+        672,
+        48,
+        33.6
+      ],
+      "geometry": "rect",
+      "text": "15",
+      "textPreview": "15",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "15"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "15",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "15",
+              "fontSize": 14.67,
+              "color": "#5B6470"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

@@ -1,0 +1,210 @@
+{
+  "sourcePptx": "/Users/mgolegario/Downloads/deck-pitch-inovacamp-v9.pptx",
+  "mapPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-frame-map.json",
+  "output": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter.pptx",
+  "outputBytes": 78882,
+  "sourceSlideCount": 18,
+  "slideCount": 18,
+  "previewDir": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview",
+  "layoutDir": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout",
+  "slides": [
+    {
+      "outputSlide": 1,
+      "sourceSlide": 1,
+      "narrativeRole": "abertura",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 0,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-01.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-01.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-01.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-01.layout.json"
+    },
+    {
+      "outputSlide": 2,
+      "sourceSlide": 2,
+      "narrativeRole": "tese",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 0,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-02.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-02.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-02.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-02.layout.json"
+    },
+    {
+      "outputSlide": 3,
+      "sourceSlide": 3,
+      "narrativeRole": "contexto",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 0,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-03.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-03.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-03.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-03.layout.json"
+    },
+    {
+      "outputSlide": 4,
+      "sourceSlide": 4,
+      "narrativeRole": "problema",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 0,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-04.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-04.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-04.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-04.layout.json"
+    },
+    {
+      "outputSlide": 5,
+      "sourceSlide": 5,
+      "narrativeRole": "solução",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 0,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-05.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-05.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-05.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-05.layout.json"
+    },
+    {
+      "outputSlide": 6,
+      "sourceSlide": 6,
+      "narrativeRole": "arquitetura",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 0,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-06.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-06.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-06.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-06.layout.json"
+    },
+    {
+      "outputSlide": 7,
+      "sourceSlide": 7,
+      "narrativeRole": "pagamento explicável",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-07.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-07.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-07.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-07.layout.json"
+    },
+    {
+      "outputSlide": 8,
+      "sourceSlide": 8,
+      "narrativeRole": "investimento",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 0,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-08.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-08.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-08.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-08.layout.json"
+    },
+    {
+      "outputSlide": 9,
+      "sourceSlide": 9,
+      "narrativeRole": "segurança",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-09.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-09.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-09.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-09.layout.json"
+    },
+    {
+      "outputSlide": 10,
+      "sourceSlide": 10,
+      "narrativeRole": "antecipação",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 0,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-10.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-10.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-10.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-10.layout.json"
+    },
+    {
+      "outputSlide": 11,
+      "sourceSlide": 11,
+      "narrativeRole": "diferencial",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 0,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-11.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-11.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-11.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-11.layout.json"
+    },
+    {
+      "outputSlide": 12,
+      "sourceSlide": 12,
+      "narrativeRole": "viabilidade",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 0,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-12.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-12.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-12.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-12.layout.json"
+    },
+    {
+      "outputSlide": 13,
+      "sourceSlide": 13,
+      "narrativeRole": "regulatório",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 0,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-13.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-13.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-13.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-13.layout.json"
+    },
+    {
+      "outputSlide": 14,
+      "sourceSlide": 14,
+      "narrativeRole": "governança",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 0,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-14.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-14.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-14.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-14.layout.json"
+    },
+    {
+      "outputSlide": 15,
+      "sourceSlide": 15,
+      "narrativeRole": "implementação",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 5,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-15.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-15.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-15.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-15.layout.json"
+    },
+    {
+      "outputSlide": 16,
+      "sourceSlide": 16,
+      "narrativeRole": "demo",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 4,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-16.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-16.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-16.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-16.layout.json"
+    },
+    {
+      "outputSlide": 17,
+      "sourceSlide": 17,
+      "narrativeRole": "fechamento",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 0,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-17.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-17.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-17.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-17.layout.json"
+    },
+    {
+      "outputSlide": 18,
+      "sourceSlide": 18,
+      "narrativeRole": "backup",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 2,
+      "previewPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-preview/starter-slide-18.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-18.png",
+      "layoutPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout/starter-slide-18.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-18.layout.json"
+    }
+  ]
+}

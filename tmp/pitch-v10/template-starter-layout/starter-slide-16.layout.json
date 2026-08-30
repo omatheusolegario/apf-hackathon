@@ -1,0 +1,707 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/wdszvw",
+    "id": "wdszvw",
+    "slide": 16,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "backgroundColor": "#0E1B33",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a9crah8f",
+      "id": "2",
+      "name": "Text 0",
+      "bbox": [
+        76.8,
+        86.4,
+        1126.08,
+        48
+      ],
+      "geometry": "rect",
+      "text": "PROTÓTIPOS — AS DUAS PROPOSTAS",
+      "textPreview": "PROTÓTIPOS — AS DUAS PROPOSTAS",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "PROTÓTIPOS — AS DUAS PROPOSTAS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "PROTÓTIPOS — AS DUAS PROPOSTAS",
+          "runs": [
+            {
+              "index": 1,
+              "text": "PROTÓTIPOS — AS DUAS PROPOSTAS",
+              "fontSize": 18.67,
+              "color": "#FF6600",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/val8j290",
+      "id": "3",
+      "name": "Text 1",
+      "bbox": [
+        76.8,
+        134.4,
+        1126.08,
+        86.4
+      ],
+      "geometry": "rect",
+      "text": "O que vocês vão ver agora",
+      "textPreview": "O que vocês vão ver agora",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "O que vocês vão ver agora"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "O que vocês vão ver agora",
+          "runs": [
+            {
+              "index": 1,
+              "text": "O que vocês vão ver agora",
+              "fontSize": 42.67,
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kze9grqh",
+      "id": "4",
+      "name": "Shape 2",
+      "bbox": [
+        76.8,
+        259.2,
+        1126.08,
+        81.6
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#24345A"
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/50napwr2",
+      "id": "5",
+      "name": "Text 3",
+      "bbox": [
+        96,
+        259.2,
+        57.6,
+        81.6
+      ],
+      "geometry": "rect",
+      "text": "1",
+      "textPreview": "1",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1",
+          "runs": [
+            {
+              "index": 1,
+              "text": "1",
+              "fontSize": 26.67,
+              "color": "#FF6600",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ixwreh8b",
+      "id": "6",
+      "name": "Text 4",
+      "bbox": [
+        163.2,
+        259.2,
+        1020.48,
+        81.6
+      ],
+      "geometry": "rect",
+      "text": "Conservadora — chat no app (Flutter): pagamento respondido dentro do próprio app",
+      "textPreview": "Conservadora — chat no app (Flutter): pagamento respondido dentro do próprio app",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Conservadora — chat no app (Flutter): pagamento respondido dentro do próprio app"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Conservadora — chat no app (Flutter): pagamento respondido dentro do próprio app",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Conservadora — chat no app (Flutter): pagamento respondido dentro do próprio app",
+              "fontSize": 16.67,
+              "color": "#FFFFFF"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jy5snm9w",
+      "id": "7",
+      "name": "Shape 5",
+      "bbox": [
+        76.8,
+        360,
+        1126.08,
+        81.6
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#24345A"
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/03a94nqd",
+      "id": "8",
+      "name": "Text 6",
+      "bbox": [
+        96,
+        360,
+        57.6,
+        81.6
+      ],
+      "geometry": "rect",
+      "text": "2",
+      "textPreview": "2",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2",
+          "runs": [
+            {
+              "index": 1,
+              "text": "2",
+              "fontSize": 26.67,
+              "color": "#FF6600",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/143qdsri",
+      "id": "9",
+      "name": "Text 7",
+      "bbox": [
+        163.2,
+        360,
+        1020.48,
+        81.6
+      ],
+      "geometry": "rect",
+      "text": "Arrojada — bot no Telegram, representando WhatsApp: o mesmo fluxo, onde o cliente já está",
+      "textPreview": "Arrojada — bot no Telegram, representando WhatsApp: o mesmo fluxo, onde o cliente já está",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Arrojada — bot no Telegram, representando WhatsApp: o mesmo fluxo, onde o cliente já está"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Arrojada — bot no Telegram, representando WhatsApp: o mesmo fluxo, onde o cliente já está",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Arrojada — bot no Telegram, representando WhatsApp: o mesmo fluxo, onde o cliente já está",
+              "fontSize": 16.67,
+              "color": "#FFFFFF"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xw7ql8zy",
+      "id": "10",
+      "name": "Shape 8",
+      "bbox": [
+        76.8,
+        460.8,
+        1126.08,
+        81.6
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#24345A"
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cvypsnit",
+      "id": "11",
+      "name": "Text 9",
+      "bbox": [
+        96,
+        460.8,
+        57.6,
+        81.6
+      ],
+      "geometry": "rect",
+      "text": "3",
+      "textPreview": "3",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3",
+          "runs": [
+            {
+              "index": 1,
+              "text": "3",
+              "fontSize": 26.67,
+              "color": "#FF6600",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bup8jih8",
+      "id": "12",
+      "name": "Text 10",
+      "bbox": [
+        163.2,
+        460.8,
+        1020.48,
+        81.6
+      ],
+      "geometry": "rect",
+      "text": "Comparador de pagamento em rich card, nos dois protótipos",
+      "textPreview": "Comparador de pagamento em rich card, nos dois protótipos",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Comparador de pagamento em rich card, nos dois protótipos"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Comparador de pagamento em rich card, nos dois protótipos",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Comparador de pagamento em rich card, nos dois protótipos",
+              "fontSize": 16.67,
+              "color": "#FFFFFF"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a9g7qd0n",
+      "id": "13",
+      "name": "Shape 11",
+      "bbox": [
+        76.8,
+        561.6,
+        1126.08,
+        81.6
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#24345A"
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l0rqpsza",
+      "id": "14",
+      "name": "Text 12",
+      "bbox": [
+        96,
+        561.6,
+        57.6,
+        81.6
+      ],
+      "geometry": "rect",
+      "text": "4",
+      "textPreview": "4",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "4"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "4",
+          "runs": [
+            {
+              "index": 1,
+              "text": "4",
+              "fontSize": 26.67,
+              "color": "#FF6600",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kzipwnyp",
+      "id": "15",
+      "name": "Text 13",
+      "bbox": [
+        163.2,
+        561.6,
+        1020.48,
+        81.6
+      ],
+      "geometry": "rect",
+      "text": "EPC ao vivo: detecção de padrão de aluguel e sugestão de Pix Automático, com dados sintéticos representativos",
+      "textPreview": "EPC ao vivo: detecção de padrão de aluguel e sugestão de Pix Automático, com dados sintéticos representativos",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "EPC ao vivo: detecção de padrão de aluguel e sugestão de Pix Automático, com dados sintéticos representativos"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "EPC ao vivo: detecção de padrão de aluguel e sugestão de Pix Automático, com dados sintéticos representativos",
+          "runs": [
+            {
+              "index": 1,
+              "text": "EPC ao vivo: detecção de padrão de aluguel e sugestão de Pix Automático, com dados sintéticos representativos",
+              "fontSize": 16.67,
+              "color": "#FFFFFF"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

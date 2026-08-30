@@ -1,0 +1,23 @@
+{
+  "outputSlides": [
+    {"outputSlide":1,"sourceSlide":1,"narrativeRole":"abertura","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":2,"sourceSlide":2,"narrativeRole":"tese","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":3,"sourceSlide":3,"narrativeRole":"contexto","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":4,"sourceSlide":4,"narrativeRole":"problema","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":5,"sourceSlide":5,"narrativeRole":"solução","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":6,"sourceSlide":6,"narrativeRole":"arquitetura","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":7,"sourceSlide":7,"narrativeRole":"pagamento explicável","reuseMode":"duplicate-slide","editTargets":[{"action":"rewrite","shapeId":"sh/xcz2l03q"}]},
+    {"outputSlide":8,"sourceSlide":8,"narrativeRole":"investimento","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":9,"sourceSlide":9,"narrativeRole":"segurança","reuseMode":"duplicate-slide","editTargets":[{"action":"rewrite","shapeId":"sh/2xsjepgb"}]},
+    {"outputSlide":10,"sourceSlide":10,"narrativeRole":"antecipação","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":11,"sourceSlide":11,"narrativeRole":"diferencial","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":12,"sourceSlide":12,"narrativeRole":"viabilidade","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":13,"sourceSlide":13,"narrativeRole":"regulatório","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":14,"sourceSlide":14,"narrativeRole":"governança","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":15,"sourceSlide":15,"narrativeRole":"implementação","reuseMode":"duplicate-slide","editTargets":[{"action":"rewrite","shapeId":"sh/vqdsrqx4"},{"action":"rewrite","shapeId":"sh/4vm9ovel"},{"action":"rewrite","shapeId":"sh/5wvax0f6"},{"action":"rewrite","shapeId":"sh/it4rm5wv"},{"action":"rewrite","shapeId":"sh/judsvqxg"}]},
+    {"outputSlide":16,"sourceSlide":16,"narrativeRole":"demo","reuseMode":"duplicate-slide","editTargets":[{"action":"rewrite","shapeId":"sh/kv2h4rqp"},{"action":"rewrite","shapeId":"sh/3qdg7qpo"},{"action":"rewrite","shapeId":"sh/1ojy10ne"},{"action":"rewrite","shapeId":"sh/2pcfa5oz"}]},
+    {"outputSlide":17,"sourceSlide":17,"narrativeRole":"fechamento","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":18,"sourceSlide":18,"narrativeRole":"backup","reuseMode":"duplicate-slide","editTargets":[{"action":"rewrite","shapeId":"sh/itw3upcf"},{"action":"rewrite","shapeId":"sh/je5knut0"}]}
+  ],
+  "omittedSourceSlides": []
+}

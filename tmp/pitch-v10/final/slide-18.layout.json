@@ -1,0 +1,850 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/y5wne50z",
+    "id": "y5wne50z",
+    "slide": 18,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wrelszu9",
+      "id": "2",
+      "name": "Text 0",
+      "bbox": [
+        57.6,
+        38.4,
+        1164.48,
+        38.4
+      ],
+      "geometry": "rect",
+      "text": "APÊNDICE — BACKUP",
+      "textPreview": "APÊNDICE — BACKUP",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "APÊNDICE — BACKUP"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "APÊNDICE — BACKUP",
+          "runs": [
+            {
+              "index": 1,
+              "text": "APÊNDICE — BACKUP",
+              "fontSize": 17.33,
+              "color": "#FF6600",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hsn2l4bu",
+      "id": "3",
+      "name": "Text 1",
+      "bbox": [
+        57.6,
+        72,
+        1164.48,
+        86.4
+      ],
+      "geometry": "rect",
+      "text": "Perguntas antecipadas da banca",
+      "textPreview": "Perguntas antecipadas da banca",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Perguntas antecipadas da banca"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Perguntas antecipadas da banca",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Perguntas antecipadas da banca",
+              "fontSize": 36,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/itw3upcf",
+      "id": "4",
+      "name": "Text 2",
+      "bbox": [
+        57.6,
+        192,
+        576,
+        52.8
+      ],
+      "geometry": "rect",
+      "text": "“O que está realmente integrado no protótipo?”",
+      "textPreview": "“O que está realmente integrado no protótipo?”",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "“O que está realmente integrado no protótipo?”"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "“O que está realmente integrado no protótipo?”",
+          "runs": [
+            {
+              "index": 1,
+              "text": "“O que está realmente integrado no protótipo?”",
+              "fontSize": 16,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/je5knut0",
+      "id": "5",
+      "name": "Text 3",
+      "bbox": [
+        57.6,
+        244.8,
+        576,
+        96
+      ],
+      "geometry": "rect",
+      "text": "Imagem de boleto, proatividade, biometria e handoff Telegram→app com estado e token persistidos.",
+      "textPreview": "Imagem de boleto, proatividade, biometria e handoff Telegram→app com estado e token persistidos.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Imagem de boleto, proatividade, biometria e handoff Telegram→app com estado e token"
+          },
+          {
+            "index": 2,
+            "text": "persistidos."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Imagem de boleto, proatividade, biometria e handoff Telegram→app com estado e token persistidos.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Imagem de boleto, proatividade, biometria e handoff Telegram→app com estado e token persistidos.",
+              "fontSize": 14,
+              "color": "#5B6470"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4felwzu5",
+      "id": "6",
+      "name": "Text 4",
+      "bbox": [
+        57.6,
+        350.4,
+        576,
+        52.8
+      ],
+      "geometry": "rect",
+      "text": "“Como vocês evitam prometer rendimento de investimento?”",
+      "textPreview": "“Como vocês evitam prometer rendimento de investimento?”",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "“Como vocês evitam prometer rendimento de investimento?”"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "“Como vocês evitam prometer rendimento de investimento?”",
+          "runs": [
+            {
+              "index": 1,
+              "text": "“Como vocês evitam prometer rendimento de investimento?”",
+              "fontSize": 16,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5gnmp4bq",
+      "id": "7",
+      "name": "Text 5",
+      "bbox": [
+        57.6,
+        403.2,
+        576,
+        96
+      ],
+      "geometry": "rect",
+      "text": "Só sugerimos produtos de baixíssimo risco; toda projeção é estimativa com disclaimer, nunca promessa — suitability CVM respeitada.",
+      "textPreview": "Só sugerimos produtos de baixíssimo risco; toda projeção é estimativa com disclaimer, nunca promessa — suitability CVM respeitada.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Só sugerimos produtos de baixíssimo risco; toda projeção é estimativa com disclaimer,"
+          },
+          {
+            "index": 2,
+            "text": "nunca promessa — suitability CVM respeitada."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Só sugerimos produtos de baixíssimo risco; toda projeção é estimativa com disclaimer, nunca promessa — suitability CVM respeitada.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Só sugerimos produtos de baixíssimo risco; toda projeção é estimativa com disclaimer, nunca promessa — suitability CVM respeitada.",
+              "fontSize": 14,
+              "color": "#5B6470"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6hw3y9sb",
+      "id": "8",
+      "name": "Text 6",
+      "bbox": [
+        57.6,
+        508.8,
+        576,
+        52.8
+      ],
+      "geometry": "rect",
+      "text": "“O agente não vai virar spam de notificação?”",
+      "textPreview": "“O agente não vai virar spam de notificação?”",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "“O agente não vai virar spam de notificação?”"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "“O agente não vai virar spam de notificação?”",
+          "runs": [
+            {
+              "index": 1,
+              "text": "“O agente não vai virar spam de notificação?”",
+              "fontSize": 16,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/rip4retw",
+      "id": "9",
+      "name": "Text 7",
+      "bbox": [
+        57.6,
+        561.6,
+        576,
+        96
+      ],
+      "geometry": "rect",
+      "text": "Máximo 1 notificação proativa por categoria de padrão por dia, com opt-out granular.",
+      "textPreview": "Máximo 1 notificação proativa por categoria de padrão por dia, com opt-out granular.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Máximo 1 notificação proativa por categoria de padrão por dia, com opt-out granular."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Máximo 1 notificação proativa por categoria de padrão por dia, com opt-out granular.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Máximo 1 notificação proativa por categoria de padrão por dia, com opt-out granular.",
+              "fontSize": 14,
+              "color": "#5B6470"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fapkr6pw",
+      "id": "10",
+      "name": "Text 8",
+      "bbox": [
+        667.2,
+        192,
+        576,
+        52.8
+      ],
+      "geometry": "rect",
+      "text": "“Os dados do protótipo são reais?”",
+      "textPreview": "“Os dados do protótipo são reais?”",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "“Os dados do protótipo são reais?”"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "“Os dados do protótipo são reais?”",
+          "runs": [
+            {
+              "index": 1,
+              "text": "“Os dados do protótipo são reais?”",
+              "fontSize": 16,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/upg3i18r",
+      "id": "11",
+      "name": "Text 9",
+      "bbox": [
+        667.2,
+        244.8,
+        576,
+        96
+      ],
+      "geometry": "rect",
+      "text": "São dados sintéticos realistas, gerados para representar o comportamento típico do público-alvo — não há acesso a API de produção do Itaú, o que exigiria credenciamento formal como instituição participante.",
+      "textPreview": "São dados sintéticos realistas, gerados para representar o comportamento típico do público-alvo — não há acesso a API de produção do Itaú...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "São dados sintéticos realistas, gerados para representar o comportamento típico do"
+          },
+          {
+            "index": 2,
+            "text": "público-alvo — não há acesso a API de produção do Itaú, o que exigiria credenciamento"
+          },
+          {
+            "index": 3,
+            "text": "formal como instituição participante."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "São dados sintéticos realistas, gerados para representar o comportamento típico do público-alvo — não há acesso a API de produção do Itaú, o que exigiria credenciamento formal como instituição participante.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "São dados sintéticos realistas, gerados para representar o comportamento típico do público-alvo — não há acesso a API de produção do Itaú, o que exigiria credenciamento formal como instituição participante.",
+              "fontSize": 14,
+              "color": "#5B6470"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1cr2tg72",
+      "id": "12",
+      "name": "Text 10",
+      "bbox": [
+        667.2,
+        350.4,
+        576,
+        52.8
+      ],
+      "geometry": "rect",
+      "text": "“Por que módulos e não agentes autônomos?”",
+      "textPreview": "“Por que módulos e não agentes autônomos?”",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "“Por que módulos e não agentes autônomos?”"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "“Por que módulos e não agentes autônomos?”",
+          "runs": [
+            {
+              "index": 1,
+              "text": "“Por que módulos e não agentes autônomos?”",
+              "fontSize": 16,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gbylkbqh",
+      "id": "13",
+      "name": "Text 11",
+      "bbox": [
+        667.2,
+        403.2,
+        576,
+        96
+      ],
+      "geometry": "rect",
+      "text": "É mais honesto tecnicamente: um único motor com roteamento de intenção e tool-calling, não processos autônomos independentes.",
+      "textPreview": "É mais honesto tecnicamente: um único motor com roteamento de intenção e tool-calling, não processos autônomos independentes.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "É mais honesto tecnicamente: um único motor com roteamento de intenção e"
+          },
+          {
+            "index": 2,
+            "text": "tool-calling, não processos autônomos independentes."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "É mais honesto tecnicamente: um único motor com roteamento de intenção e tool-calling, não processos autônomos independentes.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "É mais honesto tecnicamente: um único motor com roteamento de intenção e tool-calling, não processos autônomos independentes.",
+              "fontSize": 14,
+              "color": "#5B6470"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7mpknmp0",
+      "id": "14",
+      "name": "Text 12",
+      "bbox": [
+        1212.48,
+        672,
+        48,
+        33.6
+      ],
+      "geometry": "rect",
+      "text": "18",
+      "textPreview": "18",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "18",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "18",
+              "fontSize": 14.67,
+              "color": "#5B6470"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

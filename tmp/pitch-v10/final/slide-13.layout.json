@@ -1,0 +1,798 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/hgzapcr6",
+    "id": "hgzapcr6",
+    "slide": 13,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q50nydsj",
+      "id": "2",
+      "name": "Text 0",
+      "bbox": [
+        57.6,
+        38.4,
+        1164.48,
+        38.4
+      ],
+      "geometry": "rect",
+      "text": "REGULATÓRIO",
+      "textPreview": "REGULATÓRIO",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "REGULATÓRIO"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "REGULATÓRIO",
+          "runs": [
+            {
+              "index": 1,
+              "text": "REGULATÓRIO",
+              "fontSize": 17.33,
+              "color": "#FF6600",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bq9orito",
+      "id": "3",
+      "name": "Text 1",
+      "bbox": [
+        57.6,
+        72,
+        1164.48,
+        86.4
+      ],
+      "geometry": "rect",
+      "text": "O momento é agora",
+      "textPreview": "O momento é agora",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "O momento é agora"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "O momento é agora",
+          "runs": [
+            {
+              "index": 1,
+              "text": "O momento é agora",
+              "fontSize": 36,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/o3i5w3ad",
+      "id": "4",
+      "name": "Shape 2",
+      "bbox": [
+        57.6,
+        192,
+        369.6,
+        326.4
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4F5F7"
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p4r6p8by",
+      "id": "5",
+      "name": "Shape 3",
+      "bbox": [
+        57.6,
+        192,
+        369.6,
+        11.52
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FF6600"
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/21gnuts7",
+      "id": "6",
+      "name": "Text 4",
+      "bbox": [
+        86.4,
+        220.8,
+        312,
+        57.6
+      ],
+      "geometry": "rect",
+      "text": "MED 2.0",
+      "textPreview": "MED 2.0",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "MED 2.0"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "MED 2.0",
+          "runs": [
+            {
+              "index": 1,
+              "text": "MED 2.0",
+              "fontSize": 22,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/32ponyts",
+      "id": "7",
+      "name": "Text 5",
+      "bbox": [
+        86.4,
+        283.2,
+        312,
+        220.8
+      ],
+      "geometry": "rect",
+      "text": "Obrigatório desde fev/2026. Responsabilidade direta do banco na devolução em casos de fraude no Pix.",
+      "textPreview": "Obrigatório desde fev/2026. Responsabilidade direta do banco na devolução em casos de fraude no Pix.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Obrigatório desde fev/2026."
+          },
+          {
+            "index": 2,
+            "text": "Responsabilidade direta do banco na"
+          },
+          {
+            "index": 3,
+            "text": "devolução em casos de fraude no Pix."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Obrigatório desde fev/2026. Responsabilidade direta do banco na devolução em casos de fraude no Pix.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Obrigatório desde fev/2026. Responsabilidade direta do banco na devolução em casos de fraude no Pix.",
+              "fontSize": 16,
+              "color": "#5B6470"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gzy5s3a1",
+      "id": "8",
+      "name": "Shape 6",
+      "bbox": [
+        456,
+        192,
+        369.6,
+        326.4
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4F5F7"
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1076lobm",
+      "id": "9",
+      "name": "Shape 7",
+      "bbox": [
+        456,
+        192,
+        369.6,
+        11.52
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FF6600"
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hcfy9k3u",
+      "id": "10",
+      "name": "Text 8",
+      "bbox": [
+        484.8,
+        220.8,
+        312,
+        57.6
+      ],
+      "geometry": "rect",
+      "text": "Pix Automático",
+      "textPreview": "Pix Automático",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Pix Automático"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Pix Automático",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Pix Automático",
+              "fontSize": 22,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gb6x0zm9",
+      "id": "11",
+      "name": "Text 9",
+      "bbox": [
+        484.8,
+        283.2,
+        312,
+        220.8
+      ],
+      "geometry": "rect",
+      "text": "Lançado pelo BC em jun/2025, obrigatório desde out/2025 — base real para a automação de recorrência do EPC.",
+      "textPreview": "Lançado pelo BC em jun/2025, obrigatório desde out/2025 — base real para a automação de recorrência do EPC.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Lançado pelo BC em jun/2025,"
+          },
+          {
+            "index": 2,
+            "text": "obrigatório desde out/2025 — base real"
+          },
+          {
+            "index": 3,
+            "text": "para a automação de recorrência do"
+          },
+          {
+            "index": 4,
+            "text": "EPC."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Lançado pelo BC em jun/2025, obrigatório desde out/2025 — base real para a automação de recorrência do EPC.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Lançado pelo BC em jun/2025, obrigatório desde out/2025 — base real para a automação de recorrência do EPC.",
+              "fontSize": 16,
+              "color": "#5B6470"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vaxg7ulo",
+      "id": "12",
+      "name": "Shape 10",
+      "bbox": [
+        854.4,
+        192,
+        369.6,
+        326.4
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4F5F7"
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u9ofyp43",
+      "id": "13",
+      "name": "Shape 11",
+      "bbox": [
+        854.4,
+        192,
+        369.6,
+        11.52
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FF6600"
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t8fy5k3i",
+      "id": "14",
+      "name": "Text 12",
+      "bbox": [
+        883.2,
+        220.8,
+        312,
+        57.6
+      ],
+      "geometry": "rect",
+      "text": "Suitability (CVM)",
+      "textPreview": "Suitability (CVM)",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Suitability (CVM)"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Suitability (CVM)",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Suitability (CVM)",
+              "fontSize": 22,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/876xwfmx",
+      "id": "15",
+      "name": "Text 13",
+      "bbox": [
+        883.2,
+        283.2,
+        312,
+        220.8
+      ],
+      "geometry": "rect",
+      "text": "Sugestão de investimento restrita a produtos de baixíssimo risco; projeção sempre estimada, nunca promessa.",
+      "textPreview": "Sugestão de investimento restrita a produtos de baixíssimo risco; projeção sempre estimada, nunca promessa.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Sugestão de investimento restrita a"
+          },
+          {
+            "index": 2,
+            "text": "produtos de baixíssimo risco; projeção"
+          },
+          {
+            "index": 3,
+            "text": "sempre estimada, nunca promessa."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Sugestão de investimento restrita a produtos de baixíssimo risco; projeção sempre estimada, nunca promessa.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Sugestão de investimento restrita a produtos de baixíssimo risco; projeção sempre estimada, nunca promessa.",
+              "fontSize": 16,
+              "color": "#5B6470"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7mdg3als",
+      "id": "16",
+      "name": "Shape 14",
+      "bbox": [
+        57.6,
+        552,
+        1164.48,
+        86.4
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4F5F7"
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6l4fu547",
+      "id": "17",
+      "name": "Text 15",
+      "bbox": [
+        86.4,
+        559.68,
+        1106.88,
+        72
+      ],
+      "geometry": "rect",
+      "text": "O Itaú tem incentivo jurídico, reputacional e de retenção para investir na orquestração completa.",
+      "textPreview": "O Itaú tem incentivo jurídico, reputacional e de retenção para investir na orquestração completa.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "O Itaú tem incentivo jurídico, reputacional e de retenção para investir na orquestração completa."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "O Itaú tem incentivo jurídico, reputacional e de retenção para investir na orquestração completa.",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "O Itaú tem incentivo jurídico, reputacional e de retenção para investir na orquestração completa.",
+              "fontSize": 20,
+              "color": "#0E1B33",
+              "italic": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lkvy103m",
+      "id": "18",
+      "name": "Text 16",
+      "bbox": [
+        1212.48,
+        672,
+        48,
+        33.6
+      ],
+      "geometry": "rect",
+      "text": "13",
+      "textPreview": "13",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "13"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "13",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "13",
+              "fontSize": 14.67,
+              "color": "#5B6470"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

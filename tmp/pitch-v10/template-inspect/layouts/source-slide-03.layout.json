@@ -1,0 +1,784 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/ofy9wn61",
+    "id": "ofy9wn61",
+    "slide": 3,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cza94vmx",
+      "id": "2",
+      "name": "Text 0",
+      "bbox": [
+        57.6,
+        38.4,
+        1164.48,
+        38.4
+      ],
+      "geometry": "rect",
+      "text": "O PARADOXO DO ITAÚ",
+      "textPreview": "O PARADOXO DO ITAÚ",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "O PARADOXO DO ITAÚ"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "O PARADOXO DO ITAÚ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "O PARADOXO DO ITAÚ",
+              "fontSize": 17.33,
+              "color": "#FF6600",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d0jax03i",
+      "id": "3",
+      "name": "Text 1",
+      "bbox": [
+        57.6,
+        72,
+        1164.48,
+        86.4
+      ],
+      "geometry": "rect",
+      "text": "O banco tem as peças. Ninguém conectou elas.",
+      "textPreview": "O banco tem as peças. Ninguém conectou elas.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "O banco tem as peças. Ninguém conectou elas."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "O banco tem as peças. Ninguém conectou elas.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "O banco tem as peças. Ninguém conectou elas.",
+              "fontSize": 36,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/298ryl4v",
+      "id": "4",
+      "name": "Shape 2",
+      "bbox": [
+        57.6,
+        192,
+        364.8,
+        307.2
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4F5F7"
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ah8rqlg",
+      "id": "5",
+      "name": "Shape 3",
+      "bbox": [
+        57.6,
+        192,
+        364.8,
+        11.52
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FF6600"
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/obq90bml",
+      "id": "6",
+      "name": "Text 4",
+      "bbox": [
+        86.4,
+        220.8,
+        307.2,
+        57.6
+      ],
+      "geometry": "rect",
+      "text": "Mais produtos",
+      "textPreview": "Mais produtos",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Mais produtos"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Mais produtos",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Mais produtos",
+              "fontSize": 22,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pcjqtg36",
+      "id": "7",
+      "name": "Text 5",
+      "bbox": [
+        86.4,
+        283.2,
+        307.2,
+        196.8
+      ],
+      "geometry": "rect",
+      "text": "que qualquer banco digital: cartão, conta, investimentos, consignado, seguros, câmbio, BBA.",
+      "textPreview": "que qualquer banco digital: cartão, conta, investimentos, consignado, seguros, câmbio, BBA.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "que qualquer banco digital: cartão,"
+          },
+          {
+            "index": 2,
+            "text": "conta, investimentos, consignado,"
+          },
+          {
+            "index": 3,
+            "text": "seguros, câmbio, BBA."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "que qualquer banco digital: cartão, conta, investimentos, consignado, seguros, câmbio, BBA.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "que qualquer banco digital: cartão, conta, investimentos, consignado, seguros, câmbio, BBA.",
+              "fontSize": 16.67,
+              "color": "#5B6470"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m5cra54z",
+      "id": "8",
+      "name": "Shape 6",
+      "bbox": [
+        451.2,
+        192,
+        364.8,
+        307.2
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4F5F7"
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n6ls3alk",
+      "id": "9",
+      "name": "Shape 7",
+      "bbox": [
+        451.2,
+        192,
+        364.8,
+        11.52
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FF6600"
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n2l4fq98",
+      "id": "10",
+      "name": "Text 8",
+      "bbox": [
+        480,
+        220.8,
+        307.2,
+        57.6
+      ],
+      "geometry": "rect",
+      "text": "Décadas de dados",
+      "textPreview": "Décadas de dados",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Décadas de dados"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Décadas de dados",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Décadas de dados",
+              "fontSize": 22,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m1c3mlsn",
+      "id": "11",
+      "name": "Text 9",
+      "bbox": [
+        480,
+        283.2,
+        307.2,
+        196.8
+      ],
+      "geometry": "rect",
+      "text": "histórico transacional que nenhum banco digital novo possui — matéria-prima do EPC.",
+      "textPreview": "histórico transacional que nenhum banco digital novo possui — matéria-prima do EPC.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "histórico transacional que nenhum"
+          },
+          {
+            "index": 2,
+            "text": "banco digital novo possui —"
+          },
+          {
+            "index": 3,
+            "text": "matéria-prima do EPC."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "histórico transacional que nenhum banco digital novo possui — matéria-prima do EPC.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "histórico transacional que nenhum banco digital novo possui — matéria-prima do EPC.",
+              "fontSize": 16.67,
+              "color": "#5B6470"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/943mhgre",
+      "id": "12",
+      "name": "Shape 10",
+      "bbox": [
+        844.8,
+        192,
+        364.8,
+        307.2
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4F5F7"
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/83ulovat",
+      "id": "13",
+      "name": "Shape 11",
+      "bbox": [
+        844.8,
+        192,
+        364.8,
+        11.52
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FF6600"
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v6l4jq94",
+      "id": "14",
+      "name": "Text 12",
+      "bbox": [
+        873.6,
+        220.8,
+        307.2,
+        57.6
+      ],
+      "geometry": "rect",
+      "text": "Segurança comprovada",
+      "textPreview": "Segurança comprovada",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Segurança comprovada"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Segurança comprovada",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Segurança comprovada",
+              "fontSize": 22,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a5c3ql8z",
+      "id": "15",
+      "name": "Text 13",
+      "bbox": [
+        873.6,
+        283.2,
+        307.2,
+        196.8
+      ],
+      "geometry": "rect",
+      "text": "o Itaú já validou, oficialmente, um pacote de segurança proativa (ago/2025) — hoje restrito ao PJ.",
+      "textPreview": "o Itaú já validou, oficialmente, um pacote de segurança proativa (ago/2025) — hoje restrito ao PJ.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "o Itaú já validou, oficialmente, um"
+          },
+          {
+            "index": 2,
+            "text": "pacote de segurança proativa"
+          },
+          {
+            "index": 3,
+            "text": "(ago/2025) — hoje restrito ao PJ."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "o Itaú já validou, oficialmente, um pacote de segurança proativa (ago/2025) — hoje restrito ao PJ.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "o Itaú já validou, oficialmente, um pacote de segurança proativa (ago/2025) — hoje restrito ao PJ.",
+              "fontSize": 16.67,
+              "color": "#5B6470"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x8nml0ra",
+      "id": "16",
+      "name": "Shape 14",
+      "bbox": [
+        57.6,
+        532.8,
+        1164.48,
+        86.4
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4F5F7"
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w7ulsvqp",
+      "id": "17",
+      "name": "Text 15",
+      "bbox": [
+        86.4,
+        540.48,
+        1106.88,
+        72
+      ],
+      "geometry": "rect",
+      "text": "Os produtos e os dados existem. A gente propõe conectá-los numa única jornada de decisão — via conversa natural.",
+      "textPreview": "Os produtos e os dados existem. A gente propõe conectá-los numa única jornada de decisão — via conversa natural.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Os produtos e os dados existem. A gente propõe conectá-los numa única jornada de decisão — via conversa natural."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Os produtos e os dados existem. A gente propõe conectá-los numa única jornada de decisão — via conversa natural.",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Os produtos e os dados existem. A gente propõe conectá-los numa única jornada de decisão — via conversa natural.",
+              "fontSize": 20,
+              "color": "#0E1B33",
+              "italic": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ja54na9g",
+      "id": "18",
+      "name": "Text 16",
+      "bbox": [
+        1212.48,
+        672,
+        48,
+        33.6
+      ],
+      "geometry": "rect",
+      "text": "3",
+      "textPreview": "3",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3",
+              "fontSize": 14.67,
+              "color": "#5B6470"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

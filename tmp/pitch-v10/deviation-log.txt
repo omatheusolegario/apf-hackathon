@@ -1,0 +1,6 @@
+Slide 7: texto da comparação corrigido; não há economia inventada.
+Slide 9: texto pós-biometria passa a usar impacto em saldo/fatura/limite.
+Slide 15: proposta arrojada deixa de ser apenas conceitual e descreve webhook/handoff implementados.
+Slide 16: roteiro de demo atualizado para multimodal, proatividade e omnichannel.
+Slide 18: pergunta de backup atualizada para evidências do protótipo.
+

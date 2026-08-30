@@ -1,0 +1,864 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/m90b6t0r",
+    "id": "m90b6t0r",
+    "slide": 10,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xc3mho32",
+      "id": "2",
+      "name": "Text 0",
+      "bbox": [
+        57.6,
+        38.4,
+        1164.48,
+        38.4
+      ],
+      "geometry": "rect",
+      "text": "CASO DE USO #4 — O ANTECIPATÓRIO",
+      "textPreview": "CASO DE USO #4 — O ANTECIPATÓRIO",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "CASO DE USO #4 — O ANTECIPATÓRIO"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "CASO DE USO #4 — O ANTECIPATÓRIO",
+          "runs": [
+            {
+              "index": 1,
+              "text": "CASO DE USO #4 — O ANTECIPATÓRIO",
+              "fontSize": 17.33,
+              "color": "#FF6600",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cbu58j2h",
+      "id": "3",
+      "name": "Text 1",
+      "bbox": [
+        57.6,
+        72,
+        1164.48,
+        86.4
+      ],
+      "geometry": "rect",
+      "text": "EPC: automação e educação financeira",
+      "textPreview": "EPC: automação e educação financeira",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "EPC: automação e educação financeira"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "EPC: automação e educação financeira",
+          "runs": [
+            {
+              "index": 1,
+              "text": "EPC: automação e educação financeira",
+              "fontSize": 36,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zelojyl8",
+      "id": "4",
+      "name": "Shape 2",
+      "bbox": [
+        57.6,
+        182.4,
+        566.4,
+        316.8
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4F5F7"
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ydcnatkn",
+      "id": "5",
+      "name": "Text 3",
+      "bbox": [
+        86.4,
+        201.6,
+        508.8,
+        33.6
+      ],
+      "geometry": "rect",
+      "text": "AUTOMAÇÃO",
+      "textPreview": "AUTOMAÇÃO",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "AUTOMAÇÃO"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "AUTOMAÇÃO",
+          "runs": [
+            {
+              "index": 1,
+              "text": "AUTOMAÇÃO",
+              "fontSize": 16,
+              "color": "#FF6600",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l036l83y",
+      "id": "6",
+      "name": "Text 4",
+      "bbox": [
+        86.4,
+        240,
+        508.8,
+        67.2
+      ],
+      "geometry": "rect",
+      "text": "EPC detecta: Pix de R$ 1.500 para João Silva todo dia 10, há 12 meses.",
+      "textPreview": "EPC detecta: Pix de R$ 1.500 para João Silva todo dia 10, há 12 meses.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "EPC detecta: Pix de R$ 1.500 para João Silva todo dia 10, há 12"
+          },
+          {
+            "index": 2,
+            "text": "meses."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "EPC detecta: Pix de R$ 1.500 para João Silva todo dia 10, há 12 meses.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "EPC detecta: Pix de R$ 1.500 para João Silva todo dia 10, há 12 meses.",
+              "fontSize": 16,
+              "color": "#0E1B33"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kzu5c32t",
+      "id": "7",
+      "name": "Shape 5",
+      "bbox": [
+        86.4,
+        312,
+        508.8,
+        81.6
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#0E1B33"
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/725onyl4",
+      "id": "8",
+      "name": "Text 6",
+      "bbox": [
+        105.6,
+        312,
+        470.4,
+        81.6
+      ],
+      "geometry": "rect",
+      "text": "“Você paga aluguel de R$ 1.500 pra João Silva todo dia 10. Quer que eu configure o Pix Automático?”",
+      "textPreview": "“Você paga aluguel de R$ 1.500 pra João Silva todo dia 10. Quer que eu configure o Pix Automático?”",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "“Você paga aluguel de R$ 1.500 pra João Silva todo dia 10. Quer"
+          },
+          {
+            "index": 2,
+            "text": "que eu configure o Pix Automático?”"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "“Você paga aluguel de R$ 1.500 pra João Silva todo dia 10. Quer que eu configure o Pix Automático?”",
+          "runs": [
+            {
+              "index": 1,
+              "text": "“Você paga aluguel de R$ 1.500 pra João Silva todo dia 10. Quer que eu configure o Pix Automático?”",
+              "fontSize": 15.33,
+              "color": "#FFFFFF"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m1cnetkj",
+      "id": "9",
+      "name": "Text 7",
+      "bbox": [
+        86.4,
+        412.8,
+        508.8,
+        76.8
+      ],
+      "geometry": "rect",
+      "text": "Usa o Pix Automático — mecanismo real do Banco Central, obrigatório desde out/2025 — não uma automação proprietária.",
+      "textPreview": "Usa o Pix Automático — mecanismo real do Banco Central, obrigatório desde out/2025 — não uma automação proprietária.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Usa o Pix Automático — mecanismo real do Banco Central, obrigatório desde"
+          },
+          {
+            "index": 2,
+            "text": "out/2025 — não uma automação proprietária."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Usa o Pix Automático — mecanismo real do Banco Central, obrigatório desde out/2025 — não uma automação proprietária.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Usa o Pix Automático — mecanismo real do Banco Central, obrigatório desde out/2025 — não uma automação proprietária.",
+              "fontSize": 14,
+              "color": "#5B6470",
+              "italic": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/s7yt4b21",
+      "id": "10",
+      "name": "Shape 8",
+      "bbox": [
+        652.8,
+        182.4,
+        566.4,
+        316.8
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4F5F7"
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d87uxg3m",
+      "id": "11",
+      "name": "Text 9",
+      "bbox": [
+        681.6,
+        201.6,
+        508.8,
+        33.6
+      ],
+      "geometry": "rect",
+      "text": "INSIGHT + EDUCAÇÃO",
+      "textPreview": "INSIGHT + EDUCAÇÃO",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "INSIGHT + EDUCAÇÃO"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "INSIGHT + EDUCAÇÃO",
+          "runs": [
+            {
+              "index": 1,
+              "text": "INSIGHT + EDUCAÇÃO",
+              "fontSize": 16,
+              "color": "#FF6600",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q5gb21kb",
+      "id": "12",
+      "name": "Text 10",
+      "bbox": [
+        681.6,
+        240,
+        508.8,
+        67.2
+      ],
+      "geometry": "rect",
+      "text": "EPC detecta: R$ 45/dia em delivery no almoço, 20 dias/mês = R$ 900/mês = R$ 10.800/ano.",
+      "textPreview": "EPC detecta: R$ 45/dia em delivery no almoço, 20 dias/mês = R$ 900/mês = R$ 10.800/ano.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "EPC detecta: R$ 45/dia em delivery no almoço, 20 dias/mês = R$"
+          },
+          {
+            "index": 2,
+            "text": "900/mês = R$ 10.800/ano."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "EPC detecta: R$ 45/dia em delivery no almoço, 20 dias/mês = R$ 900/mês = R$ 10.800/ano.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "EPC detecta: R$ 45/dia em delivery no almoço, 20 dias/mês = R$ 900/mês = R$ 10.800/ano.",
+              "fontSize": 16,
+              "color": "#0E1B33"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/r6pcv6lw",
+      "id": "13",
+      "name": "Shape 11",
+      "bbox": [
+        681.6,
+        312,
+        508.8,
+        81.6
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#0E1B33"
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0bit8b2d",
+      "id": "14",
+      "name": "Text 12",
+      "bbox": [
+        700.8,
+        312,
+        470.4,
+        81.6
+      ],
+      "geometry": "rect",
+      "text": "“Separar em caixinhas é uma técnica chamada envelope digital — você vê o progresso e evita gastar sem perceber.”",
+      "textPreview": "“Separar em caixinhas é uma técnica chamada envelope digital — você vê o progresso e evita gastar sem perceber.”",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "“Separar em caixinhas é uma técnica chamada envelope digital"
+          },
+          {
+            "index": 2,
+            "text": "— você vê o progresso e evita gastar sem perceber.”"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "“Separar em caixinhas é uma técnica chamada envelope digital — você vê o progresso e evita gastar sem perceber.”",
+          "runs": [
+            {
+              "index": 1,
+              "text": "“Separar em caixinhas é uma técnica chamada envelope digital — você vê o progresso e evita gastar sem perceber.”",
+              "fontSize": 15.33,
+              "color": "#FFFFFF"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1cru1g3y",
+      "id": "15",
+      "name": "Text 13",
+      "bbox": [
+        681.6,
+        412.8,
+        508.8,
+        76.8
+      ],
+      "geometry": "rect",
+      "text": "Pílula de conhecimento pré-aprovada, selecionada contextualmente — nunca gerada ao vivo pelo LLM.",
+      "textPreview": "Pílula de conhecimento pré-aprovada, selecionada contextualmente — nunca gerada ao vivo pelo LLM.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Pílula de conhecimento pré-aprovada, selecionada contextualmente — nunca"
+          },
+          {
+            "index": 2,
+            "text": "gerada ao vivo pelo LLM."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Pílula de conhecimento pré-aprovada, selecionada contextualmente — nunca gerada ao vivo pelo LLM.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Pílula de conhecimento pré-aprovada, selecionada contextualmente — nunca gerada ao vivo pelo LLM.",
+              "fontSize": 14,
+              "color": "#5B6470",
+              "italic": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e9gb61k7",
+      "id": "16",
+      "name": "Shape 14",
+      "bbox": [
+        57.6,
+        518.4,
+        1164.48,
+        72
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFF1E0"
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fapcz6ls",
+      "id": "17",
+      "name": "Text 15",
+      "bbox": [
+        86.4,
+        518.4,
+        1106.88,
+        72
+      ],
+      "geometry": "rect",
+      "text": "Controle de frequência: no máximo 1 notificação proativa por categoria de padrão por dia, com opt-out — evita fadiga.",
+      "textPreview": "Controle de frequência: no máximo 1 notificação proativa por categoria de padrão por dia, com opt-out — evita fadiga.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Controle de frequência: no máximo 1 notificação proativa por categoria de padrão por dia, com opt-out — evita fadiga."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Controle de frequência: no máximo 1 notificação proativa por categoria de padrão por dia, com opt-out — evita fadiga.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Controle de frequência: no máximo 1 notificação proativa por categoria de padrão por dia, com opt-out — evita fadiga.",
+              "fontSize": 16.67,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ozitcv29",
+      "id": "18",
+      "name": "Text 16",
+      "bbox": [
+        1212.48,
+        672,
+        48,
+        33.6
+      ],
+      "geometry": "rect",
+      "text": "10",
+      "textPreview": "10",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "10"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "10",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "10",
+              "fontSize": 14.67,
+              "color": "#5B6470"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

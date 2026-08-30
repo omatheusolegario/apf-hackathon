@@ -1,0 +1,1001 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/iwv0dm",
+    "id": "iwv0dm",
+    "slide": 6,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qpsnyl4f",
+      "id": "2",
+      "name": "Text 0",
+      "bbox": [
+        57.6,
+        38.4,
+        1164.48,
+        38.4
+      ],
+      "geometry": "rect",
+      "text": "ARQUITETURA",
+      "textPreview": "ARQUITETURA",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ARQUITETURA"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ARQUITETURA",
+          "runs": [
+            {
+              "index": 1,
+              "text": "ARQUITETURA",
+              "fontSize": 17.33,
+              "color": "#FF6600",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/rq1o7q50",
+      "id": "3",
+      "name": "Text 1",
+      "bbox": [
+        57.6,
+        72,
+        1164.48,
+        86.4
+      ],
+      "geometry": "rect",
+      "text": "Um orquestrador, módulos especializados",
+      "textPreview": "Um orquestrador, módulos especializados",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Um orquestrador, módulos especializados"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Um orquestrador, módulos especializados",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Um orquestrador, módulos especializados",
+              "fontSize": 36,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0fa54fmh",
+      "id": "4",
+      "name": "Shape 2",
+      "bbox": [
+        422.4,
+        182.4,
+        432,
+        110.4
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#0E1B33"
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1g36d032",
+      "id": "5",
+      "name": "Text 3",
+      "bbox": [
+        441.6,
+        192,
+        393.6,
+        38.4
+      ],
+      "geometry": "rect",
+      "text": "APF — Motor Único de Orquestração",
+      "textPreview": "APF — Motor Único de Orquestração",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "APF — Motor Único de Orquestração"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "APF — Motor Único de Orquestração",
+          "runs": [
+            {
+              "index": 1,
+              "text": "APF — Motor Único de Orquestração",
+              "fontSize": 16.67,
+              "color": "#FF6600",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/etsn254b",
+      "id": "6",
+      "name": "Text 4",
+      "bbox": [
+        441.6,
+        230.4,
+        393.6,
+        52.8
+      ],
+      "geometry": "rect",
+      "text": "NLU/LLM • roteamento de intenção • grounding • explicabilidade",
+      "textPreview": "NLU/LLM • roteamento de intenção • grounding • explicabilidade",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "NLU/LLM • roteamento de intenção • grounding •"
+          },
+          {
+            "index": 2,
+            "text": "explicabilidade"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "NLU/LLM • roteamento de intenção • grounding • explicabilidade",
+          "runs": [
+            {
+              "index": 1,
+              "text": "NLU/LLM • roteamento de intenção • grounding • explicabilidade",
+              "fontSize": 13.33,
+              "color": "#D7DCE6"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fe1oba5w",
+      "id": "7",
+      "name": "Shape 5",
+      "bbox": [
+        67.2,
+        340.8,
+        264,
+        100.8
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4F5F7",
+      "lineColor": "#E3E5E9",
+      "lineWidth": 1.33
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wjq5sbmd",
+      "id": "8",
+      "name": "Text 6",
+      "bbox": [
+        67.2,
+        340.8,
+        264,
+        100.8
+      ],
+      "geometry": "rect",
+      "text": "Módulo de\nSegurança",
+      "textPreview": "Módulo de | Segurança",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Módulo de"
+          },
+          {
+            "index": 2,
+            "text": "Segurança"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Módulo de",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Módulo de",
+              "fontSize": 16,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "Segurança",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Segurança",
+              "fontSize": 16,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hkz61gny",
+      "id": "9",
+      "name": "Shape 7",
+      "bbox": [
+        199.2,
+        297.6,
+        0,
+        43.2
+      ],
+      "geometry": "line",
+      "lineColor": "#FF6600",
+      "lineWidth": 2
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tonmdgbu",
+      "id": "10",
+      "name": "Shape 8",
+      "bbox": [
+        360,
+        340.8,
+        264,
+        100.8
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4F5F7",
+      "lineColor": "#E3E5E9",
+      "lineWidth": 1.33
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8nel4bu9",
+      "id": "11",
+      "name": "Text 9",
+      "bbox": [
+        360,
+        340.8,
+        264,
+        100.8
+      ],
+      "geometry": "rect",
+      "text": "Módulo de\nPagamento",
+      "textPreview": "Módulo de | Pagamento",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Módulo de"
+          },
+          {
+            "index": 2,
+            "text": "Pagamento"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Módulo de",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Módulo de",
+              "fontSize": 16,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "Pagamento",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Pagamento",
+              "fontSize": 16,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7m54b6to",
+      "id": "12",
+      "name": "Shape 10",
+      "bbox": [
+        492,
+        297.6,
+        0,
+        43.2
+      ],
+      "geometry": "line",
+      "lineColor": "#FF6600",
+      "lineWidth": 2
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6lw321c3",
+      "id": "13",
+      "name": "Shape 11",
+      "bbox": [
+        652.8,
+        340.8,
+        264,
+        100.8
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4F5F7",
+      "lineColor": "#E3E5E9",
+      "lineWidth": 1.33
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hcnmhgbq",
+      "id": "14",
+      "name": "Text 12",
+      "bbox": [
+        652.8,
+        340.8,
+        264,
+        100.8
+      ],
+      "geometry": "rect",
+      "text": "Módulo de\nInvestimento",
+      "textPreview": "Módulo de | Investimento",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Módulo de"
+          },
+          {
+            "index": 2,
+            "text": "Investimento"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Módulo de",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Módulo de",
+              "fontSize": 16,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "Investimento",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Investimento",
+              "fontSize": 16,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/grel8bu5",
+      "id": "15",
+      "name": "Shape 13",
+      "bbox": [
+        784.8,
+        297.6,
+        0,
+        43.2
+      ],
+      "geometry": "line",
+      "lineColor": "#FF6600",
+      "lineWidth": 2
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vq54fqtk",
+      "id": "16",
+      "name": "Shape 14",
+      "bbox": [
+        945.6,
+        340.8,
+        264,
+        100.8
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4F5F7",
+      "lineColor": "#E3E5E9",
+      "lineWidth": 1.33
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/upw36lcz",
+      "id": "17",
+      "name": "Text 15",
+      "bbox": [
+        945.6,
+        340.8,
+        264,
+        100.8
+      ],
+      "geometry": "rect",
+      "text": "Módulo de\nPadrões (EPC)",
+      "textPreview": "Módulo de | Padrões (EPC)",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Módulo de"
+          },
+          {
+            "index": 2,
+            "text": "Padrões (EPC)"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Módulo de",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Módulo de",
+              "fontSize": 16,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "Padrões (EPC)",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Padrões (EPC)",
+              "fontSize": 16,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pg7ml0bm",
+      "id": "18",
+      "name": "Shape 16",
+      "bbox": [
+        1077.6,
+        297.6,
+        0,
+        43.2
+      ],
+      "geometry": "line",
+      "lineColor": "#FF6600",
+      "lineWidth": 2
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4fy5cvah",
+      "id": "19",
+      "name": "Shape 17",
+      "bbox": [
+        67.2,
+        297.6,
+        1145.28,
+        0
+      ],
+      "geometry": "line",
+      "lineColor": "#FF6600",
+      "lineWidth": 2
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ovqx43mp",
+      "id": "20",
+      "name": "Shape 18",
+      "bbox": [
+        57.6,
+        470.4,
+        1164.48,
+        81.6
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFF1E0"
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9wzyx8na",
+      "id": "21",
+      "name": "Text 19",
+      "bbox": [
+        86.4,
+        470.4,
+        1106.88,
+        81.6
+      ],
+      "geometry": "rect",
+      "text": "Não são agentes autônomos: é um único motor com roteamento de intenção e tool-calling por módulo — a forma real como esse tipo de sistema é construído hoje.",
+      "textPreview": "Não são agentes autônomos: é um único motor com roteamento de intenção e tool-calling por módulo — a forma real como esse tipo de sistema...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Não são agentes autônomos: é um único motor com roteamento de intenção e tool-calling por módulo — a forma real como esse tipo de"
+          },
+          {
+            "index": 2,
+            "text": "sistema é construído hoje."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Não são agentes autônomos: é um único motor com roteamento de intenção e tool-calling por módulo — a forma real como esse tipo de sistema é construído hoje.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Não são agentes autônomos: é um único motor com roteamento de intenção e tool-calling por módulo — a forma real como esse tipo de sistema é construído hoje.",
+              "fontSize": 16.67,
+              "color": "#0E1B33",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m9of2t4j",
+      "id": "22",
+      "name": "Text 20",
+      "bbox": [
+        57.6,
+        571.2,
+        1164.48,
+        48
+      ],
+      "geometry": "rect",
+      "text": "EPC: detecção de recorrência por agregação estatística simples (favorecido + valor + periodicidade) — não clustering, não machine learning.",
+      "textPreview": "EPC: detecção de recorrência por agregação estatística simples (favorecido + valor + periodicidade) — não clustering, não machine learning.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "EPC: detecção de recorrência por agregação estatística simples (favorecido + valor + periodicidade) — não clustering, não machine learning."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "EPC: detecção de recorrência por agregação estatística simples (favorecido + valor + periodicidade) — não clustering, não machine learning.",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "EPC: detecção de recorrência por agregação estatística simples (favorecido + valor + periodicidade) — não clustering, não machine learning.",
+              "fontSize": 15.33,
+              "color": "#5B6470",
+              "italic": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nahwvy54",
+      "id": "23",
+      "name": "Text 21",
+      "bbox": [
+        1212.48,
+        672,
+        48,
+        33.6
+      ],
+      "geometry": "rect",
+      "text": "6",
+      "textPreview": "6",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "6"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "6",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "6",
+              "fontSize": 14.67,
+              "color": "#5B6470"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

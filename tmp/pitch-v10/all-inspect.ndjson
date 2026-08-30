@@ -1,0 +1,357 @@
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"DEFAULT"}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"INOVACAMP — DESAFIO DE NEGÓCIOS ITAÚ","textShapes":4}
+{"kind":"shape","id":"sh/547294r6","slide":1,"name":"Shape 0","bbox":[0,0,1279.68,17.28]}
+{"kind":"textbox","id":"sh/k3yl0zql","slide":1,"name":"Text 1","text":"INOVACAMP — DESAFIO DE NEGÓCIOS ITAÚ","textPreview":"INOVACAMP — DESAFIO DE NEGÓCIOS ITAÚ","textChars":36,"textLines":1,"bbox":[76.8,144,1126.08,48]}
+{"kind":"textbox","id":"sh/7qp4be9c","slide":1,"name":"Text 2","text":"Assistente Pessoal Financeiro (APF)","textPreview":"Assistente Pessoal Financeiro (APF)","textChars":35,"textLines":1,"bbox":[76.8,201.6,1126.08,96]}
+{"kind":"textbox","id":"sh/65g3298r","slide":1,"name":"Text 3","text":"Com Engine de Padrões: da segurança à antecipação de necessidades","textPreview":"Com Engine de Padrões: da segurança à antecipação de necessidades","textChars":65,"textLines":1,"bbox":[76.8,302.4,1126.08,57.6]}
+{"kind":"shape","id":"sh/ts7md4r2","slide":1,"name":"Shape 4","bbox":[76.8,393.6,211.2,0]}
+{"kind":"textbox","id":"sh/sryl4zqx","slide":1,"name":"Text 5","text":"“Não é mais um app que você usa. É um agente que aprende com você, avisa antes e te ensina no momento certo.”","textPreview":"“Não é mais um app que você usa. É um agente que aprende com você, avisa antes e te ensina no momento certo.”","textChars":109,"textLines":1,"bbox":[76.8,422.4,1126.08,76.8]}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":"Propomos um Assistente Pessoal Financeiro com Engine de Padrões: entende linguagem natural, orquestra o ecossistema Itaú, e aprende com o histórico de cada cliente para antecipar necessidades — literalmente o que o objetivo do desafio pede."}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"A TESE CENTRAL","textShapes":13}
+{"kind":"textbox","id":"sh/9072xkry","slide":2,"name":"Text 0","text":"A TESE CENTRAL","textPreview":"A TESE CENTRAL","textChars":14,"textLines":1,"bbox":[57.6,38.4,1164.48,38.4]}
+{"kind":"textbox","id":"sh/ozy1ofad","slide":2,"name":"Text 1","text":"De navegar, para pedir, para ser antecipado","textPreview":"De navegar, para pedir, para ser antecipado","textChars":43,"textLines":1,"bbox":[57.6,72,1164.48,86.4]}
+{"kind":"shape","id":"sh/b29kza94","slide":2,"name":"Shape 2","bbox":[57.6,192,364.8,249.6]}
+{"kind":"textbox","id":"sh/a10jqpsj","slide":2,"name":"Text 3","text":"Navegar (hoje)","textPreview":"Navegar (hoje)","textChars":14,"textLines":1,"bbox":[81.6,216,316.8,57.6]}
+{"kind":"textbox","id":"sh/x4r21kru","slide":2,"name":"Text 4","text":"Apps bancários pedem que o cliente aprenda a estrutura de menu de outra pessoa.","textPreview":"Apps bancários pedem que o cliente aprenda a estrutura de menu de outra pessoa.","textChars":79,"textLines":1,"bbox":[81.6,278.4,316.8,144]}
+{"kind":"textbox","id":"sh/w3i1sfa9","slide":2,"name":"Text 5","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[417.6,278.4,67.2,57.6]}
+{"kind":"shape","id":"sh/r65knqtk","slide":2,"name":"Shape 6","bbox":[451.2,192,364.8,249.6]}
+{"kind":"textbox","id":"sh/q5wjelsz","slide":2,"name":"Text 7","text":"Pedir","textPreview":"Pedir","textChars":5,"textLines":1,"bbox":[475.2,216,316.8,57.6]}
+{"kind":"textbox","id":"sh/ove9o7yd","slide":2,"name":"Text 8","text":"O cliente pede como pediria a uma pessoa: “Paga minha conta de água”.","textPreview":"O cliente pede como pediria a uma pessoa: “Paga minha conta de água”.","textChars":69,"textLines":1,"bbox":[475.2,278.4,316.8,144]}
+{"kind":"textbox","id":"sh/9wnqhczy","slide":2,"name":"Text 9","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[811.2,278.4,67.2,57.6]}
+{"kind":"shape","id":"sh/mtwrmxg7","slide":2,"name":"Shape 10","bbox":[844.8,192,364.8,249.6]}
+{"kind":"textbox","id":"sh/nu58f2hs","slide":2,"name":"Text 11","text":"Ser antecipado","textPreview":"Ser antecipado","textChars":14,"textLines":1,"bbox":[868.8,216,316.8,57.6]}
+{"kind":"textbox","id":"sh/wjy9sry9","slide":2,"name":"Text 12","text":"O agente já sabe: detecta o padrão e sugere antes de você lembrar.","textPreview":"O agente já sabe: detecta o padrão e sugere antes de você lembrar.","textChars":66,"textLines":1,"bbox":[868.8,278.4,316.8,144]}
+{"kind":"shape","id":"sh/xk7qlczu","slide":2,"name":"Shape 13","bbox":[57.6,465.6,1164.48,96]}
+{"kind":"textbox","id":"sh/ahwrqhgj","slide":2,"name":"Text 14","text":"Inclusão real: pedir tem custo cognitivo muito menor que navegar — não só para usuários mais velhos, qualquer pessoa cansada de aprender interface nova. Nem bancos tradicionais nem digitais resolveram essa frente.","textPreview":"Inclusão real: pedir tem custo cognitivo muito menor que navegar — não só para usuários mais velhos, qualquer pessoa cansada de aprender ...","textChars":213,"textLines":1,"bbox":[86.4,465.6,1106.88,96]}
+{"kind":"shape","id":"sh/bip8jmho","slide":2,"name":"Shape 15","bbox":[57.6,580.8,1164.48,86.4]}
+{"kind":"textbox","id":"sh/cnupgny5","slide":2,"name":"Text 16","text":"“Antecipar necessidades” é o que o próprio edital pede. Nada resolve isso de fato sem aprender com o histórico do cliente.","textPreview":"“Antecipar necessidades” é o que o próprio edital pede. Nada resolve isso de fato sem aprender com o histórico do cliente.","textChars":122,"textLines":1,"bbox":[86.4,588.48,1106.88,72]}
+{"kind":"textbox","id":"sh/do3q9szq","slide":2,"name":"Text 17","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[1212.48,672,48,33.6]}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":"Apps ainda são sistemas de navegação. Um assistente conversacional muda para delegação: o cliente pede. Mas vamos além — o agente aprende os padrões do cliente e antecipa, o que é literalmente o texto do objetivo do desafio."}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"O PARADOXO DO ITAÚ","textShapes":10}
+{"kind":"textbox","id":"sh/cza94vmx","slide":3,"name":"Text 0","text":"O PARADOXO DO ITAÚ","textPreview":"O PARADOXO DO ITAÚ","textChars":18,"textLines":1,"bbox":[57.6,38.4,1164.48,38.4]}
+{"kind":"textbox","id":"sh/d0jax03i","slide":3,"name":"Text 1","text":"O banco tem as peças. Ninguém conectou elas.","textPreview":"O banco tem as peças. Ninguém conectou elas.","textChars":44,"textLines":1,"bbox":[57.6,72,1164.48,86.4]}
+{"kind":"shape","id":"sh/298ryl4v","slide":3,"name":"Shape 2","bbox":[57.6,192,364.8,307.2]}
+{"kind":"shape","id":"sh/3ah8rqlg","slide":3,"name":"Shape 3","bbox":[57.6,192,364.8,11.52]}
+{"kind":"textbox","id":"sh/obq90bml","slide":3,"name":"Text 4","text":"Mais produtos","textPreview":"Mais produtos","textChars":13,"textLines":1,"bbox":[86.4,220.8,307.2,57.6]}
+{"kind":"textbox","id":"sh/pcjqtg36","slide":3,"name":"Text 5","text":"que qualquer banco digital: cartão, conta, investimentos, consignado, seguros, câmbio, BBA.","textPreview":"que qualquer banco digital: cartão, conta, investimentos, consignado, seguros, câmbio, BBA.","textChars":91,"textLines":1,"bbox":[86.4,283.2,307.2,196.8]}
+{"kind":"shape","id":"sh/m5cra54z","slide":3,"name":"Shape 6","bbox":[451.2,192,364.8,307.2]}
+{"kind":"shape","id":"sh/n6ls3alk","slide":3,"name":"Shape 7","bbox":[451.2,192,364.8,11.52]}
+{"kind":"textbox","id":"sh/n2l4fq98","slide":3,"name":"Text 8","text":"Décadas de dados","textPreview":"Décadas de dados","textChars":16,"textLines":1,"bbox":[480,220.8,307.2,57.6]}
+{"kind":"textbox","id":"sh/m1c3mlsn","slide":3,"name":"Text 9","text":"histórico transacional que nenhum banco digital novo possui — matéria-prima do EPC.","textPreview":"histórico transacional que nenhum banco digital novo possui — matéria-prima do EPC.","textChars":83,"textLines":1,"bbox":[480,283.2,307.2,196.8]}
+{"kind":"shape","id":"sh/943mhgre","slide":3,"name":"Shape 10","bbox":[844.8,192,364.8,307.2]}
+{"kind":"shape","id":"sh/83ulovat","slide":3,"name":"Shape 11","bbox":[844.8,192,364.8,11.52]}
+{"kind":"textbox","id":"sh/v6l4jq94","slide":3,"name":"Text 12","text":"Segurança comprovada","textPreview":"Segurança comprovada","textChars":20,"textLines":1,"bbox":[873.6,220.8,307.2,57.6]}
+{"kind":"textbox","id":"sh/a5c3ql8z","slide":3,"name":"Text 13","text":"o Itaú já validou, oficialmente, um pacote de segurança proativa (ago/2025) — hoje restrito ao PJ.","textPreview":"o Itaú já validou, oficialmente, um pacote de segurança proativa (ago/2025) — hoje restrito ao PJ.","textChars":98,"textLines":1,"bbox":[873.6,283.2,307.2,196.8]}
+{"kind":"shape","id":"sh/x8nml0ra","slide":3,"name":"Shape 14","bbox":[57.6,532.8,1164.48,86.4]}
+{"kind":"textbox","id":"sh/w7ulsvqp","slide":3,"name":"Text 15","text":"Os produtos e os dados existem. A gente propõe conectá-los numa única jornada de decisão — via conversa natural.","textPreview":"Os produtos e os dados existem. A gente propõe conectá-los numa única jornada de decisão — via conversa natural.","textChars":112,"textLines":1,"bbox":[86.4,540.48,1106.88,72]}
+{"kind":"textbox","id":"sh/ja54na9g","slide":3,"name":"Text 16","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[1212.48,672,48,33.6]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":"O Itaú tem produto e tem dado histórico — o que falta é orquestração. Já provou que segurança proativa funciona no PJ; a oportunidade é levar isso ao PF e conectar com o resto."}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"O PROBLEMA","textShapes":11}
+{"kind":"textbox","id":"sh/1cj2d8b6","slide":4,"name":"Text 0","text":"O PROBLEMA","textPreview":"O PROBLEMA","textChars":10,"textLines":1,"bbox":[57.6,38.4,1164.48,38.4]}
+{"kind":"textbox","id":"sh/0ba143al","slide":4,"name":"Text 1","text":"Quatro camadas, uma jornada quebrada","textPreview":"Quatro camadas, uma jornada quebrada","textChars":36,"textLines":1,"bbox":[57.6,72,1164.48,86.4]}
+{"kind":"shape","id":"sh/rm1k7yt4","slide":4,"name":"Shape 2","bbox":[57.6,187.2,57.6,57.6]}
+{"kind":"textbox","id":"sh/ql8jytsj","slide":4,"name":"Text 3","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[57.6,187.2,57.6,57.6]}
+{"kind":"textbox","id":"sh/doj29oba","slide":4,"name":"Text 4","text":"Segurança detecta risco, pergunta “cancela ou continua?” — e some.","textPreview":"Segurança detecta risco, pergunta “cancela ou continua?” — e some.","textChars":66,"textLines":1,"bbox":[134.4,189.12,1078.08,53.76]}
+{"kind":"shape","id":"sh/sna103ap","slide":4,"name":"Shape 5","bbox":[57.6,288,57.6,57.6]}
+{"kind":"textbox","id":"sh/3ihk3et8","slide":4,"name":"Text 6","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[57.6,288,57.6,57.6]}
+{"kind":"textbox","id":"sh/ih8ju9sn","slide":4,"name":"Text 7","text":"Pagamento: o cliente escolhe crédito por padrão, sem comparar.","textPreview":"Pagamento: o cliente escolhe crédito por padrão, sem comparar.","textChars":62,"textLines":1,"bbox":[134.4,289.92,1078.08,53.76]}
+{"kind":"shape","id":"sh/kbm987y5","slide":4,"name":"Shape 8","bbox":[57.6,388.8,57.6,57.6]}
+{"kind":"textbox","id":"sh/5cva1cfq","slide":4,"name":"Text 9","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[57.6,388.8,57.6,57.6]}
+{"kind":"textbox","id":"sh/i94r6xgz","slide":4,"name":"Text 10","text":"Investimentos: dinheiro fica parado por falta de sugestão no momento certo.","textPreview":"Investimentos: dinheiro fica parado por falta de sugestão no momento certo.","textChars":75,"textLines":1,"bbox":[134.4,390.72,1078.08,53.76]}
+{"kind":"shape","id":"sh/jadsz2xk","slide":4,"name":"Shape 11","bbox":[57.6,489.6,57.6,57.6]}
+{"kind":"textbox","id":"sh/w72947yt","slide":4,"name":"Text 12","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[57.6,489.6,57.6,57.6]}
+{"kind":"textbox","id":"sh/x8vaxsfe","slide":4,"name":"Text 13","text":"Padrões desperdiçados: o cliente paga os mesmos boletos, gasta nos mesmos lugares — e o banco nunca usa esse histórico.","textPreview":"Padrões desperdiçados: o cliente paga os mesmos boletos, gasta nos mesmos lugares — e o banco nunca usa esse histórico.","textChars":119,"textLines":1,"bbox":[134.4,491.52,1078.08,53.76]}
+{"kind":"textbox","id":"sh/a5kr2xg3","slide":4,"name":"Text 14","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[1212.48,672,48,33.6]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":"Quatro camadas quebradas: segurança que some, pagamento sem comparação, investimento sem sugestão, e — a mais nova — décadas de padrão de comportamento que o banco simplesmente ignora."}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"A SOLUÇÃO","textShapes":11}
+{"kind":"textbox","id":"sh/dgbulwnm","slide":5,"name":"Text 0","text":"A SOLUÇÃO","textPreview":"A SOLUÇÃO","textChars":9,"textLines":1,"bbox":[57.6,38.4,1164.48,38.4]}
+{"kind":"textbox","id":"sh/cf2tcr61","slide":5,"name":"Text 1","text":"APF com Engine de Padrões e Contexto (EPC)","textPreview":"APF com Engine de Padrões e Contexto (EPC)","textChars":42,"textLines":1,"bbox":[57.6,72,1164.48,86.4]}
+{"kind":"shape","id":"sh/z2tcnm5s","slide":5,"name":"Shape 2","bbox":[57.6,187.2,1164.48,86.4]}
+{"kind":"shape","id":"sh/yhkbe1o7","slide":5,"name":"Shape 3","bbox":[57.6,187.2,11.52,86.4]}
+{"kind":"textbox","id":"sh/l4bupwny","slide":5,"name":"Text 4","text":"1. Segurança Integrada","textPreview":"1. Segurança Integrada","textChars":22,"textLines":1,"bbox":[96,187.2,355.2,86.4]}
+{"kind":"textbox","id":"sh/032tgr6d","slide":5,"name":"Text 5","text":"Adapta ao PF o padrão já validado no PJ; valida e libera o fluxo.","textPreview":"Adapta ao PF o padrão já validado no PJ; valida e libera o fluxo.","textChars":65,"textLines":1,"bbox":[460.8,187.2,796.8,86.4]}
+{"kind":"shape","id":"sh/n6dcr65o","slide":5,"name":"Shape 6","bbox":[57.6,288,1164.48,86.4]}
+{"kind":"shape","id":"sh/m5kbi1oj","slide":5,"name":"Shape 7","bbox":[57.6,288,11.52,86.4]}
+{"kind":"textbox","id":"sh/w32dkbuh","slide":5,"name":"Text 8","text":"2. Otimização de Pagamento","textPreview":"2. Otimização de Pagamento","textChars":26,"textLines":1,"bbox":[96,288,355.2,86.4]}
+{"kind":"textbox","id":"sh/x4vedgvm","slide":5,"name":"Text 9","text":"Compara formas de pagamento em tempo real; sugere a mais vantajosa.","textPreview":"Compara formas de pagamento em tempo real; sugere a mais vantajosa.","textChars":67,"textLines":1,"bbox":[460.8,288,796.8,86.4]}
+{"kind":"shape","id":"sh/ahkvi1cb","slide":5,"name":"Shape 10","bbox":[57.6,388.8,1164.48,86.4]}
+{"kind":"shape","id":"sh/v2twb6dw","slide":5,"name":"Shape 11","bbox":[57.6,388.8,11.52,86.4]}
+{"kind":"textbox","id":"sh/k7mxovud","slide":5,"name":"Text 12","text":"3. Alocação Inteligente","textPreview":"3. Alocação Inteligente","textChars":23,"textLines":1,"bbox":[96,388.8,355.2,86.4]}
+{"kind":"textbox","id":"sh/58vehgvy","slide":5,"name":"Text 13","text":"Detecta saldo ocioso; sugere produto de baixo risco, com pílula de conhecimento.","textPreview":"Detecta saldo ocioso; sugere produto de baixo risco, com pílula de conhecimento.","textChars":80,"textLines":1,"bbox":[460.8,388.8,796.8,86.4]}
+{"kind":"shape","id":"sh/i54fmlc7","slide":5,"name":"Shape 14","bbox":[57.6,489.6,1164.48,86.4]}
+{"kind":"shape","id":"sh/j6dwfqds","slide":5,"name":"Shape 15","bbox":[57.6,489.6,11.52,86.4]}
+{"kind":"textbox","id":"sh/sb6xsvu9","slide":5,"name":"Text 16","text":"4. EPC — Antecipação","textPreview":"4. EPC — Antecipação","textChars":20,"textLines":1,"bbox":[96,489.6,355.2,86.4]}
+{"kind":"textbox","id":"sh/tcfel0vu","slide":5,"name":"Text 17","text":"Detecta recorrências (aluguel, delivery, salário) e age antes do cliente lembrar.","textPreview":"Detecta recorrências (aluguel, delivery, salário) e age antes do cliente lembrar.","textChars":81,"textLines":1,"bbox":[460.8,489.6,796.8,86.4]}
+{"kind":"textbox","id":"sh/hgrmpwj2","slide":5,"name":"Text 18","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1212.48,672,48,33.6]}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":"Quatro pilares. Os três primeiros já discutidos antes; o EPC é a novidade — motor de detecção de padrão que transforma histórico em antecipação real."}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"ARQUITETURA","textShapes":11}
+{"kind":"textbox","id":"sh/yhg7epsj","slide":6,"name":"Text 0","text":"ARQUITETURA","textPreview":"ARQUITETURA","textChars":11,"textLines":1,"bbox":[57.6,38.4,1164.48,38.4]}
+{"kind":"textbox","id":"sh/zi98nu94","slide":6,"name":"Text 1","text":"Um orquestrador, módulos especializados","textPreview":"Um orquestrador, módulos especializados","textChars":39,"textLines":1,"bbox":[57.6,72,1164.48,86.4]}
+{"kind":"shape","id":"sh/87ipkzal","slide":6,"name":"Shape 2","bbox":[422.4,182.4,432,110.4]}
+{"kind":"textbox","id":"sh/98rqt4r6","slide":6,"name":"Text 3","text":"APF — Motor Único de Orquestração","textPreview":"APF — Motor Único de Orquestração","textChars":33,"textLines":1,"bbox":[441.6,192,393.6,38.4]}
+{"kind":"textbox","id":"sh/ml07i9sv","slide":6,"name":"Text 4","text":"NLU/LLM • roteamento de intenção • grounding • explicabilidade","textPreview":"NLU/LLM • roteamento de intenção • grounding • explicabilidade","textChars":62,"textLines":1,"bbox":[441.6,230.4,393.6,52.8]}
+{"kind":"shape","id":"sh/7m98ru9g","slide":6,"name":"Shape 5","bbox":[67.2,340.8,264,100.8]}
+{"kind":"textbox","id":"sh/oryp8fah","slide":6,"name":"Text 6","text":"Módulo de\nSegurança","textPreview":"Módulo de | Segurança","textChars":19,"textLines":2,"bbox":[67.2,340.8,264,100.8]}
+{"kind":"shape","id":"sh/pc76hkr2","slide":6,"name":"Shape 7","bbox":[199.2,297.6,0,43.2]}
+{"kind":"shape","id":"sh/h4bupgn6","slide":6,"name":"Shape 8","bbox":[360,340.8,264,100.8]}
+{"kind":"textbox","id":"sh/w32twb6l","slide":6,"name":"Text 9","text":"Módulo de\nPagamento","textPreview":"Módulo de | Pagamento","textChars":19,"textLines":2,"bbox":[360,340.8,264,100.8]}
+{"kind":"shape","id":"sh/v2tcn650","slide":6,"name":"Shape 10","bbox":[492,297.6,0,43.2]}
+{"kind":"shape","id":"sh/u1kbu1ov","slide":6,"name":"Shape 11","bbox":[652.8,340.8,264,100.8]}
+{"kind":"textbox","id":"sh/5svutgni","slide":6,"name":"Text 12","text":"Módulo de\nInvestimento","textPreview":"Módulo de | Investimento","textChars":22,"textLines":2,"bbox":[652.8,340.8,264,100.8]}
+{"kind":"shape","id":"sh/47mt0b6x","slide":6,"name":"Shape 13","bbox":[784.8,297.6,0,43.2]}
+{"kind":"shape","id":"sh/j6dcr65c","slide":6,"name":"Shape 14","bbox":[945.6,340.8,264,100.8]}
+{"kind":"textbox","id":"sh/i54bylor","slide":6,"name":"Text 15","text":"Módulo de\nPadrões (EPC)","textPreview":"Módulo de | Padrões (EPC)","textChars":23,"textLines":2,"bbox":[945.6,340.8,264,100.8]}
+{"kind":"shape","id":"sh/twfux0ne","slide":6,"name":"Shape 16","bbox":[1077.6,297.6,0,43.2]}
+{"kind":"shape","id":"sh/svmt4v6t","slide":6,"name":"Shape 17","bbox":[67.2,297.6,1145.28,0]}
+{"kind":"shape","id":"sh/cbe5g3ih","slide":6,"name":"Shape 18","bbox":[57.6,470.4,1164.48,81.6]}
+{"kind":"textbox","id":"sh/dcnm98zm","slide":6,"name":"Text 19","text":"Não são agentes autônomos: é um único motor com roteamento de intenção e tool-calling por módulo — a forma real como esse tipo de sistema é construído hoje.","textPreview":"Não são agentes autônomos: é um único motor com roteamento de intenção e tool-calling por módulo — a forma real como esse tipo de sistema...","textChars":156,"textLines":1,"bbox":[86.4,470.4,1106.88,81.6]}
+{"kind":"textbox","id":"sh/qpwnet0b","slide":6,"name":"Text 20","text":"EPC: detecção de recorrência por agregação estatística simples (favorecido + valor + periodicidade) — não clustering, não machine learning.","textPreview":"EPC: detecção de recorrência por agregação estatística simples (favorecido + valor + periodicidade) — não clustering, não machine learning.","textChars":139,"textLines":1,"bbox":[57.6,571.2,1164.48,48]}
+{"kind":"textbox","id":"sh/bq547yhw","slide":6,"name":"Text 21","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[1212.48,672,48,33.6]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":"Um único motor de orquestração, não múltiplos agentes autônomos — isso é mais honesto tecnicamente. O EPC detecta padrão com agregação SQL simples, sem inflar como 'clustering' ou 'machine learning' quando é contagem de recorrência com limiar de confiança."}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"CASO DE USO #1","textShapes":10}
+{"kind":"textbox","id":"sh/cb2tkvap","slide":7,"name":"Text 0","text":"CASO DE USO #1","textPreview":"CASO DE USO #1","textChars":14,"textLines":1,"bbox":[57.6,38.4,1164.48,38.4]}
+{"kind":"textbox","id":"sh/dcbud0ra","slide":7,"name":"Text 1","text":"Chat de pagamento","textPreview":"Chat de pagamento","textChars":17,"textLines":1,"bbox":[57.6,72,1164.48,86.4]}
+{"kind":"shape","id":"sh/ydkbm5sv","slide":7,"name":"Shape 2","bbox":[57.6,182.4,1164.48,355.2]}
+{"kind":"shape","id":"sh/zedcfa9g","slide":7,"name":"Shape 3","bbox":[530.88,206.4,662.4,59.52]}
+{"kind":"textbox","id":"sh/kzmdova1","slide":7,"name":"Text 4","text":"Que contas tenho que pagar?","textPreview":"Que contas tenho que pagar?","textChars":27,"textLines":1,"bbox":[550.08,209.28,624,53.76]}
+{"kind":"shape","id":"sh/l0vuh0rm","slide":7,"name":"Shape 5","bbox":[86.4,278.4,662.4,59.52]}
+{"kind":"textbox","id":"sh/eh0ba1sr","slide":7,"name":"Text 6","text":"SABESP (R$ 187,40, vence em 5 dias) e Vivo (R$ 129,90, vence em 7 dias). Pagar a SABESP agora?","textPreview":"SABESP (R$ 187,40, vence em 5 dias) e Vivo (R$ 129,90, vence em 7 dias). Pagar a SABESP agora?","textChars":94,"textLines":1,"bbox":[105.6,281.28,624,53.76]}
+{"kind":"shape","id":"sh/fi9c369c","slide":7,"name":"Shape 7","bbox":[530.88,350.4,662.4,59.52]}
+{"kind":"textbox","id":"sh/baxkjqlk","slide":7,"name":"Text 8","text":"Pagar SABESP","textPreview":"Pagar SABESP","textChars":12,"textLines":1,"bbox":[550.08,353.28,624,53.76]}
+{"kind":"shape","id":"sh/a9ojq5kz","slide":7,"name":"Shape 9","bbox":[86.4,422.4,662.4,59.52]}
+{"kind":"textbox","id":"sh/xcz2l03q","slide":7,"name":"Text 10","text":"Segurança validada. Débito (R$ 187,40) é R$ 23 mais barato que crédito. Confirmar?","textPreview":"Segurança validada. Débito (R$ 187,40) é R$ 23 mais barato que crédito. Confirmar?","textChars":82,"textLines":1,"bbox":[105.6,425.28,624,53.76]}
+{"kind":"shape","id":"sh/cbq1sv25","slide":7,"name":"Shape 11","bbox":[530.88,494.4,662.4,59.52]}
+{"kind":"textbox","id":"sh/n6x0fqlo","slide":7,"name":"Text 12","text":"Sim","textPreview":"Sim","textChars":3,"textLines":1,"bbox":[550.08,497.28,624,53.76]}
+{"kind":"shape","id":"sh/25ojml43","slide":7,"name":"Shape 13","bbox":[57.6,556.8,1164.48,67.2]}
+{"kind":"textbox","id":"sh/p8fih03e","slide":7,"name":"Text 14","text":"MÉTRICA DE SUCESSO   ","textPreview":"MÉTRICA DE SUCESSO","textChars":21,"textLines":1,"bbox":[86.4,556.8,288,67.2]}
+{"kind":"textbox","id":"sh/o761ov2t","slide":7,"name":"Text 15","text":"Redução de uso de crédito rotativo; taxa de resolução de intenção na primeira interação.","textPreview":"Redução de uso de crédito rotativo; taxa de resolução de intenção na primeira interação.","textChars":88,"textLines":1,"bbox":[345.6,556.8,876.48,67.2]}
+{"kind":"textbox","id":"sh/f2d0b6lc","slide":7,"name":"Text 16","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1212.48,672,48,33.6]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":"Maria pergunta o que precisa pagar. O agente já validou a segurança e já comparou as formas de pagamento — tudo numa conversa."}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"CASO DE USO #2","textShapes":8}
+{"kind":"textbox","id":"sh/18byd4zy","slide":8,"name":"Text 0","text":"CASO DE USO #2","textPreview":"CASO DE USO #2","textChars":14,"textLines":1,"bbox":[57.6,38.4,1164.48,38.4]}
+{"kind":"textbox","id":"sh/g72x4zyd","slide":8,"name":"Text 1","text":"Alocação + pílula de conhecimento","textPreview":"Alocação + pílula de conhecimento","textChars":33,"textLines":1,"bbox":[57.6,72,1164.48,86.4]}
+{"kind":"shape","id":"sh/ri9g7uhw","slide":8,"name":"Shape 2","bbox":[57.6,182.4,1164.48,355.2]}
+{"kind":"shape","id":"sh/6h0fypgb","slide":8,"name":"Shape 3","bbox":[86.4,206.4,662.4,59.52]}
+{"kind":"textbox","id":"sh/tkby9kzm","slide":8,"name":"Text 4","text":"Detectei R$ 1.200 acima do seu padrão. Aplicar em CDB liquidez diária? Projeção: +R$ 8/mês (estimativa).","textPreview":"Detectei R$ 1.200 acima do seu padrão. Aplicar em CDB liquidez diária? Projeção: +R$ 8/mês (estimativa).","textChars":104,"textLines":1,"bbox":[105.6,209.28,624,53.76]}
+{"kind":"shape","id":"sh/sjix0zy1","slide":8,"name":"Shape 5","bbox":[530.88,278.4,662.4,59.52]}
+{"kind":"textbox","id":"sh/je9g3ahk","slide":8,"name":"Text 6","text":"Aplica 800","textPreview":"Aplica 800","textChars":10,"textLines":1,"bbox":[550.08,281.28,624,53.76]}
+{"kind":"shape","id":"sh/id0fu50z","slide":8,"name":"Shape 7","bbox":[86.4,350.4,662.4,59.52]}
+{"kind":"textbox","id":"sh/o7ydoret","slide":8,"name":"Text 8","text":"Aplicado. Renda fixa é um tipo de investimento com rendimento previsível e liquidez diária.","textPreview":"Aplicado. Renda fixa é um tipo de investimento com rendimento previsível e liquidez diária.","textChars":91,"textLines":1,"bbox":[105.6,353.28,624,53.76]}
+{"kind":"shape","id":"sh/98rehwve","slide":8,"name":"Shape 9","bbox":[57.6,556.8,1164.48,67.2]}
+{"kind":"textbox","id":"sh/m5gvmhwn","slide":8,"name":"Text 10","text":"MÉTRICA DE SUCESSO   ","textPreview":"MÉTRICA DE SUCESSO","textChars":21,"textLines":1,"bbox":[86.4,556.8,288,67.2]}
+{"kind":"textbox","id":"sh/n6pwfmd8","slide":8,"name":"Text 11","text":"Volume migrado via sugestão; taxa de aceitação; engajamento com a pílula de conhecimento.","textPreview":"Volume migrado via sugestão; taxa de aceitação; engajamento com a pílula de conhecimento.","textChars":89,"textLines":1,"bbox":[345.6,556.8,876.48,67.2]}
+{"kind":"textbox","id":"sh/0jydkreh","slide":8,"name":"Text 12","text":"8","textPreview":"8","textChars":1,"textLines":1,"bbox":[1212.48,672,48,33.6]}
+{"kind":"notes","id":"nt/fu1gfa1s","slide":8,"text":"A sugestão sempre aparece como projeção estimada, nunca promessa, e só para produto de baixíssimo risco — sem exigir perfil de investidor complexo. A pílula de conhecimento é conteúdo pré-aprovado, não gerado pelo LLM."}
+{"kind":"slide","id":"sl/udsvah03","slide":9,"title":"CASO DE USO #3","textShapes":9}
+{"kind":"textbox","id":"sh/1cfmhgne","slide":9,"name":"Text 0","text":"CASO DE USO #3","textPreview":"CASO DE USO #3","textChars":14,"textLines":1,"bbox":[57.6,38.4,1164.48,38.4]}
+{"kind":"textbox","id":"sh/0b65obm9","slide":9,"name":"Text 1","text":"Segurança conversacional","textPreview":"Segurança conversacional","textChars":24,"textLines":1,"bbox":[57.6,72,1164.48,86.4]}
+{"kind":"shape","id":"sh/nex4jq5k","slide":9,"name":"Shape 2","bbox":[57.6,182.4,1164.48,355.2]}
+{"kind":"shape","id":"sh/mdonql4z","slide":9,"name":"Shape 3","bbox":[530.88,206.4,662.4,59.52]}
+{"kind":"textbox","id":"sh/9gzml0nq","slide":9,"name":"Text 4","text":"[Pix de R$ 2.500 para chave nova]","textPreview":"[Pix de R$ 2.500 para chave nova]","textChars":33,"textLines":1,"bbox":[550.08,209.28,624,53.76]}
+{"kind":"shape","id":"sh/ofq5svm5","slide":9,"name":"Shape 5","bbox":[86.4,278.4,662.4,59.52]}
+{"kind":"textbox","id":"sh/bih4na5w","slide":9,"name":"Text 6","text":"Detectei um padrão atípico: valor alto para favorecido novo. Você conhece essa pessoa?","textPreview":"Detectei um padrão atípico: valor alto para favorecido novo. Você conhece essa pessoa?","textChars":86,"textLines":1,"bbox":[105.6,281.28,624,53.76]}
+{"kind":"shape","id":"sh/ah8nu54b","slide":9,"name":"Shape 7","bbox":[530.88,350.4,662.4,59.52]}
+{"kind":"textbox","id":"sh/oza1gfyh","slide":9,"name":"Text 8","text":"[Confirma com biometria no app]","textPreview":"[Confirma com biometria no app]","textChars":31,"textLines":1,"bbox":[550.08,353.28,624,53.76]}
+{"kind":"shape","id":"sh/p0ji9kf2","slide":9,"name":"Shape 9","bbox":[86.4,422.4,662.4,59.52]}
+{"kind":"textbox","id":"sh/2xsjepgb","slide":9,"name":"Text 10","text":"Liberado. Débito tem saldo suficiente e é mais barato. Quer usar?","textPreview":"Liberado. Débito tem saldo suficiente e é mais barato. Quer usar?","textChars":65,"textLines":1,"bbox":[105.6,425.28,624,53.76]}
+{"kind":"shape","id":"sh/3y107axw","slide":9,"name":"Shape 11","bbox":[57.6,556.8,1164.48,67.2]}
+{"kind":"textbox","id":"sh/cnu1kzyd","slide":9,"name":"Text 12","text":"MÉTRICA DE SUCESSO   ","textPreview":"MÉTRICA DE SUCESSO","textChars":21,"textLines":1,"bbox":[86.4,556.8,288,67.2]}
+{"kind":"textbox","id":"sh/do3id4fy","slide":9,"name":"Text 13","text":"Taxa de engajamento com o comparador após o fluxo de segurança.","textPreview":"Taxa de engajamento com o comparador após o fluxo de segurança.","textChars":63,"textLines":1,"bbox":[345.6,556.8,876.48,67.2]}
+{"kind":"textbox","id":"sh/qlcjipgn","slide":9,"name":"Text 14","text":"9","textPreview":"9","textChars":1,"textLines":1,"bbox":[1212.48,672,48,33.6]}
+{"kind":"notes","id":"nt/udsvah03","slide":9,"text":"A segurança não termina no cancelar/continuar — depois de validar, o agente avança automaticamente para a otimização, na mesma conversa."}
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"CASO DE USO #4 — O ANTECIPATÓRIO","textShapes":12}
+{"kind":"textbox","id":"sh/xc3mho32","slide":10,"name":"Text 0","text":"CASO DE USO #4 — O ANTECIPATÓRIO","textPreview":"CASO DE USO #4 — O ANTECIPATÓRIO","textChars":32,"textLines":1,"bbox":[57.6,38.4,1164.48,38.4]}
+{"kind":"textbox","id":"sh/cbu58j2h","slide":10,"name":"Text 1","text":"EPC: automação e educação financeira","textPreview":"EPC: automação e educação financeira","textChars":36,"textLines":1,"bbox":[57.6,72,1164.48,86.4]}
+{"kind":"shape","id":"sh/zelojyl8","slide":10,"name":"Shape 2","bbox":[57.6,182.4,566.4,316.8]}
+{"kind":"textbox","id":"sh/ydcnatkn","slide":10,"name":"Text 3","text":"AUTOMAÇÃO","textPreview":"AUTOMAÇÃO","textChars":9,"textLines":1,"bbox":[86.4,201.6,508.8,33.6]}
+{"kind":"textbox","id":"sh/l036l83y","slide":10,"name":"Text 4","text":"EPC detecta: Pix de R$ 1.500 para João Silva todo dia 10, há 12 meses.","textPreview":"EPC detecta: Pix de R$ 1.500 para João Silva todo dia 10, há 12 meses.","textChars":70,"textLines":1,"bbox":[86.4,240,508.8,67.2]}
+{"kind":"shape","id":"sh/kzu5c32t","slide":10,"name":"Shape 5","bbox":[86.4,312,508.8,81.6]}
+{"kind":"textbox","id":"sh/725onyl4","slide":10,"name":"Text 6","text":"“Você paga aluguel de R$ 1.500 pra João Silva todo dia 10. Quer que eu configure o Pix Automático?”","textPreview":"“Você paga aluguel de R$ 1.500 pra João Silva todo dia 10. Quer que eu configure o Pix Automático?”","textChars":99,"textLines":1,"bbox":[105.6,312,470.4,81.6]}
+{"kind":"textbox","id":"sh/m1cnetkj","slide":10,"name":"Text 7","text":"Usa o Pix Automático — mecanismo real do Banco Central, obrigatório desde out/2025 — não uma automação proprietária.","textPreview":"Usa o Pix Automático — mecanismo real do Banco Central, obrigatório desde out/2025 — não uma automação proprietária.","textChars":116,"textLines":1,"bbox":[86.4,412.8,508.8,76.8]}
+{"kind":"shape","id":"sh/s7yt4b21","slide":10,"name":"Shape 8","bbox":[652.8,182.4,566.4,316.8]}
+{"kind":"textbox","id":"sh/d87uxg3m","slide":10,"name":"Text 9","text":"INSIGHT + EDUCAÇÃO","textPreview":"INSIGHT + EDUCAÇÃO","textChars":18,"textLines":1,"bbox":[681.6,201.6,508.8,33.6]}
+{"kind":"textbox","id":"sh/q5gb21kb","slide":10,"name":"Text 10","text":"EPC detecta: R$ 45/dia em delivery no almoço, 20 dias/mês = R$ 900/mês = R$ 10.800/ano.","textPreview":"EPC detecta: R$ 45/dia em delivery no almoço, 20 dias/mês = R$ 900/mês = R$ 10.800/ano.","textChars":87,"textLines":1,"bbox":[681.6,240,508.8,67.2]}
+{"kind":"shape","id":"sh/r6pcv6lw","slide":10,"name":"Shape 11","bbox":[681.6,312,508.8,81.6]}
+{"kind":"textbox","id":"sh/0bit8b2d","slide":10,"name":"Text 12","text":"“Separar em caixinhas é uma técnica chamada envelope digital — você vê o progresso e evita gastar sem perceber.”","textPreview":"“Separar em caixinhas é uma técnica chamada envelope digital — você vê o progresso e evita gastar sem perceber.”","textChars":112,"textLines":1,"bbox":[700.8,312,470.4,81.6]}
+{"kind":"textbox","id":"sh/1cru1g3y","slide":10,"name":"Text 13","text":"Pílula de conhecimento pré-aprovada, selecionada contextualmente — nunca gerada ao vivo pelo LLM.","textPreview":"Pílula de conhecimento pré-aprovada, selecionada contextualmente — nunca gerada ao vivo pelo LLM.","textChars":97,"textLines":1,"bbox":[681.6,412.8,508.8,76.8]}
+{"kind":"shape","id":"sh/e9gb61k7","slide":10,"name":"Shape 14","bbox":[57.6,518.4,1164.48,72]}
+{"kind":"textbox","id":"sh/fapcz6ls","slide":10,"name":"Text 15","text":"Controle de frequência: no máximo 1 notificação proativa por categoria de padrão por dia, com opt-out — evita fadiga.","textPreview":"Controle de frequência: no máximo 1 notificação proativa por categoria de padrão por dia, com opt-out — evita fadiga.","textChars":117,"textLines":1,"bbox":[86.4,518.4,1106.88,72]}
+{"kind":"textbox","id":"sh/ozitcv29","slide":10,"name":"Text 16","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1212.48,672,48,33.6]}
+{"kind":"notes","id":"nt/m90b6t0r","slide":10,"text":"Esse é o caso que mais responde ao texto literal do edital: 'capaz de antecipar necessidades'. Duas faces do mesmo EPC — automação de recorrência via Pix Automático (mecanismo real do BC) e insight de economia com educação contextual. Sempre com limite de frequência pra não virar spam."}
+{"kind":"slide","id":"sl/jetc3ut0","slide":11,"title":"DIFERENCIAL COMPETITIVO","textShapes":22}
+{"kind":"textbox","id":"sh/xcryxg7y","slide":11,"name":"Text 0","text":"DIFERENCIAL COMPETITIVO","textPreview":"DIFERENCIAL COMPETITIVO","textChars":23,"textLines":1,"bbox":[57.6,38.4,1164.48,38.4]}
+{"kind":"textbox","id":"sh/wbih4b6d","slide":11,"name":"Text 1","text":"Por que ninguém consegue copiar","textPreview":"Por que ninguém consegue copiar","textChars":31,"textLines":1,"bbox":[57.6,72,1164.48,86.4]}
+{"kind":"shape","id":"sh/n69grmpw","slide":11,"name":"Shape 2","bbox":[57.6,182.4,278.4,57.6]}
+{"kind":"shape","id":"sh/250zy18b","slide":11,"name":"Text 3","bbox":[57.6,182.4,278.4,57.6]}
+{"kind":"shape","id":"sh/98rytw72","slide":11,"name":"Shape 4","bbox":[336,182.4,278.4,57.6]}
+{"kind":"textbox","id":"sh/o7ih0r6h","slide":11,"name":"Text 5","text":"Bancos Digitais","textPreview":"Bancos Digitais","textChars":15,"textLines":1,"bbox":[336,182.4,278.4,57.6]}
+{"kind":"shape","id":"sh/72t03qp0","slide":11,"name":"Shape 6","bbox":[614.4,182.4,307.2,57.6]}
+{"kind":"textbox","id":"sh/61kzalof","slide":11,"name":"Text 7","text":"Itaú Hoje","textPreview":"Itaú Hoje","textChars":9,"textLines":1,"bbox":[614.4,182.4,307.2,57.6]}
+{"kind":"shape","id":"sh/ofqtgnyt","slide":11,"name":"Shape 8","bbox":[921.6,182.4,338.88,57.6]}
+{"kind":"textbox","id":"sh/9gza9sze","slide":11,"name":"Text 9","text":"Itaú + APF","textPreview":"Itaú + APF","textChars":10,"textLines":1,"bbox":[921.6,182.4,338.88,57.6]}
+{"kind":"shape","id":"sh/mdobedg3","slide":11,"name":"Shape 10","bbox":[57.6,240,278.4,86.4]}
+{"kind":"textbox","id":"sh/nehs7iho","slide":11,"name":"Text 11","text":"Paradigma de interface","textPreview":"Paradigma de interface","textChars":22,"textLines":1,"bbox":[65.28,240,263.04,86.4]}
+{"kind":"shape","id":"sh/0b6tc3yx","slide":11,"name":"Shape 12","bbox":[336,240,278.4,86.4]}
+{"kind":"textbox","id":"sh/1cfa58zi","slide":11,"name":"Text 13","text":"Sistema de navegação","textPreview":"Sistema de navegação","textChars":20,"textLines":1,"bbox":[343.68,240,263.04,86.4]}
+{"kind":"shape","id":"sh/epobatgr","slide":11,"name":"Shape 14","bbox":[614.4,240,307.2,86.4]}
+{"kind":"textbox","id":"sh/zaxs3yhc","slide":11,"name":"Text 15","text":"Sistema de navegação","textPreview":"Sistema de navegação","textChars":20,"textLines":1,"bbox":[622.08,240,291.84,86.4]}
+{"kind":"shape","id":"sh/cn6t83y1","slide":11,"name":"Shape 16","bbox":[921.6,240,338.88,86.4]}
+{"kind":"textbox","id":"sh/dofa18z6","slide":11,"name":"Text 17","text":"Delegação: o cliente pede, o agente resolve","textPreview":"Delegação: o cliente pede, o agente resolve","textChars":43,"textLines":1,"bbox":[929.28,240,323.52,86.4]}
+{"kind":"shape","id":"sh/tsnip0ny","slide":11,"name":"Shape 18","bbox":[57.6,326.4,278.4,86.4]}
+{"kind":"textbox","id":"sh/87ehgv6d","slide":11,"name":"Text 19","text":"Antecipação de necessidades","textPreview":"Antecipação de necessidades","textChars":27,"textLines":1,"bbox":[65.28,326.4,263.04,86.4]}
+{"kind":"shape","id":"sh/7650nq5s","slide":11,"name":"Shape 20","bbox":[336,326.4,278.4,86.4]}
+{"kind":"textbox","id":"sh/65wzelo7","slide":11,"name":"Text 21","text":"Não existe","textPreview":"Não existe","textChars":10,"textLines":1,"bbox":[343.68,326.4,263.04,86.4]}
+{"kind":"shape","id":"sh/l43ilgn2","slide":11,"name":"Shape 22","bbox":[614.4,326.4,307.2,86.4]}
+{"kind":"textbox","id":"sh/k3uhcb6h","slide":11,"name":"Text 23","text":"Não existe","textPreview":"Não existe","textChars":10,"textLines":1,"bbox":[622.08,326.4,291.84,86.4]}
+{"kind":"shape","id":"sh/j2lgjq5w","slide":11,"name":"Shape 24","bbox":[921.6,326.4,338.88,86.4]}
+{"kind":"textbox","id":"sh/y1czalob","slide":11,"name":"Text 25","text":"EPC detecta padrão e age antes do cliente pedir","textPreview":"EPC detecta padrão e age antes do cliente pedir","textChars":47,"textLines":1,"bbox":[929.28,326.4,323.52,86.4]}
+{"kind":"shape","id":"sh/p07ixkn6","slide":11,"name":"Shape 26","bbox":[57.6,412.8,278.4,86.4]}
+{"kind":"textbox","id":"sh/4zyhofml","slide":11,"name":"Text 27","text":"Segurança proativa","textPreview":"Segurança proativa","textChars":18,"textLines":1,"bbox":[65.28,412.8,263.04,86.4]}
+{"kind":"shape","id":"sh/m58fih43","slide":11,"name":"Shape 28","bbox":[336,412.8,278.4,86.4]}
+{"kind":"textbox","id":"sh/n61wbmlo","slide":11,"name":"Text 29","text":"Reativa/regras rígidas","textPreview":"Reativa/regras rígidas","textChars":22,"textLines":1,"bbox":[343.68,412.8,263.04,86.4]}
+{"kind":"shape","id":"sh/o7axk7m9","slide":11,"name":"Shape 30","bbox":[614.4,412.8,307.2,86.4]}
+{"kind":"textbox","id":"sh/98jedc3u","slide":11,"name":"Text 31","text":"Comprovada no PJ, não no PF","textPreview":"Comprovada no PJ, não no PF","textChars":27,"textLines":1,"bbox":[622.08,412.8,291.84,86.4]}
+{"kind":"shape","id":"sh/eh8fex47","slide":11,"name":"Shape 32","bbox":[921.6,412.8,338.88,86.4]}
+{"kind":"textbox","id":"sh/z2hw72lc","slide":11,"name":"Text 33","text":"Levada ao PF, integrada à jornada","textPreview":"Levada ao PF, integrada à jornada","textChars":33,"textLines":1,"bbox":[929.28,412.8,323.52,86.4]}
+{"kind":"shape","id":"sh/03qxg7mx","slide":11,"name":"Shape 34","bbox":[57.6,499.2,278.4,86.4]}
+{"kind":"textbox","id":"sh/14ze9c3i","slide":11,"name":"Text 35","text":"Profundidade + histórico","textPreview":"Profundidade + histórico","textChars":24,"textLines":1,"bbox":[65.28,499.2,263.04,86.4]}
+{"kind":"shape","id":"sh/ydcfq1kb","slide":11,"name":"Shape 36","bbox":[336,499.2,278.4,86.4]}
+{"kind":"textbox","id":"sh/jylwj6lw","slide":11,"name":"Text 37","text":"Poucos produtos, dado recente","textPreview":"Poucos produtos, dado recente","textChars":29,"textLines":1,"bbox":[343.68,499.2,263.04,86.4]}
+{"kind":"shape","id":"sh/3qhsfypc","slide":11,"name":"Shape 38","bbox":[614.4,499.2,307.2,86.4]}
+{"kind":"textbox","id":"sh/ip8bmtor","slide":11,"name":"Text 39","text":"Completa, mas fragmentada","textPreview":"Completa, mas fragmentada","textChars":25,"textLines":1,"bbox":[622.08,499.2,291.84,86.4]}
+{"kind":"shape","id":"sh/5sjah872","slide":11,"name":"Shape 40","bbox":[921.6,499.2,338.88,86.4]}
+{"kind":"textbox","id":"sh/4rato36h","slide":11,"name":"Text 41","text":"Orquestrada por conversa e padrão","textPreview":"Orquestrada por conversa e padrão","textChars":33,"textLines":1,"bbox":[929.28,499.2,323.52,86.4]}
+{"kind":"textbox","id":"sh/v2hsbyp0","slide":11,"name":"Text 42","text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1212.48,672,48,33.6]}
+{"kind":"notes","id":"nt/jetc3ut0","slide":11,"text":"Não competimos com os digitais na simplicidade — competimos no paradigma de interface e na antecipação de necessidades, que exigem profundidade de produto e histórico de dados que só o Itaú tem."}
+{"kind":"slide","id":"sl/8f2psfyx","slide":12,"title":"VIABILIDADE ECONÔMICA","textShapes":14}
+{"kind":"textbox","id":"sh/1gbm9s3a","slide":12,"name":"Text 0","text":"VIABILIDADE ECONÔMICA","textPreview":"VIABILIDADE ECONÔMICA","textChars":21,"textLines":1,"bbox":[57.6,38.4,1164.48,38.4]}
+{"kind":"textbox","id":"sh/0f2lgnmp","slide":12,"name":"Text 1","text":"Os números do caso de negócio","textPreview":"Os números do caso de negócio","textChars":29,"textLines":1,"bbox":[57.6,72,1164.48,86.4]}
+{"kind":"shape","id":"sh/ra943il8","slide":12,"name":"Shape 2","bbox":[57.6,177.6,566.4,393.6]}
+{"kind":"textbox","id":"sh/q903ad4n","slide":12,"name":"Text 3","text":"Retenção (base existente)","textPreview":"Retenção (base existente)","textChars":25,"textLines":1,"bbox":[86.4,192,508.8,38.4]}
+{"kind":"textbox","id":"sh/dcbm583y","slide":12,"name":"Text 4","text":"8 milhões  de clientes 18–29 anos (SAM)\n15% → 1,2 milhão  expostos a golpe/ano\n25% → 300 mil  em risco de churn","textPreview":"8 milhões  de clientes 18–29 anos (SAM) | 15% → 1,2 milhão  expostos a golpe/ano | 25% → 300 mil  em risco de churn","textChars":111,"textLines":3,"bbox":[86.4,240,508.8,115.2]}
+{"kind":"shape","id":"sh/sb2lcnmd","slide":12,"name":"Shape 5","bbox":[86.4,364.8,508.8,91.2]}
+{"kind":"textbox","id":"sh/b6d4f2lc","slide":12,"name":"Text 6","text":"Piso conservador (CAC evitado)","textPreview":"Piso conservador (CAC evitado)","textChars":30,"textLines":1,"bbox":[105.6,371.52,470.4,33.6]}
+{"kind":"textbox","id":"sh/a543mx4r","slide":12,"name":"Text 7","text":"R$ 75 milhões/ano","textPreview":"R$ 75 milhões/ano","textChars":17,"textLines":1,"bbox":[105.6,398.4,470.4,52.8]}
+{"kind":"textbox","id":"sh/wvupgz6t","slide":12,"name":"Text 8","text":"Piso conservador — valor real via LTV tende a ser maior.","textPreview":"Piso conservador — valor real via LTV tende a ser maior.","textChars":56,"textLines":1,"bbox":[86.4,470.4,508.8,86.4]}
+{"kind":"shape","id":"sh/xw3q94ne","slide":12,"name":"Shape 9","bbox":[652.8,177.6,566.4,393.6]}
+{"kind":"textbox","id":"sh/atc7epon","slide":12,"name":"Text 10","text":"Engajamento e automações","textPreview":"Engajamento e automações","textChars":24,"textLines":1,"bbox":[681.6,192,508.8,38.4]}
+{"kind":"textbox","id":"sh/bulo7u58","slide":12,"name":"Text 11","text":"480 mil  usam comparador — R$ 180/ano\n240 mil  novos investidores — R$ 1.500 ticket\n480 mil  adotam Pix Automático/caixinha (EPC)","textPreview":"480 mil  usam comparador — R$ 180/ano | 240 mil  novos investidores — R$ 1.500 ticket | 480 mil  adotam Pix Automático/caixinha (EPC)","textChars":129,"textLines":3,"bbox":[681.6,240,508.8,115.2]}
+{"kind":"shape","id":"sh/orapcf6h","slide":12,"name":"Shape 12","bbox":[681.6,364.8,508.8,91.2]}
+{"kind":"textbox","id":"sh/9sj65kn2","slide":12,"name":"Text 13","text":"Receita recorrente estimada","textPreview":"Receita recorrente estimada","textChars":27,"textLines":1,"bbox":[700.8,371.52,470.4,33.6]}
+{"kind":"textbox","id":"sh/mps7a5or","slide":12,"name":"Text 14","text":"R$ 2,88 milhões/ano","textPreview":"R$ 2,88 milhões/ano","textChars":19,"textLines":1,"bbox":[700.8,398.4,470.4,52.8]}
+{"kind":"textbox","id":"sh/nq1o3a5w","slide":12,"name":"Text 15","text":"0,8% a.a. de spread é premissa ilustrativa a validar com o Itaú.","textPreview":"0,8% a.a. de spread é premissa ilustrativa a validar com o Itaú.","textChars":64,"textLines":1,"bbox":[681.6,470.4,508.8,86.4]}
+{"kind":"shape","id":"sh/0nap8f6l","slide":12,"name":"Shape 16","bbox":[57.6,590.4,1164.48,72]}
+{"kind":"textbox","id":"sh/1oj61kn6","slide":12,"name":"Text 17","text":"Investimento MVP: R$ 2–4 milhões      Payback estimado: 12–18 meses (conservador)","textPreview":"Investimento MVP: R$ 2–4 milhões      Payback estimado: 12–18 meses (conservador)","textChars":81,"textLines":1,"bbox":[86.4,590.4,1106.88,72]}
+{"kind":"textbox","id":"sh/hkbm5wzu","slide":12,"name":"Text 18","text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1212.48,672,48,33.6]}
+{"kind":"notes","id":"nt/8f2psfyx","slide":12,"text":"Piso de retenção conservador, receita de engajamento reforçada agora pelas automações do EPC. Payback de 12 a 18 meses, deliberadamente cauteloso."}
+{"kind":"slide","id":"sl/hgzapcr6","slide":13,"title":"REGULATÓRIO","textShapes":10}
+{"kind":"textbox","id":"sh/q50nydsj","slide":13,"name":"Text 0","text":"REGULATÓRIO","textPreview":"REGULATÓRIO","textChars":11,"textLines":1,"bbox":[57.6,38.4,1164.48,38.4]}
+{"kind":"textbox","id":"sh/bq9orito","slide":13,"name":"Text 1","text":"O momento é agora","textPreview":"O momento é agora","textChars":17,"textLines":1,"bbox":[57.6,72,1164.48,86.4]}
+{"kind":"shape","id":"sh/o3i5w3ad","slide":13,"name":"Shape 2","bbox":[57.6,192,369.6,326.4]}
+{"kind":"shape","id":"sh/p4r6p8by","slide":13,"name":"Shape 3","bbox":[57.6,192,369.6,11.52]}
+{"kind":"textbox","id":"sh/21gnuts7","slide":13,"name":"Text 4","text":"MED 2.0","textPreview":"MED 2.0","textChars":7,"textLines":1,"bbox":[86.4,220.8,312,57.6]}
+{"kind":"textbox","id":"sh/32ponyts","slide":13,"name":"Text 5","text":"Obrigatório desde fev/2026. Responsabilidade direta do banco na devolução em casos de fraude no Pix.","textPreview":"Obrigatório desde fev/2026. Responsabilidade direta do banco na devolução em casos de fraude no Pix.","textChars":100,"textLines":1,"bbox":[86.4,283.2,312,220.8]}
+{"kind":"shape","id":"sh/gzy5s3a1","slide":13,"name":"Shape 6","bbox":[456,192,369.6,326.4]}
+{"kind":"shape","id":"sh/1076lobm","slide":13,"name":"Shape 7","bbox":[456,192,369.6,11.52]}
+{"kind":"textbox","id":"sh/hcfy9k3u","slide":13,"name":"Text 8","text":"Pix Automático","textPreview":"Pix Automático","textChars":14,"textLines":1,"bbox":[484.8,220.8,312,57.6]}
+{"kind":"textbox","id":"sh/gb6x0zm9","slide":13,"name":"Text 9","text":"Lançado pelo BC em jun/2025, obrigatório desde out/2025 — base real para a automação de recorrência do EPC.","textPreview":"Lançado pelo BC em jun/2025, obrigatório desde out/2025 — base real para a automação de recorrência do EPC.","textChars":107,"textLines":1,"bbox":[484.8,283.2,312,220.8]}
+{"kind":"shape","id":"sh/vaxg7ulo","slide":13,"name":"Shape 10","bbox":[854.4,192,369.6,326.4]}
+{"kind":"shape","id":"sh/u9ofyp43","slide":13,"name":"Shape 11","bbox":[854.4,192,369.6,11.52]}
+{"kind":"textbox","id":"sh/t8fy5k3i","slide":13,"name":"Text 12","text":"Suitability (CVM)","textPreview":"Suitability (CVM)","textChars":17,"textLines":1,"bbox":[883.2,220.8,312,57.6]}
+{"kind":"textbox","id":"sh/876xwfmx","slide":13,"name":"Text 13","text":"Sugestão de investimento restrita a produtos de baixíssimo risco; projeção sempre estimada, nunca promessa.","textPreview":"Sugestão de investimento restrita a produtos de baixíssimo risco; projeção sempre estimada, nunca promessa.","textChars":107,"textLines":1,"bbox":[883.2,283.2,312,220.8]}
+{"kind":"shape","id":"sh/7mdg3als","slide":13,"name":"Shape 14","bbox":[57.6,552,1164.48,86.4]}
+{"kind":"textbox","id":"sh/6l4fu547","slide":13,"name":"Text 15","text":"O Itaú tem incentivo jurídico, reputacional e de retenção para investir na orquestração completa.","textPreview":"O Itaú tem incentivo jurídico, reputacional e de retenção para investir na orquestração completa.","textChars":97,"textLines":1,"bbox":[86.4,559.68,1106.88,72]}
+{"kind":"textbox","id":"sh/lkvy103m","slide":13,"name":"Text 16","text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[1212.48,672,48,33.6]}
+{"kind":"notes","id":"nt/hgzapcr6","slide":13,"text":"Timing regulatório favorável: MED 2.0 endurece devolução, Pix Automático já é a base real da automação que propomos, e suitability CVM está explicitamente respeitada — não prometemos rendimento, sugerimos só produto de baixo risco."}
+{"kind":"slide","id":"sl/6lsnupw7","slide":14,"title":"GOVERNANÇA E CONFORMIDADE","textShapes":13}
+{"kind":"textbox","id":"sh/xc7eds76","slide":14,"name":"Text 0","text":"GOVERNANÇA E CONFORMIDADE","textPreview":"GOVERNANÇA E CONFORMIDADE","textChars":25,"textLines":1,"bbox":[57.6,38.4,1164.48,38.4]}
+{"kind":"textbox","id":"sh/wbydknq1","slide":14,"name":"Text 1","text":"Regras que o EPC nunca quebra","textPreview":"Regras que o EPC nunca quebra","textChars":29,"textLines":1,"bbox":[57.6,72,1164.48,86.4]}
+{"kind":"shape","id":"sh/jepwf2pc","slide":14,"name":"Shape 2","bbox":[57.6,192,580.8,134.4]}
+{"kind":"textbox","id":"sh/idgvmx8r","slide":14,"name":"Text 3","text":"Suitability","textPreview":"Suitability","textChars":11,"textLines":1,"bbox":[81.6,203.52,532.8,38.4]}
+{"kind":"textbox","id":"sh/5grehs7i","slide":14,"name":"Text 4","text":"Só sugere produtos de baixíssimo risco e liquidez diária. Produto mais complexo fica fora do escopo automático.","textPreview":"Só sugere produtos de baixíssimo risco e liquidez diária. Produto mais complexo fica fora do escopo automático.","textChars":111,"textLines":1,"bbox":[81.6,244.8,532.8,76.8]}
+{"kind":"shape","id":"sh/kfidonqx","slide":14,"name":"Shape 5","bbox":[667.2,192,580.8,134.4]}
+{"kind":"textbox","id":"sh/zi5c3y98","slide":14,"name":"Text 6","text":"Projeção, não promessa","textPreview":"Projeção, não promessa","textChars":22,"textLines":1,"bbox":[691.2,203.52,532.8,38.4]}
+{"kind":"textbox","id":"sh/ehwvat8n","slide":14,"name":"Text 7","text":"Toda estimativa de rendimento é ilustrativa, com disclaimer — nunca valor garantido.","textPreview":"Toda estimativa de rendimento é ilustrativa, com disclaimer — nunca valor garantido.","textChars":84,"textLines":1,"bbox":[691.2,244.8,532.8,76.8]}
+{"kind":"shape","id":"sh/c3e1gjyd","slide":14,"name":"Shape 8","bbox":[57.6,345.6,580.8,134.4]}
+{"kind":"textbox","id":"sh/x4ni9ofy","slide":14,"name":"Text 9","text":"Consentimento granular","textPreview":"Consentimento granular","textChars":22,"textLines":1,"bbox":[81.6,357.12,532.8,38.4]}
+{"kind":"textbox","id":"sh/a1wze9g7","slide":14,"name":"Text 10","text":"Cliente autoriza por categoria de análise comportamental — não um checkbox único genérico.","textPreview":"Cliente autoriza por categoria de análise comportamental — não um checkbox único genérico.","textChars":90,"textLines":1,"bbox":[81.6,398.4,532.8,76.8]}
+{"kind":"shape","id":"sh/b2507exs","slide":14,"name":"Shape 11","bbox":[667.2,345.6,580.8,134.4]}
+{"kind":"textbox","id":"sh/kre1k3y9","slide":14,"name":"Text 12","text":"Frequência controlada","textPreview":"Frequência controlada","textChars":21,"textLines":1,"bbox":[691.2,357.12,532.8,38.4]}
+{"kind":"textbox","id":"sh/ls7idofu","slide":14,"name":"Text 13","text":"Máximo 1 notificação proativa por categoria de padrão por dia, com opt-out — evita fadiga.","textPreview":"Máximo 1 notificação proativa por categoria de padrão por dia, com opt-out — evita fadiga.","textChars":90,"textLines":1,"bbox":[691.2,398.4,532.8,76.8]}
+{"kind":"shape","id":"sh/y5wjitgj","slide":14,"name":"Shape 14","bbox":[57.6,499.2,580.8,134.4]}
+{"kind":"textbox","id":"sh/z650byxo","slide":14,"name":"Text 15","text":"Conteúdo pré-aprovado","textPreview":"Conteúdo pré-aprovado","textChars":21,"textLines":1,"bbox":[81.6,510.72,532.8,38.4]}
+{"kind":"textbox","id":"sh/0buh8zy5","slide":14,"name":"Text 16","text":"Pílulas de conhecimento são um conjunto fixo, curado — nunca geradas ao vivo pelo LLM.","textPreview":"Pílulas de conhecimento são um conjunto fixo, curado — nunca geradas ao vivo pelo LLM.","textChars":86,"textLines":1,"bbox":[81.6,552,532.8,76.8]}
+{"kind":"textbox","id":"sh/1w3i14fq","slide":14,"name":"Text 17","text":"14","textPreview":"14","textChars":2,"textLines":1,"bbox":[1212.48,672,48,33.6]}
+{"kind":"notes","id":"nt/6lsnupw7","slide":14,"text":"Governança explícita: suitability respeitada, nunca prometemos rendimento, consentimento é granular por categoria, notificação tem teto diário, e conteúdo educacional é pré-aprovado, não gerado ao vivo. Isso é o que separa um protótipo ingênuo de uma proposta que um banco pode realmente levar adiante."}
+{"kind":"slide","id":"sl/vaxsvy10","slide":15,"title":"PLANO DE IMPLEMENTAÇÃO","textShapes":14}
+{"kind":"textbox","id":"sh/547mhg3m","slide":15,"name":"Text 0","text":"PLANO DE IMPLEMENTAÇÃO","textPreview":"PLANO DE IMPLEMENTAÇÃO","textChars":22,"textLines":1,"bbox":[57.6,38.4,1164.48,38.4]}
+{"kind":"textbox","id":"sh/k3y5ov21","slide":15,"name":"Text 1","text":"Duas propostas, dois apetites de inovação","textPreview":"Duas propostas, dois apetites de inovação","textChars":41,"textLines":1,"bbox":[57.6,72,1164.48,86.4]}
+{"kind":"shape","id":"sh/76p4jqls","slide":15,"name":"Shape 2","bbox":[57.6,187.2,566.4,374.4]}
+{"kind":"shape","id":"sh/65gnqlk7","slide":15,"name":"Shape 3","bbox":[57.6,187.2,566.4,11.52]}
+{"kind":"textbox","id":"sh/t87ml0ji","slide":15,"name":"Text 4","text":"CONSERVADORA — CHAT NO APP ITAÚ","textPreview":"CONSERVADORA — CHAT NO APP ITAÚ","textChars":31,"textLines":1,"bbox":[86.4,211.2,508.8,38.4]}
+{"kind":"textbox","id":"sh/s7y5sv2x","slide":15,"name":"Text 5","text":"• Ambiente 100% controlado pelo banco — mesma sessão autenticada","textPreview":"• Ambiente 100% controlado pelo banco — mesma sessão autenticada","textChars":64,"textLines":1,"bbox":[86.4,264,508.8,65.28]}
+{"kind":"textbox","id":"sh/na5476l8","slide":15,"name":"Text 6","text":"• Execução completa: qualquer ação confirma na própria conversa","textPreview":"• Execução completa: qualquer ação confirma na própria conversa","textChars":63,"textLines":1,"bbox":[86.4,333.12,508.8,65.28]}
+{"kind":"textbox","id":"sh/m9c3e1kn","slide":15,"name":"Text 7","text":"• Sem dependência de aprovação de terceiros","textPreview":"• Sem dependência de aprovação de terceiros","textChars":43,"textLines":1,"bbox":[86.4,402.24,508.8,65.28]}
+{"kind":"textbox","id":"sh/wrm9kvep","slide":15,"name":"Text 8","text":"• Menor risco regulatório — caminho de adoção mais imediata","textPreview":"• Menor risco regulatório — caminho de adoção mais imediata","textChars":59,"textLines":1,"bbox":[86.4,471.36,508.8,65.28]}
+{"kind":"shape","id":"sh/hsvat0fa","slide":15,"name":"Shape 9","bbox":[652.8,187.2,566.4,374.4]}
+{"kind":"shape","id":"sh/upkrilwj","slide":15,"name":"Shape 10","bbox":[652.8,187.2,566.4,11.52]}
+{"kind":"textbox","id":"sh/vqdsrqx4","slide":15,"name":"Text 11","text":"ARROJADA — BOT EM MENSAGEIRO (TELEGRAM → WHATSAPP)","textPreview":"ARROJADA — BOT EM MENSAGEIRO (TELEGRAM → WHATSAPP)","textChars":50,"textLines":1,"bbox":[681.6,211.2,508.8,38.4]}
+{"kind":"textbox","id":"sh/4vm9ovel","slide":15,"name":"Text 12","text":"• Encontra o cliente onde ele já passa o dia","textPreview":"• Encontra o cliente onde ele já passa o dia","textChars":44,"textLines":1,"bbox":[681.6,264,508.8,65.28]}
+{"kind":"textbox","id":"sh/5wvax0f6","slide":15,"name":"Text 13","text":"• Protótipo em Telegram representa o padrão de WhatsApp em produção","textPreview":"• Protótipo em Telegram representa o padrão de WhatsApp em produção","textChars":67,"textLines":1,"bbox":[681.6,333.12,508.8,65.28]}
+{"kind":"textbox","id":"sh/it4rm5wv","slide":15,"name":"Text 14","text":"• Ação de dinheiro sempre reabre o app via deep link, com biometria","textPreview":"• Ação de dinheiro sempre reabre o app via deep link, com biometria","textChars":67,"textLines":1,"bbox":[681.6,402.24,508.8,65.28]}
+{"kind":"textbox","id":"sh/judsvqxg","slide":15,"name":"Text 15","text":"• WhatsApp em produção depende de aprovação comercial da Meta","textPreview":"• WhatsApp em produção depende de aprovação comercial da Meta","textChars":61,"textLines":1,"bbox":[681.6,471.36,508.8,65.28]}
+{"kind":"shape","id":"sh/0z29cbyh","slide":15,"name":"Shape 16","bbox":[57.6,580.8,1164.48,86.4]}
+{"kind":"textbox","id":"sh/l0bqlgf2","slide":15,"name":"Text 17","text":"Mesma arquitetura do APF nos dois casos — muda só onde a conversa acontece. A escolha cabe ao Itaú.","textPreview":"Mesma arquitetura do APF nos dois casos — muda só onde a conversa acontece. A escolha cabe ao Itaú.","textChars":99,"textLines":1,"bbox":[86.4,588.48,1106.88,72]}
+{"kind":"textbox","id":"sh/1kjyt83e","slide":15,"name":"Text 18","text":"15","textPreview":"15","textChars":2,"textLines":1,"bbox":[1212.48,672,48,33.6]}
+{"kind":"notes","id":"nt/vaxsvy10","slide":15,"text":"Construímos duas propostas funcionais, não uma só. Conservadora dentro do app, arrojada num bot de mensageiro — a mesma arquitetura por trás das duas."}
+{"kind":"slide","id":"sl/gny5sjyp","slide":16,"title":"PROTÓTIPOS — AS DUAS PROPOSTAS","textShapes":10}
+{"kind":"textbox","id":"sh/8z2h8bq1","slide":16,"name":"Text 0","text":"PROTÓTIPOS — AS DUAS PROPOSTAS","textPreview":"PROTÓTIPOS — AS DUAS PROPOSTAS","textChars":30,"textLines":1,"bbox":[76.8,86.4,1126.08,48]}
+{"kind":"textbox","id":"sh/9kby1g7m","slide":16,"name":"Text 1","text":"O que vocês vão ver agora","textPreview":"O que vocês vão ver agora","textChars":25,"textLines":1,"bbox":[76.8,134.4,1126.08,86.4]}
+{"kind":"shape","id":"sh/ytkf2h8j","slide":16,"name":"Shape 2","bbox":[76.8,259.2,1126.08,81.6]}
+{"kind":"textbox","id":"sh/zutgvm94","slide":16,"name":"Text 3","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[96,259.2,57.6,81.6]}
+{"kind":"textbox","id":"sh/kv2h4rqp","slide":16,"name":"Text 4","text":"Conservadora — chat no app (Flutter): pagamento respondido dentro do próprio app","textPreview":"Conservadora — chat no app (Flutter): pagamento respondido dentro do próprio app","textChars":80,"textLines":1,"bbox":[163.2,259.2,1020.48,81.6]}
+{"kind":"shape","id":"sh/lwbyxwra","slide":16,"name":"Shape 5","bbox":[76.8,360,1126.08,81.6]}
+{"kind":"textbox","id":"sh/ip4zel83","slide":16,"name":"Text 6","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[96,360,57.6,81.6]}
+{"kind":"textbox","id":"sh/3qdg7qpo","slide":16,"name":"Text 7","text":"Arrojada — bot no Telegram, representando WhatsApp: o mesmo fluxo, onde o cliente já está","textPreview":"Arrojada — bot no Telegram, representando WhatsApp: o mesmo fluxo, onde o cliente já está","textChars":89,"textLines":1,"bbox":[163.2,360,1020.48,81.6]}
+{"kind":"shape","id":"sh/fm1gzq5o","slide":16,"name":"Shape 8","bbox":[76.8,460.8,1126.08,81.6]}
+{"kind":"textbox","id":"sh/e1sf65o3","slide":16,"name":"Text 9","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[96,460.8,57.6,81.6]}
+{"kind":"textbox","id":"sh/1ojy10ne","slide":16,"name":"Text 10","text":"Comparador de pagamento em rich card, nos dois protótipos","textPreview":"Comparador de pagamento em rich card, nos dois protótipos","textChars":57,"textLines":1,"bbox":[163.2,460.8,1020.48,81.6]}
+{"kind":"shape","id":"sh/gnax8v6t","slide":16,"name":"Shape 11","bbox":[76.8,561.6,1126.08,81.6]}
+{"kind":"textbox","id":"sh/nqlg3a5k","slide":16,"name":"Text 12","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[96,561.6,57.6,81.6]}
+{"kind":"textbox","id":"sh/2pcfa5oz","slide":16,"name":"Text 13","text":"EPC ao vivo: detecção de padrão de aluguel e sugestão de Pix Automático, com dados sintéticos representativos","textPreview":"EPC ao vivo: detecção de padrão de aluguel e sugestão de Pix Automático, com dados sintéticos representativos","textChars":109,"textLines":1,"bbox":[163.2,561.6,1020.48,81.6]}
+{"kind":"notes","id":"nt/gny5sjyp","slide":16,"text":"Demonstração ao vivo das duas propostas, incluindo o EPC detectando um padrão com dados sintéticos realistas."}
+{"kind":"slide","id":"sl/14bup87q","slide":17,"title":"FECHAMENTO DO CASO","textShapes":12}
+{"kind":"textbox","id":"sh/1c7e50ni","slide":17,"name":"Text 0","text":"FECHAMENTO DO CASO","textPreview":"FECHAMENTO DO CASO","textChars":18,"textLines":1,"bbox":[57.6,38.4,1164.48,38.4]}
+{"kind":"textbox","id":"sh/gbedwfmx","slide":17,"name":"Text 1","text":"Por que o Itaú vence com isso","textPreview":"Por que o Itaú vence com isso","textChars":29,"textLines":1,"bbox":[57.6,72,1164.48,86.4]}
+{"kind":"shape","id":"sh/rm5czq50","slide":17,"name":"Shape 2","bbox":[57.6,192,561.6,182.4]}
+{"kind":"textbox","id":"sh/6lwvql4v","slide":17,"name":"Text 3","text":"Retenção","textPreview":"Retenção","textChars":8,"textLines":1,"bbox":[86.4,211.2,504,48]}
+{"kind":"textbox","id":"sh/t8ne10n6","slide":17,"name":"Text 4","text":"Até 300 mil clientes jovens por ano protegidos do churn por fraude (piso conservador).","textPreview":"Até 300 mil clientes jovens por ano protegidos do churn por fraude (piso conservador).","textChars":86,"textLines":1,"bbox":[86.4,264,504,96]}
+{"kind":"shape","id":"sh/snedsvml","slide":17,"name":"Shape 5","bbox":[648,192,561.6,182.4]}
+{"kind":"textbox","id":"sh/jilcvq54","slide":17,"name":"Text 6","text":"Engajamento","textPreview":"Engajamento","textChars":11,"textLines":1,"bbox":[676.8,211.2,504,48]}
+{"kind":"textbox","id":"sh/ihcvml4j","slide":17,"name":"Text 7","text":"Produtos de margem mais alta via sugestão contextual e automação — não marketing push.","textPreview":"Produtos de margem mais alta via sugestão contextual e automação — não marketing push.","textChars":86,"textLines":1,"bbox":[676.8,264,504,96]}
+{"kind":"shape","id":"sh/4by9or6l","slide":17,"name":"Shape 8","bbox":[57.6,398.4,561.6,182.4]}
+{"kind":"textbox","id":"sh/pc7qhwn6","slide":17,"name":"Text 9","text":"Risco jurídico e regulatório","textPreview":"Risco jurídico e regulatório","textChars":28,"textLines":1,"bbox":[86.4,417.6,504,48]}
+{"kind":"textbox","id":"sh/29grm1of","slide":17,"name":"Text 10","text":"Mitigação de responsabilidade objetiva; suitability e frequência de notificação já governadas.","textPreview":"Mitigação de responsabilidade objetiva; suitability e frequência de notificação já governadas.","textChars":94,"textLines":1,"bbox":[86.4,470.4,504,96]}
+{"kind":"shape","id":"sh/3ap8fm50","slide":17,"name":"Shape 11","bbox":[648,398.4,561.6,182.4]}
+{"kind":"textbox","id":"sh/gnepkr69","slide":17,"name":"Text 12","text":"Antecipação real","textPreview":"Antecipação real","textChars":16,"textLines":1,"bbox":[676.8,417.6,504,48]}
+{"kind":"textbox","id":"sh/honqdwnu","slide":17,"name":"Text 13","text":"EPC entrega o que o edital pede literalmente: antecipar necessidades, não só responder.","textPreview":"EPC entrega o que o edital pede literalmente: antecipar necessidades, não só responder.","textChars":87,"textLines":1,"bbox":[676.8,470.4,504,96]}
+{"kind":"shape","id":"sh/ulw7ihoj","slide":17,"name":"Shape 14","bbox":[57.6,628.8,1164.48,86.4]}
+{"kind":"textbox","id":"sh/fm58bm54","slide":17,"name":"Text 15","text":"Não é mais um app que você usa. É um agente que aprende com você, avisa antes e te ensina no momento certo.","textPreview":"Não é mais um app que você usa. É um agente que aprende com você, avisa antes e te ensina no momento certo.","textChars":107,"textLines":1,"bbox":[86.4,636.48,1106.88,72]}
+{"kind":"textbox","id":"sh/0ji9wb6t","slide":17,"name":"Text 16","text":"17","textPreview":"17","textChars":2,"textLines":1,"bbox":[1212.48,672,48,33.6]}
+{"kind":"notes","id":"nt/14bup87q","slide":17,"text":"Retenção, engajamento, risco jurídico mitigado, e antecipação real — o que o edital pede no texto. Conectar o que o Itaú já tem. Antecipar o que ninguém mais consegue."}
+{"kind":"slide","id":"sl/y5wne50z","slide":18,"title":"APÊNDICE — BACKUP","textShapes":13}
+{"kind":"textbox","id":"sh/wrelszu9","slide":18,"name":"Text 0","text":"APÊNDICE — BACKUP","textPreview":"APÊNDICE — BACKUP","textChars":17,"textLines":1,"bbox":[57.6,38.4,1164.48,38.4]}
+{"kind":"textbox","id":"sh/hsn2l4bu","slide":18,"name":"Text 1","text":"Perguntas antecipadas da banca","textPreview":"Perguntas antecipadas da banca","textChars":30,"textLines":1,"bbox":[57.6,72,1164.48,86.4]}
+{"kind":"textbox","id":"sh/itw3upcf","slide":18,"name":"Text 2","text":"“O Itaú já tem Alerta Pix etc. para pessoa física?”","textPreview":"“O Itaú já tem Alerta Pix etc. para pessoa física?”","textChars":51,"textLines":1,"bbox":[57.6,192,576,52.8]}
+{"kind":"textbox","id":"sh/je5knut0","slide":18,"name":"Text 3","text":"O lançamento oficial de agosto de 2025 foi para PJ. Nossa proposta leva esse padrão ao PF.","textPreview":"O lançamento oficial de agosto de 2025 foi para PJ. Nossa proposta leva esse padrão ao PF.","textChars":90,"textLines":1,"bbox":[57.6,244.8,576,96]}
+{"kind":"textbox","id":"sh/4felwzu5","slide":18,"name":"Text 4","text":"“Como vocês evitam prometer rendimento de investimento?”","textPreview":"“Como vocês evitam prometer rendimento de investimento?”","textChars":56,"textLines":1,"bbox":[57.6,350.4,576,52.8]}
+{"kind":"textbox","id":"sh/5gnmp4bq","slide":18,"name":"Text 5","text":"Só sugerimos produtos de baixíssimo risco; toda projeção é estimativa com disclaimer, nunca promessa — suitability CVM respeitada.","textPreview":"Só sugerimos produtos de baixíssimo risco; toda projeção é estimativa com disclaimer, nunca promessa — suitability CVM respeitada.","textChars":130,"textLines":1,"bbox":[57.6,403.2,576,96]}
+{"kind":"textbox","id":"sh/6hw3y9sb","slide":18,"name":"Text 6","text":"“O agente não vai virar spam de notificação?”","textPreview":"“O agente não vai virar spam de notificação?”","textChars":45,"textLines":1,"bbox":[57.6,508.8,576,52.8]}
+{"kind":"textbox","id":"sh/rip4retw","slide":18,"name":"Text 7","text":"Máximo 1 notificação proativa por categoria de padrão por dia, com opt-out granular.","textPreview":"Máximo 1 notificação proativa por categoria de padrão por dia, com opt-out granular.","textChars":84,"textLines":1,"bbox":[57.6,561.6,576,96]}
+{"kind":"textbox","id":"sh/fapkr6pw","slide":18,"name":"Text 8","text":"“Os dados do protótipo são reais?”","textPreview":"“Os dados do protótipo são reais?”","textChars":34,"textLines":1,"bbox":[667.2,192,576,52.8]}
+{"kind":"textbox","id":"sh/upg3i18r","slide":18,"name":"Text 9","text":"São dados sintéticos realistas, gerados para representar o comportamento típico do público-alvo — não há acesso a API de produção do Itaú, o que exigiria credenciamento formal como instituição participante.","textPreview":"São dados sintéticos realistas, gerados para representar o comportamento típico do público-alvo — não há acesso a API de produção do Itaú...","textChars":206,"textLines":1,"bbox":[667.2,244.8,576,96]}
+{"kind":"textbox","id":"sh/1cr2tg72","slide":18,"name":"Text 10","text":"“Por que módulos e não agentes autônomos?”","textPreview":"“Por que módulos e não agentes autônomos?”","textChars":42,"textLines":1,"bbox":[667.2,350.4,576,52.8]}
+{"kind":"textbox","id":"sh/gbylkbqh","slide":18,"name":"Text 11","text":"É mais honesto tecnicamente: um único motor com roteamento de intenção e tool-calling, não processos autônomos independentes.","textPreview":"É mais honesto tecnicamente: um único motor com roteamento de intenção e tool-calling, não processos autônomos independentes.","textChars":125,"textLines":1,"bbox":[667.2,403.2,576,96]}
+{"kind":"textbox","id":"sh/7mpknmp0","slide":18,"name":"Text 12","text":"18","textPreview":"18","textChars":2,"textLines":1,"bbox":[1212.48,672,48,33.6]}
+{"kind":"notes","id":"nt/y5wne50z","slide":18,"text":"Slide de apoio — usar apenas se a pergunta vier na rodada de perguntas."}

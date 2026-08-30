@@ -1,0 +1,72 @@
+[
+  {
+    "id": "pill_001",
+    "titulo": "O que é liquidez diária?",
+    "texto": "Produtos com liquidez diária permitem resgatar o dinheiro a qualquer momento, sem perda de rendimento. Exemplos comuns: CDB com liquidez diária e Tesouro Selic.",
+    "categoria": "investimentos",
+    "aprovado_compliance": true
+  },
+  {
+    "id": "pill_002",
+    "titulo": "Diferença entre CDB e Poupança",
+    "texto": "O CDB costuma render mais que a poupança e é garantido pelo FGC até R$ 250 mil por CPF e por instituição. A poupança tem isenção de IR, mas rendimento menor.",
+    "categoria": "investimentos",
+    "aprovado_compliance": true
+  },
+  {
+    "id": "pill_003",
+    "titulo": "Por que o Tesouro Selic é considerado seguro?",
+    "texto": "É um título público emitido pelo Tesouro Nacional. O risco de crédito é o do governo federal. Tem liquidez diária e acompanha a taxa Selic.",
+    "categoria": "investimentos",
+    "aprovado_compliance": true
+  },
+  {
+    "id": "pill_004",
+    "titulo": "O que é perfil de investidor (suitability)?",
+    "texto": "É a análise obrigatória pela Resolução CVM 30 que define quais produtos são adequados ao seu perfil de risco (conservador, moderado ou arrojado).",
+    "categoria": "compliance",
+    "aprovado_compliance": true
+  },
+  {
+    "id": "pill_005",
+    "titulo": "Como funciona o Pix recorrente?",
+    "texto": "Você pode agendar transferências Pix para o mesmo valor e favorecido em datas fixas. Ideal para aluguel, mensalidades e contas fixas.",
+    "categoria": "pagamentos",
+    "aprovado_compliance": true
+  },
+  {
+    "id": "pill_006",
+    "titulo": "Dica de organização financeira",
+    "texto": "Separe sua renda em: 50% necessidades, 30% desejos e 20% poupança/investimento. Ajuste conforme sua realidade.",
+    "categoria": "educacao",
+    "aprovado_compliance": true
+  },
+  {
+    "id": "pill_007",
+    "titulo": "Atenção com boletos",
+    "texto": "Sempre confira o beneficiário e o valor antes de pagar. Em caso de dúvida, use o app do banco para validar o código de barras.",
+    "categoria": "seguranca",
+    "aprovado_compliance": true
+  },
+  {
+    "id": "pill_008",
+    "titulo": "Saldo ocioso",
+    "texto": "Dinheiro parado em conta corrente rende pouco. Considere produtos de liquidez diária para o valor que você não precisa usar nos próximos dias.",
+    "categoria": "investimentos",
+    "aprovado_compliance": true
+  },
+  {
+    "id": "pill_009",
+    "titulo": "IR em investimentos de renda fixa",
+    "texto": "A alíquota de Imposto de Renda em CDBs e Tesouro segue tabela regressiva: 22,5% até 180 dias, caindo até 15% após 720 dias.",
+    "categoria": "investimentos",
+    "aprovado_compliance": true
+  },
+  {
+    "id": "pill_010",
+    "titulo": "FGC – Fundo Garantidor de Créditos",
+    "texto": "Protege depósitos e aplicações (CDB, LCI, LCA etc.) até R$ 250 mil por CPF em cada instituição financeira. É uma segurança importante.",
+    "categoria": "seguranca",
+    "aprovado_compliance": true
+  }
+]

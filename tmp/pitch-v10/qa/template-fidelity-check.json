@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "checkedAt": "2026-08-30T00:14:26.953Z",
+  "workspace": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10",
+  "finalPptx": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/deliverables/deck-pitch-inovacamp-v10.pptx",
+  "starterPptx": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter.pptx",
+  "mapPath": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-frame-map.json",
+  "starterLayoutDir": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/template-starter-layout",
+  "finalLayoutDir": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10/final",
+  "editDir": "/Users/mgolegario/bcc/itau_inovacamp/apf-hackathon/tmp/pitch-v10",
+  "issueCount": 0,
+  "issues": []
+}

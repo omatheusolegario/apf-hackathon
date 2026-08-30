@@ -1,0 +1,7 @@
+Deck 16:9 com 18 slides, paleta navy/laranja/branco, títulos no topo e rodapé numérico.
+Todos os slides serão preservados um-a-um; somente textos existentes serão reescritos.
+Tipografia, caixas, alinhamento, formas, masters, layouts e notas existentes permanecem.
+Slides 7 e 9: remover alegações não comprovadas de economia e explicitar impacto/premissas.
+Slides 15 e 16: refletir a integração Telegram real, deep link, persistência, biometria e boleto por imagem.
+Slide 18: substituir resposta temporalmente frágil por evidência do que está integrado.
+
