@@ -1528,25 +1528,28 @@ class _InvestmentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final suggestedValue = data['valor_sugerido'];
     return _CardShell(
       title: title,
       icon: Icons.trending_up_rounded,
       accent: const Color(0xFF00695C),
-      actions: [
-        FilledButton(
-          onPressed: () {
-            onAction?.call({
-              'type': 'apply_investment',
-              'produto': data['produto'] ?? title,
-              'produto_id': data['produto_id'],
-              'valor': data['valor_sugerido'] ?? 800,
-            });
-          },
-          style:
-              FilledButton.styleFrom(backgroundColor: const Color(0xFFFF6200)),
-          child: Text('Aplicar R\$ ${_fmt(data['valor_sugerido'] ?? 800)}'),
-        ),
-      ],
+      actions: suggestedValue == null
+          ? null
+          : [
+              FilledButton(
+                onPressed: () {
+                  onAction?.call({
+                    'type': 'apply_investment',
+                    'produto': data['produto'] ?? title,
+                    'produto_id': data['produto_id'],
+                    'valor': suggestedValue,
+                  });
+                },
+                style: FilledButton.styleFrom(
+                    backgroundColor: const Color(0xFFFF6200)),
+                child: Text('Aplicar R\$ ${_fmt(suggestedValue)}'),
+              ),
+            ],
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

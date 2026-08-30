@@ -118,7 +118,8 @@ INTENT_PATTERNS: Dict[str, List[str]] = {
     "investir": [
         r"investir", r"investimento", r"aplicar", r"rendimento",
         r"\bcdb\b", r"tesouro", r"poupan[cç]a", r"saldo\s+ocioso",
-        r"dinheiro\s+parado",
+        r"dinheiro\s+parado", r"guard(?:ar|o|e|a)\b",
+        r"(?:todo|restante|resto)\s+(?:do\s+)?saldo",
     ],
     "saldo": [
         r"\bsaldo\b", r"quanto\s+tenho", r"meu\s+dinheiro",
@@ -185,6 +186,44 @@ def _extract_valor(text: str, default: float = 187.40) -> float:
         return float(raw)
     except ValueError:
         return default
+
+
+def _resolve_investment_amount(text: str, saldo_disponivel: float) -> Dict[str, Any]:
+    """Interpreta o valor solicitado sem confundi-lo com a reserva sugerida.
+
+    Pedidos explícitos sempre prevalecem. Na ausência deles, a recomendação
+    preserva R$ 2.000,00; se não houver excedente, nenhuma quantia é inventada.
+    """
+    text_l = text.lower().strip()
+    saldo = max(0.0, round(float(saldo_disponivel or 0), 2))
+    all_balance = bool(re.search(
+        r"\b(?:todo|tudo|restante|resto)\b.*\b(?:saldo|dinheiro)\b|"
+        r"\b(?:saldo|dinheiro)\b.*\b(?:todo|tudo|restante|resto)\b",
+        text_l,
+    ))
+    if all_balance:
+        return {"valor": saldo, "origem": "saldo_integral", "explicito": True}
+
+    number = re.search(
+        r"(?:r\$\s*)?(\d{1,3}(?:\.\d{3})*(?:,\d{1,2})?|\d+(?:[.,]\d{1,2})?)"
+        r"\s*(mil)?\b",
+        text_l,
+    )
+    if number:
+        raw = number.group(1)
+        if "," in raw:
+            raw = raw.replace(".", "").replace(",", ".")
+        elif re.fullmatch(r"\d{1,3}\.\d{3}", raw):
+            raw = raw.replace(".", "")
+        valor = float(raw) * (1000 if number.group(2) else 1)
+        return {"valor": round(valor, 2), "origem": "valor_informado", "explicito": True}
+
+    excedente = max(0.0, round(saldo - 2000.0, 2))
+    return {
+        "valor": excedente if excedente > 0 else None,
+        "origem": "excedente_sugerido",
+        "explicito": False,
+    }
 
 
 # ---------- Grounding ----------
@@ -531,13 +570,50 @@ async def process_message(
                 "data": gate if isinstance(gate, dict) else {"mensagem": safe},
             })
         else:
-            ocioso = max(0, float(saldo.get("disponivel") or 0) - 2000)
-            valor_sugerido = round(ocioso, 2) if ocioso > 100 else 800.0
-            safe = (
-                f"Com base no seu saldo, há cerca de R$ {_fmt_brl(ocioso)} acima de uma reserva de segurança. "
-                f"Sugestão alinhada ao seu perfil ({gate.get('perfil')}): {gate.get('produto')}. "
-                f"{gate.get('disclaimer', '')}"
-            )
+            saldo_disponivel = float(saldo.get("disponivel") or 0)
+            amount = _resolve_investment_amount(text, saldo_disponivel)
+            valor_sugerido = amount["valor"]
+            if amount["origem"] == "saldo_integral":
+                if not valor_sugerido:
+                    safe = "Não há saldo disponível para aplicar neste momento."
+                    valor_sugerido = None
+                else:
+                    safe = (
+                        f"Você pediu para aplicar **todo o saldo disponível**, no valor de "
+                        f"R$ {_fmt_brl(float(valor_sugerido))}.\n\n"
+                        "- Saldo após a aplicação: **R$ 0,00**\n"
+                        "- Confira o valor antes de confirmar."
+                    )
+            elif amount["origem"] == "valor_informado":
+                valor = float(valor_sugerido or 0)
+                if valor > saldo_disponivel:
+                    safe = (
+                        f"O valor solicitado, **R$ {_fmt_brl(valor)}**, supera o saldo "
+                        f"disponível de **R$ {_fmt_brl(saldo_disponivel)}**.\n\n"
+                        "Informe um valor menor para continuar."
+                    )
+                    valor_sugerido = None
+                else:
+                    safe = (
+                        f"Você pediu uma aplicação de **R$ {_fmt_brl(valor)}** em "
+                        f"{gate.get('produto')}.\n\n"
+                        f"- Saldo após a aplicação: **R$ {_fmt_brl(saldo_disponivel - valor)}**\n"
+                        "- Confira o valor antes de confirmar."
+                    )
+            elif valor_sugerido is None:
+                safe = (
+                    "Seu saldo disponível não possui valor acima da reserva de segurança "
+                    "de **R$ 2.000,00**.\n\n"
+                    "Por isso, não sugeri uma aplicação automática. Se quiser investir mesmo "
+                    "assim, informe o valor exato ou peça para aplicar todo o saldo."
+                )
+            else:
+                safe = (
+                    f"Há **R$ {_fmt_brl(float(valor_sugerido))}** acima da reserva de "
+                    "segurança de R$ 2.000,00.\n\n"
+                    f"Sugestão alinhada ao seu perfil ({gate.get('perfil')}): "
+                    f"{gate.get('produto')}. {gate.get('disclaimer', '')}"
+                )
             cards.append({
                 "type": "investment_suggestion",
                 "title": gate.get("produto", produto),
@@ -550,6 +626,7 @@ async def process_message(
                     "perfil": gate.get("perfil"),
                     "disclaimer": gate.get("disclaimer"),
                     "valor_sugerido": valor_sugerido,
+                    "valor_origem": amount["origem"],
                 },
             })
 
