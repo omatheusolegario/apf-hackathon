@@ -6,6 +6,8 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 import 'package:app_links/app_links.dart';
+import 'package:speech_to_text/speech_recognition_result.dart';
+import 'package:speech_to_text/speech_to_text.dart';
 import 'privacy_screen.dart';
 import 'app_config.dart';
 import 'device_auth.dart';
@@ -91,8 +93,13 @@ typedef CardActionCallback = void Function(Map<String, dynamic> action);
 
 class ChatScreen extends StatefulWidget {
   final String userId;
+  final bool connectOnStart;
 
-  const ChatScreen({super.key, required this.userId});
+  const ChatScreen({
+    super.key,
+    required this.userId,
+    this.connectOnStart = true,
+  });
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
@@ -109,10 +116,15 @@ class _ChatScreenState extends State<ChatScreen> {
   StreamSubscription<Uri>? _linkSubscription;
   final AppLinks _appLinks = AppLinks();
   final ImagePicker _imagePicker = ImagePicker();
+  final SpeechToText _speech = SpeechToText();
   int _connectionEpoch = 0;
   String? _pendingContinuationToken;
   bool _proactiveLoaded = false;
   bool _hasConnectedOnce = false;
+  bool _speechAvailable = false;
+  bool _speechInitializing = false;
+  bool _isListening = false;
+  String _speechPrefix = '';
 
   static String get wsUrl => AppConfig.webSocketUrl;
   static const String baseUrl = AppConfig.apiBaseUrl;
@@ -130,7 +142,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   void initState() {
     super.initState();
-    _connect();
+    if (widget.connectOnStart) _connect();
     _listenForLinks();
     _addSystemMessage(
       'Olá! Sou o Assistente Pessoal Financeiro do Itaú.\n'
@@ -255,6 +267,95 @@ class _ChatScreenState extends State<ChatScreen> {
     _scrollToBottom();
 
     _channel!.sink.add(jsonEncode({'text': text, 'user_id': widget.userId}));
+  }
+
+  Future<void> _toggleListening() async {
+    if (_sending || !_connected || _speechInitializing) return;
+
+    if (_isListening) {
+      await _speech.stop();
+      if (mounted) setState(() => _isListening = false);
+      return;
+    }
+
+    if (!_speechAvailable) {
+      setState(() => _speechInitializing = true);
+      bool available;
+      try {
+        available = await _speech.initialize(
+          onStatus: (status) {
+            if (!mounted) return;
+            setState(() => _isListening = status == 'listening');
+          },
+          onError: (error) {
+            if (!mounted) return;
+            setState(() => _isListening = false);
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text(
+                  'Não consegui ouvir. Verifique a permissão do microfone e tente novamente.',
+                ),
+              ),
+            );
+          },
+        );
+      } catch (_) {
+        available = false;
+      }
+      if (!mounted) return;
+      setState(() {
+        _speechAvailable = available;
+        _speechInitializing = false;
+      });
+      if (!available) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text(
+              'Reconhecimento de voz indisponível neste navegador ou dispositivo.',
+            ),
+          ),
+        );
+        return;
+      }
+    }
+
+    _speechPrefix = _controller.text.trim();
+    if (_speechPrefix.isNotEmpty) _speechPrefix = '$_speechPrefix ';
+
+    String? localeId;
+    final locales = await _speech.locales();
+    for (final locale in locales) {
+      final normalized = locale.localeId.toLowerCase().replaceAll('-', '_');
+      if (normalized == 'pt_br') {
+        localeId = locale.localeId;
+        break;
+      }
+    }
+
+    await _speech.listen(
+      onResult: _onSpeechResult,
+      listenOptions: SpeechListenOptions(
+        partialResults: true,
+        cancelOnError: true,
+        listenMode: ListenMode.dictation,
+        localeId: localeId,
+        listenFor: const Duration(seconds: 30),
+        pauseFor: const Duration(seconds: 3),
+      ),
+    );
+    if (mounted) setState(() => _isListening = _speech.isListening);
+  }
+
+  void _onSpeechResult(SpeechRecognitionResult result) {
+    if (!mounted) return;
+    final text = '$_speechPrefix${result.recognizedWords}'.trim();
+    setState(() {
+      _controller.value = TextEditingValue(
+        text: text,
+        selection: TextSelection.collapsed(offset: text.length),
+      );
+      if (result.finalResult) _isListening = false;
+    });
   }
 
   void _sendAction(Map<String, dynamic> action) {
@@ -556,6 +657,7 @@ class _ChatScreenState extends State<ChatScreen> {
     _connectionEpoch++;
     _retryTimer?.cancel();
     _linkSubscription?.cancel();
+    _speech.cancel();
     _channel?.sink.close();
     _controller.dispose();
     _scrollController.dispose();
@@ -719,6 +821,22 @@ class _ChatScreenState extends State<ChatScreen> {
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 ),
               ),
+            ),
+            IconButton(
+              onPressed: _sending || !_connected ? null : _toggleListening,
+              tooltip: _isListening
+                  ? 'Parar de ouvir'
+                  : 'Ditar mensagem (não diga senhas ou códigos)',
+              color: const Color(0xFFFF6200),
+              icon: _speechInitializing
+                  ? const SizedBox(
+                      width: 20,
+                      height: 20,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
+                  : Icon(
+                      _isListening ? Icons.mic_rounded : Icons.mic_none_rounded,
+                    ),
             ),
             const SizedBox(width: 8),
             Material(

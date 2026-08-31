@@ -27,6 +27,10 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Usamos a câmera para ler o boleto que você decidir enviar.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Usamos o microfone somente enquanto você dita uma mensagem ao assistente.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Convertemos sua fala em texto para preencher a mensagem que você poderá revisar antes de enviar.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Usamos a foto escolhida somente para extrair os dados do boleto.</string>
 	<key>NSFaceIDUsageDescription</key>
