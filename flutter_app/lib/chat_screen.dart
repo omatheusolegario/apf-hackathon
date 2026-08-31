@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
@@ -118,6 +119,7 @@ class _ChatScreenState extends State<ChatScreen> {
   final AppLinks _appLinks = AppLinks();
   final ImagePicker _imagePicker = ImagePicker();
   final SpeechToText _speech = SpeechToText();
+  final FlutterTts _tts = FlutterTts();
   int _connectionEpoch = 0;
   String? _pendingContinuationToken;
   bool _proactiveLoaded = false;
@@ -126,6 +128,8 @@ class _ChatScreenState extends State<ChatScreen> {
   bool _speechInitializing = false;
   bool _isListening = false;
   String _speechPrefix = '';
+  bool _ttsReady = false;
+  ChatMessage? _speakingMessage;
 
   static String get wsUrl => AppConfig.webSocketUrl;
   static const String baseUrl = AppConfig.apiBaseUrl;
@@ -270,6 +274,74 @@ class _ChatScreenState extends State<ChatScreen> {
     _channel!.sink.add(jsonEncode({'text': text, 'user_id': widget.userId}));
   }
 
+  Future<void> _ensureTtsReady() async {
+    if (_ttsReady) return;
+    _tts.setCompletionHandler(_finishSpeaking);
+    _tts.setCancelHandler(_finishSpeaking);
+    _tts.setErrorHandler((_) => _finishSpeaking(showError: true));
+    try {
+      await _tts.setLanguage('pt-BR');
+      await _tts.setSpeechRate(0.48);
+      await _tts.setPitch(1.0);
+      await _tts.setVolume(1.0);
+    } catch (_) {
+      // Alguns navegadores ignoram configurações de voz, mas ainda conseguem
+      // reproduzir usando a voz padrão do sistema.
+    }
+    _ttsReady = true;
+  }
+
+  void _finishSpeaking({bool showError = false}) {
+    if (!mounted) return;
+    setState(() => _speakingMessage = null);
+    if (showError) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content:
+              Text('Não foi possível reproduzir o áudio neste dispositivo.'),
+        ),
+      );
+    }
+  }
+
+  Future<void> _toggleMessageSpeech(ChatMessage message) async {
+    if (identical(_speakingMessage, message)) {
+      await _tts.stop();
+      _finishSpeaking();
+      return;
+    }
+
+    if (_isListening) {
+      await _speech.stop();
+      if (mounted) setState(() => _isListening = false);
+    }
+    await _tts.stop();
+    await _ensureTtsReady();
+    final text = _plainTextForSpeech(message.text);
+    if (text.isEmpty || !mounted) return;
+    setState(() => _speakingMessage = message);
+    try {
+      final result = await _tts.speak(text);
+      if (result != 1) _finishSpeaking(showError: true);
+    } catch (_) {
+      _finishSpeaking(showError: true);
+    }
+  }
+
+  String _plainTextForSpeech(String value) {
+    return value
+        .replaceAll(RegExp(r'```[\s\S]*?```'), ' ')
+        .replaceAllMapped(
+          RegExp(r'\[([^\]]+)\]\([^\)]+\)'),
+          (match) => match.group(1) ?? '',
+        )
+        .replaceAll(RegExp(r'https?://\S+'), ' link ')
+        .replaceAll(RegExp(r'[*_`#>|]'), '')
+        .replaceAll(RegExp(r'^\s*[-•]\s+', multiLine: true), '')
+        .replaceAll(RegExp(r'\s+'), ' ')
+        .trim();
+  }
+
   Future<void> _toggleListening() async {
     if (_sending || !_connected || _speechInitializing) return;
 
@@ -277,6 +349,11 @@ class _ChatScreenState extends State<ChatScreen> {
       await _speech.stop();
       if (mounted) setState(() => _isListening = false);
       return;
+    }
+
+    if (_speakingMessage != null) {
+      await _tts.stop();
+      _finishSpeaking();
     }
 
     if (!_speechAvailable) {
@@ -660,6 +737,8 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
     );
     if (confirmed != true) return;
+    await _tts.stop();
+    if (mounted) setState(() => _speakingMessage = null);
     if (mounted) setState(() => _sending = true);
     try {
       await DemoSession.reset(widget.userId);
@@ -691,6 +770,7 @@ class _ChatScreenState extends State<ChatScreen> {
     _retryTimer?.cancel();
     _linkSubscription?.cancel();
     _speech.cancel();
+    _tts.stop();
     _channel?.sink.close();
     _controller.dispose();
     _scrollController.dispose();
@@ -781,6 +861,8 @@ class _ChatScreenState extends State<ChatScreen> {
                 return MessageBubble(
                   message: _messages[index],
                   onAction: _sendAction,
+                  isSpeaking: identical(_speakingMessage, _messages[index]),
+                  onToggleSpeech: _toggleMessageSpeech,
                 );
               },
             ),
@@ -947,8 +1029,16 @@ class ChatMessage {
 class MessageBubble extends StatelessWidget {
   final ChatMessage message;
   final CardActionCallback? onAction;
+  final bool isSpeaking;
+  final ValueChanged<ChatMessage>? onToggleSpeech;
 
-  const MessageBubble({super.key, required this.message, this.onAction});
+  const MessageBubble({
+    super.key,
+    required this.message,
+    this.onAction,
+    this.isSpeaking = false,
+    this.onToggleSpeech,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -995,9 +1085,33 @@ class MessageBubble extends StatelessWidget {
             ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 6),
-            child: Text(
-              '${TimeOfDay.fromDateTime(message.createdAt).format(context)}${message.cards.isNotEmpty ? '  |  ${message.isUser ? 'enviado' : 'resposta recebida'}' : ''}',
-              style: const TextStyle(fontSize: 10, color: Colors.black45),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  '${TimeOfDay.fromDateTime(message.createdAt).format(context)}${message.cards.isNotEmpty ? '  |  ${message.isUser ? 'enviado' : 'resposta recebida'}' : ''}',
+                  style: const TextStyle(fontSize: 10, color: Colors.black45),
+                ),
+                if (!message.isUser && message.text.trim().isNotEmpty) ...[
+                  const SizedBox(width: 3),
+                  IconButton(
+                    onPressed: () => onToggleSpeech?.call(message),
+                    tooltip: isSpeaking ? 'Parar áudio' : 'Ouvir mensagem',
+                    visualDensity: VisualDensity.compact,
+                    padding: const EdgeInsets.all(3),
+                    constraints:
+                        const BoxConstraints.tightFor(width: 30, height: 30),
+                    iconSize: 17,
+                    color:
+                        isSpeaking ? const Color(0xFFFF6200) : Colors.black45,
+                    icon: Icon(
+                      isSpeaking
+                          ? Icons.stop_circle_outlined
+                          : Icons.volume_up_outlined,
+                    ),
+                  ),
+                ],
+              ],
             ),
           ),
           ...message.cards.map((c) => _buildCard(context, c)),

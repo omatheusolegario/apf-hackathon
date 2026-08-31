@@ -8,6 +8,7 @@
 
 #include <app_links/app_links_plugin_c_api.h>
 #include <file_selector_windows/file_selector_windows.h>
+#include <flutter_tts/flutter_tts_plugin.h>
 #include <local_auth_windows/local_auth_plugin.h>
 #include <speech_to_text_windows/speech_to_text_windows.h>
 
@@ -16,6 +17,8 @@ void RegisterPlugins(flutter::PluginRegistry* registry) {
       registry->GetRegistrarForPlugin("AppLinksPluginCApi"));
   FileSelectorWindowsRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("FileSelectorWindows"));
+  FlutterTtsPluginRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("FlutterTtsPlugin"));
   LocalAuthPluginRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("LocalAuthPlugin"));
   SpeechToTextWindowsRegisterWithRegistrar(

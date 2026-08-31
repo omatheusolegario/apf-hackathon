@@ -32,6 +32,8 @@ void main() {
     await tester.pump();
 
     expect(find.byIcon(Icons.mic_none_rounded), findsOneWidget);
+    expect(find.byIcon(Icons.volume_up_outlined), findsOneWidget);
+    expect(find.byTooltip('Ouvir mensagem'), findsOneWidget);
     expect(
       find.byTooltip('Ditar mensagem (não diga senhas ou códigos)'),
       findsOneWidget,
@@ -39,5 +41,35 @@ void main() {
     expect(find.byIcon(Icons.send_rounded), findsOneWidget);
 
     await tester.pumpWidget(const SizedBox.shrink());
+  });
+
+  testWidgets('mensagem do assistente oferece reproduzir e parar áudio',
+      (tester) async {
+    var requested = false;
+    final message =
+        ChatMessage(text: '**Seu saldo** é R\$ 100.', isUser: false);
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: MessageBubble(
+            message: message,
+            onToggleSpeech: (_) => requested = true,
+          ),
+        ),
+      ),
+    );
+    await tester.tap(find.byTooltip('Ouvir mensagem'));
+    expect(requested, isTrue);
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: MessageBubble(message: message, isSpeaking: true),
+        ),
+      ),
+    );
+    expect(find.byTooltip('Parar áudio'), findsOneWidget);
+    expect(find.byIcon(Icons.stop_circle_outlined), findsOneWidget);
   });
 }
