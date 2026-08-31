@@ -102,6 +102,18 @@ async def run() -> None:
         )
         check("boleto fotografado pagável", bool(paid.get("cards")))
 
+        octet_scan = await scan_boleto(
+            session,
+            "demo",
+            b"\x89PNG\r\n\x1a\nAPF-OCTET-STREAM",
+            "application/octet-stream",
+            "boleto-sem-mime.png",
+        )
+        check(
+            "PNG válido aceito mesmo com MIME genérico do navegador",
+            octet_scan["id"].startswith("SCAN_"),
+        )
+
     async with AsyncSessionLocal() as session:
         code = await create_link_code(session, "demo")
         check("código de vínculo criado", bool(code))

@@ -21,6 +21,35 @@ ALLOWED_TYPES = {"image/jpeg", "image/png", "image/webp"}
 VISION_MODEL = os.getenv("GROQ_VISION_MODEL", "qwen/qwen3.6-27b")
 
 
+def _image_content_type(content: bytes, declared_type: str | None) -> str:
+    """Valida a assinatura do arquivo e devolve um MIME canônico.
+
+    Navegadores podem enviar imagens escolhidas como application/octet-stream.
+    A assinatura evita rejeitar esses arquivos sem confiar em uma extensão ou
+    Content-Type potencialmente falsificados.
+    """
+    detected = None
+    if content.startswith(b"\xff\xd8\xff"):
+        detected = "image/jpeg"
+    elif content.startswith(b"\x89PNG\r\n\x1a\n"):
+        detected = "image/png"
+    elif (
+        len(content) >= 12
+        and content.startswith(b"RIFF")
+        and content[8:12] == b"WEBP"
+    ):
+        detected = "image/webp"
+
+    normalized = (declared_type or "").split(";", 1)[0].strip().lower()
+    if normalized == "image/jpg":
+        normalized = "image/jpeg"
+    if detected is None:
+        raise ValueError("Envie uma imagem JPG, PNG ou WebP válida.")
+    if normalized in ALLOWED_TYPES and normalized != detected:
+        raise ValueError("O conteúdo da imagem não corresponde ao formato informado.")
+    return detected
+
+
 def _response_text(payload: Dict[str, Any]) -> str:
     if payload.get("output_text"):
         return str(payload["output_text"])
@@ -127,8 +156,7 @@ async def scan_boleto(
 ) -> Dict[str, Any]:
     if not content or len(content) > MAX_DOCUMENT_BYTES:
         raise ValueError("A imagem deve ter até 8 MB.")
-    if content_type not in ALLOWED_TYPES:
-        raise ValueError("Envie uma imagem JPG, PNG ou WebP.")
+    content_type = _image_content_type(content, content_type)
     digest = hashlib.sha256(content).hexdigest()
     existing = await session.execute(
         select(ScannedBoleto).where(

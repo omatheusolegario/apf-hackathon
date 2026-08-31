@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:http/http.dart' as http;
+import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:app_links/app_links.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
@@ -564,6 +565,7 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
     );
     if (source == null) return;
+    String? failureMessage;
     try {
       final image = await _imagePicker.pickImage(
         source: source,
@@ -571,19 +573,34 @@ class _ChatScreenState extends State<ChatScreen> {
         maxWidth: 2200,
       );
       if (image == null) return;
+      final bytes = await image.readAsBytes();
+      if (bytes.length > 8 * 1024 * 1024) {
+        _addSystemMessage('A imagem precisa ter no máximo 8 MB.');
+        return;
+      }
       if (mounted) setState(() => _sending = true);
       final request = http.MultipartRequest(
         'POST',
         Uri.parse('$baseUrl/user/${widget.userId}/boleto/scan'),
       );
+      final contentType = _imageMediaType(image);
       request.files.add(http.MultipartFile.fromBytes(
         'file',
-        await image.readAsBytes(),
+        bytes,
         filename: image.name,
+        contentType: contentType,
       ));
       final streamed = await request.send();
       final body = await streamed.stream.bytesToString();
-      if (streamed.statusCode != 200) throw Exception(body);
+      if (streamed.statusCode != 200) {
+        try {
+          final error = jsonDecode(body) as Map<String, dynamic>;
+          failureMessage = error['detail']?.toString();
+        } catch (_) {
+          failureMessage = null;
+        }
+        throw Exception('HTTP ${streamed.statusCode}');
+      }
       final data = jsonDecode(body) as Map<String, dynamic>;
       final cards = (data['cards'] as List? ?? [])
           .map((c) => Map<String, dynamic>.from(c as Map))
@@ -601,9 +618,25 @@ class _ChatScreenState extends State<ChatScreen> {
       _scrollToBottom();
     } catch (_) {
       if (mounted) setState(() => _sending = false);
-      _addSystemMessage(
-          'Não consegui ler essa imagem. Tente uma foto mais nítida.');
+      _addSystemMessage(failureMessage ??
+          'Não consegui ler essa imagem. Tente uma foto mais nítida em JPG, PNG ou WebP.');
     }
+  }
+
+  MediaType _imageMediaType(XFile image) {
+    final declared = image.mimeType?.toLowerCase();
+    if (declared == 'image/jpeg' ||
+        declared == 'image/png' ||
+        declared == 'image/webp') {
+      return MediaType.parse(declared!);
+    }
+    final name = image.name.toLowerCase();
+    if (name.endsWith('.png')) return MediaType('image', 'png');
+    if (name.endsWith('.webp')) return MediaType('image', 'webp');
+    if (name.endsWith('.jpg') || name.endsWith('.jpeg')) {
+      return MediaType('image', 'jpeg');
+    }
+    return MediaType('application', 'octet-stream');
   }
 
   Future<void> _resetDemo() async {
