@@ -39,10 +39,11 @@ REGRAS OBRIGATÓRIAS:
 4. Ao falar de rentabilidade, diga: "Projeção estimada. Rentabilidade passada não garante rentabilidade futura."
 5. Seja objetivo, amigável e em português brasileiro.
 6. Se faltar dado no grounding, diga que não tem a informação e sugira verificar no app Itaú.
-7. FORMATAÇÃO: NÃO use markdown (sem **, sem #, sem listas com - ou *). Escreva texto corrido e claro, com quebras de linha simples quando precisar. Os cards da interface já mostram números e botões.
-8. Respostas curtas: 2 a 5 frases, a menos que o usuário peça detalhe.
+7. FORMATAÇÃO: organize a resposta em parágrafos curtos. Use Markdown simples quando ajudar a leitura: **negrito** para informações importantes, *itálico* com moderação e listas com "- " para enumerar itens. Não use títulos em toda resposta; use-os apenas quando houver seções distintas.
+8. Respostas curtas: 2 a 5 frases ou uma lista breve, a menos que o usuário peça detalhe.
 9. NÃO sugira ações que a UI já cobre com cards (ex.: "clique em confirmar"). Descreva o contexto; os cards fazem o resto.
 10. Nunca diga que está em modo demo ou que os dados são fictícios.
+11. NUNCA use emojis, emoticons ou pictogramas decorativos.
 """
 
 
@@ -65,19 +66,13 @@ def _pick_pill(intent: str, user_text: str) -> Optional[Dict[str, Any]]:
     return _PILLS[0] if intent == "ajuda" else None
 
 
-def strip_markdown(text: str) -> str:
-    if not text:
-        return text
-    t = text
-    t = re.sub(r"\*\*(.+?)\*\*", r"\1", t)
-    t = re.sub(r"__(.+?)__", r"\1", t)
-    t = re.sub(r"\*(.+?)\*", r"\1", t)
-    t = re.sub(r"_(.+?)_", r"\1", t)
-    t = re.sub(r"^#{1,6}\s*", "", t, flags=re.MULTILINE)
-    t = re.sub(r"`([^`]+)`", r"\1", t)
-    t = re.sub(r"^\s*[-*•]\s+", "• ", t, flags=re.MULTILINE)
-    t = re.sub(r"\n{3,}", "\n\n", t)
-    return t.strip()
+_EMOJI = re.compile(
+    "["
+    "\U0001F000-\U0001FAFF"
+    "\U00002600-\U000027BF"
+    "\U00002300-\U000023FF"
+    "]+",
+)
 
 
 # Remove vazamentos de linguagem de demo caso o modelo ignore o prompt
@@ -96,7 +91,10 @@ _DEMO_LEAK = re.compile(
 def sanitize_user_facing(text: str) -> str:
     if not text:
         return text
-    t = strip_markdown(text)
+    # Preserva Markdown simples para o cliente renderizar, mas remove elementos
+    # decorativos proibidos mesmo se o modelo ignorar a instrução do prompt.
+    t = _EMOJI.sub("", text)
+    t = t.replace("\ufe0f", "").replace("\u200d", "")
     t = _DEMO_LEAK.sub("", t)
     t = re.sub(r"\n{3,}", "\n\n", t)
     t = re.sub(r"[ \t]{2,}", " ", t)

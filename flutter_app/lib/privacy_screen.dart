@@ -5,7 +5,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'app_config.dart';
 
 class PrivacyScreen extends StatefulWidget {
-  const PrivacyScreen({super.key});
+  final String userId;
+
+  const PrivacyScreen({super.key, required this.userId});
 
   @override
   State<PrivacyScreen> createState() => _PrivacyScreenState();
@@ -16,6 +18,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
   bool consentHabitos = false;
   bool consentSaldo = false;
   bool loading = false;
+  final reservaController = TextEditingController(text: '2000,00');
   static const baseUrl = AppConfig.apiBaseUrl;
 
   @override
@@ -26,6 +29,21 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
 
   Future<void> _load() async {
     final prefs = await SharedPreferences.getInstance();
+    try {
+      final response = await http
+          .get(Uri.parse('$baseUrl/user/${widget.userId}/preferences'));
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body) as Map<String, dynamic>;
+        final reserva = (data['reserva_seguranca'] as num?)?.toDouble();
+        if (reserva != null) {
+          reservaController.text =
+              reserva.toStringAsFixed(2).replaceAll('.', ',');
+        }
+      }
+    } catch (_) {
+      // Mantém o valor padrão quando o backend estiver indisponível.
+    }
+    if (!mounted) return;
     setState(() {
       consentPadroes = prefs.getBool('consent_padroes_pagamento') ?? false;
       consentHabitos = prefs.getBool('consent_habitos_gasto') ?? false;
@@ -36,8 +54,14 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
   Future<void> _save() async {
     setState(() => loading = true);
     try {
+      final reserva = double.tryParse(
+        reservaController.text.trim().replaceAll('.', '').replaceAll(',', '.'),
+      );
+      if (reserva == null || reserva < 0) {
+        throw const FormatException('Reserva inválida');
+      }
       final response = await http.post(
-        Uri.parse('$baseUrl/user/demo/consent'),
+        Uri.parse('$baseUrl/user/${widget.userId}/consent'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           'consent_padroes_pagamento': consentPadroes,
@@ -47,6 +71,15 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
       );
       if (response.statusCode < 200 || response.statusCode >= 300) {
         throw Exception('HTTP ${response.statusCode}');
+      }
+      final preferenceResponse = await http.post(
+        Uri.parse('$baseUrl/user/${widget.userId}/preferences'),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({'reserva_seguranca': reserva}),
+      );
+      if (preferenceResponse.statusCode < 200 ||
+          preferenceResponse.statusCode >= 300) {
+        throw Exception('HTTP ${preferenceResponse.statusCode}');
       }
       final prefs = await SharedPreferences.getInstance();
       await prefs.setBool('consent_padroes_pagamento', consentPadroes);
@@ -68,6 +101,12 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
         const SnackBar(content: Text('Preferências de privacidade salvas')),
       );
     }
+  }
+
+  @override
+  void dispose() {
+    reservaController.dispose();
+    super.dispose();
   }
 
   Future<void> _forget() async {
@@ -92,7 +131,8 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
     );
     if (ok != true) return;
     try {
-      final response = await http.delete(Uri.parse('$baseUrl/user/demo/data'));
+      final response =
+          await http.delete(Uri.parse('$baseUrl/user/${widget.userId}/data'));
       if (response.statusCode < 200 || response.statusCode >= 300) {
         throw Exception('HTTP ${response.statusCode}');
       }
@@ -154,11 +194,28 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
             onChanged: (v) => setState(() => consentHabitos = v),
           ),
           SwitchListTile(
-            title: const Text('Saldo ocioso / sugestões de investimento'),
+            title: const Text('Dinheiro disponível para investir'),
             subtitle: const Text('Apenas renda fixa simples'),
             value: consentSaldo,
             activeThumbColor: const Color(0xFFFF6200),
             onChanged: (v) => setState(() => consentSaldo = v),
+          ),
+          const SizedBox(height: 16),
+          const Text(
+            'Planejamento financeiro',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+          ),
+          const SizedBox(height: 8),
+          TextFormField(
+            controller: reservaController,
+            keyboardType: const TextInputType.numberWithOptions(decimal: true),
+            decoration: const InputDecoration(
+              labelText: 'Reserva que desejo manter disponível',
+              prefixText: 'R\$ ',
+              helperText:
+                  'Usada apenas para calcular sugestões de investimento.',
+              border: OutlineInputBorder(),
+            ),
           ),
           const SizedBox(height: 12),
           SizedBox(

@@ -14,6 +14,11 @@ from models import (
     NotificationLog,
     PixAutomatico,
     BoletoPago,
+    FinancialPreference,
+    FlowState,
+    ContinuationToken,
+    ScannedBoleto,
+    ChannelLinkCode,
 )
 
 py_seed(42)  # reprodutível
@@ -29,49 +34,64 @@ def daterange(start: date, end: date):
         current += timedelta(days=1)
 
 
-async def seed():
+async def seed_user(
+    user_id: str = USER_ID,
+    user_name: str = USER_NAME,
+    *,
+    reset: bool = True,
+    initial_consents: bool = True,
+):
+    """Cria uma conta sintética isolada e, opcionalmente, reinicia sua jornada."""
+    if not user_id.startswith("demo") or len(user_id) > 50:
+        raise ValueError("Identificador de demonstração inválido")
+    py_seed(42)
     await init_db()
     async with AsyncSessionLocal() as session:
-        existing = await session.get(User, USER_ID)
-        if existing:
+        existing = await session.get(User, user_id)
+        if existing and reset:
+            consents = (
+                existing.consent_padroes_pagamento,
+                existing.consent_habitos_gasto,
+                existing.consent_saldo_ocioso,
+            )
             print("Usuário demo já existe. Limpando transações e padrões...")
-            await session.execute(
-                Transaction.__table__.delete().where(Transaction.user_id == USER_ID)
-            )
-            await session.execute(
-                Pattern.__table__.delete().where(Pattern.user_id == USER_ID)
-            )
-            await session.execute(
-                Conversation.__table__.delete().where(Conversation.user_id == USER_ID)
-            )
-            await session.execute(
-                NotificationLog.__table__.delete().where(NotificationLog.user_id == USER_ID)
-            )
-            await session.execute(
-                PixAutomatico.__table__.delete().where(PixAutomatico.user_id == USER_ID)
-            )
-            await session.execute(
-                BoletoPago.__table__.delete().where(BoletoPago.user_id == USER_ID)
-            )
-            existing.consent_padroes_pagamento = True
-            existing.consent_habitos_gasto = True
-            existing.consent_saldo_ocioso = True
+            for model in (
+                ContinuationToken,
+                ChannelLinkCode,
+                ScannedBoleto,
+                FlowState,
+                FinancialPreference,
+                BoletoPago,
+                PixAutomatico,
+                NotificationLog,
+                Conversation,
+                Pattern,
+                Transaction,
+            ):
+                await session.execute(
+                    model.__table__.delete().where(model.user_id == user_id)
+                )
+            existing.consent_padroes_pagamento = consents[0]
+            existing.consent_habitos_gasto = consents[1]
+            existing.consent_saldo_ocioso = consents[2]
             existing.muted_categories = {}
             existing.notificacoes_hoje = 0
             existing.ultima_notificacao_data = None
             await session.commit()
-        else:
+        elif not existing:
             user = User(
-                id=USER_ID,
-                name=USER_NAME,
+                id=user_id,
+                name=user_name,
                 perfil_investidor="moderado",
-                consent_padroes_pagamento=True,
-                consent_habitos_gasto=True,
-                consent_saldo_ocioso=True,
+                consent_padroes_pagamento=initial_consents,
+                consent_habitos_gasto=initial_consents,
+                consent_saldo_ocioso=initial_consents,
             )
             session.add(user)
             await session.commit()
-            print(f"Usuário {USER_NAME} criado.")
+            print(f"Usuário {user_name} criado.")
+        else:
+            return {"user_id": user_id, "created": False, "reset": False}
 
         today = date.today()
         start = today - timedelta(days=180)
@@ -86,7 +106,7 @@ async def seed():
                 ):
                     transactions.append(
                         Transaction(
-                            user_id=USER_ID,
+                            user_id=user_id,
                             data=d,
                             tipo="ted",
                             valor=5500.00,
@@ -102,7 +122,7 @@ async def seed():
             if d.day == 10:
                 transactions.append(
                     Transaction(
-                        user_id=USER_ID,
+                        user_id=user_id,
                         data=d,
                         tipo="pix",
                         valor=1500.00,
@@ -118,7 +138,7 @@ async def seed():
             if d.day == 5:
                 transactions.append(
                     Transaction(
-                        user_id=USER_ID,
+                        user_id=user_id,
                         data=d,
                         tipo="pix",
                         valor=89.90,
@@ -134,7 +154,7 @@ async def seed():
             if d.day == 15:
                 transactions.append(
                     Transaction(
-                        user_id=USER_ID,
+                        user_id=user_id,
                         data=d,
                         tipo="debito",
                         valor=39.90,
@@ -150,7 +170,7 @@ async def seed():
             if d.day == 12:
                 transactions.append(
                     Transaction(
-                        user_id=USER_ID,
+                        user_id=user_id,
                         data=d,
                         tipo="debito",
                         valor=21.90,
@@ -166,7 +186,7 @@ async def seed():
             if d.day == 20:
                 transactions.append(
                     Transaction(
-                        user_id=USER_ID,
+                        user_id=user_id,
                         data=d,
                         tipo="boleto",
                         valor=119.90,
@@ -183,7 +203,7 @@ async def seed():
                 valor = round(uniform(32.0, 68.0), 2)
                 transactions.append(
                     Transaction(
-                        user_id=USER_ID,
+                        user_id=user_id,
                         data=d,
                         tipo="pix",
                         valor=valor,
@@ -199,7 +219,7 @@ async def seed():
             if d.day == 5:
                 transactions.append(
                     Transaction(
-                        user_id=USER_ID,
+                        user_id=user_id,
                         data=d,
                         tipo="boleto",
                         valor=round(uniform(160.0, 220.0), 2),
@@ -212,7 +232,7 @@ async def seed():
             if d.day == 8:
                 transactions.append(
                     Transaction(
-                        user_id=USER_ID,
+                        user_id=user_id,
                         data=d,
                         tipo="boleto",
                         valor=round(uniform(180.0, 280.0), 2),
@@ -228,7 +248,7 @@ async def seed():
             if d.day == 3:
                 transactions.append(
                     Transaction(
-                        user_id=USER_ID,
+                        user_id=user_id,
                         data=d,
                         tipo="pix",
                         valor=300.00,
@@ -244,7 +264,7 @@ async def seed():
             if d.weekday() == 5 and randint(1, 10) <= 6:  # sábados
                 transactions.append(
                     Transaction(
-                        user_id=USER_ID,
+                        user_id=user_id,
                         data=d,
                         tipo="credito",
                         valor=round(uniform(120.0, 280.0), 2),
@@ -270,7 +290,7 @@ async def seed():
                 cat, desc, vmin, vmax = choice(categorias_extras)
                 transactions.append(
                     Transaction(
-                        user_id=USER_ID,
+                        user_id=user_id,
                         data=d,
                         tipo=choice(["pix", "debito", "credito"]),
                         valor=round(uniform(vmin, vmax), 2),
@@ -286,7 +306,7 @@ async def seed():
             if d.day == 25 and d.weekday() < 5:
                 transactions.append(
                     Transaction(
-                        user_id=USER_ID,
+                        user_id=user_id,
                         data=d,
                         tipo="ted",
                         valor=500.00,
@@ -299,8 +319,13 @@ async def seed():
 
         session.add_all(transactions)
         await session.commit()
-        print(f"✅ {len(transactions)} transações sintéticas criadas para o usuário '{USER_ID}'.")
+        print(f"{len(transactions)} transações sintéticas criadas para o usuário '{user_id}'.")
         print("Seed concluído com sucesso.")
+        return {"user_id": user_id, "created": existing is None, "reset": bool(existing)}
+
+
+async def seed():
+    return await seed_user()
 
 
 if __name__ == "__main__":

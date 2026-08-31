@@ -9,8 +9,10 @@ import 'package:app_links/app_links.dart';
 import 'privacy_screen.dart';
 import 'app_config.dart';
 import 'device_auth.dart';
+import 'demo_session.dart';
 
-/// Renderiza texto com **negrito** simples (fallback se o LLM ainda mandar markdown).
+/// Renderiza o subconjunto de Markdown usado nas respostas do assistente:
+/// parágrafos, listas, **negrito** e *itálico*.
 class FormattedText extends StatelessWidget {
   final String text;
   final TextStyle? style;
@@ -22,24 +24,64 @@ class FormattedText extends StatelessWidget {
   Widget build(BuildContext context) {
     final base = (style ?? const TextStyle(fontSize: 15, height: 1.4))
         .copyWith(color: color ?? style?.color);
+    final blocks = text.split('\n');
+
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        for (final line in blocks)
+          if (line.trim().isEmpty)
+            const SizedBox(height: 10)
+          else if (RegExp(r'^\s*[-•*]\s+').hasMatch(line))
+            Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('•  ', style: base),
+                  Expanded(
+                    child: _inlineMarkdown(
+                      line.replaceFirst(RegExp(r'^\s*[-•*]\s+'), ''),
+                      base,
+                    ),
+                  ),
+                ],
+              ),
+            )
+          else
+            _inlineMarkdown(
+              line.replaceFirst(RegExp(r'^#{1,3}\s+'), ''),
+              RegExp(r'^#{1,3}\s+').hasMatch(line)
+                  ? base.copyWith(fontWeight: FontWeight.w700, fontSize: 16)
+                  : base,
+            ),
+      ],
+    );
+  }
+
+  Widget _inlineMarkdown(String value, TextStyle base) {
     final spans = <TextSpan>[];
-    final re = RegExp(r'\*\*(.+?)\*\*');
+    final re = RegExp(r'(\*\*|__)(.+?)\1|(?<!\*)\*([^*\n]+?)\*(?!\*)');
     int last = 0;
-    for (final m in re.allMatches(text)) {
+    for (final m in re.allMatches(value)) {
       if (m.start > last) {
-        spans.add(TextSpan(text: text.substring(last, m.start), style: base));
+        spans.add(TextSpan(text: value.substring(last, m.start), style: base));
       }
       spans.add(TextSpan(
-        text: m.group(1),
-        style: base.copyWith(fontWeight: FontWeight.w700),
+        text: m.group(2) ?? m.group(3),
+        style: base.copyWith(
+          fontWeight: m.group(2) != null ? FontWeight.w700 : null,
+          fontStyle: m.group(3) != null ? FontStyle.italic : null,
+        ),
       ));
       last = m.end;
     }
-    if (last < text.length) {
-      spans.add(TextSpan(text: text.substring(last), style: base));
+    if (last < value.length) {
+      spans.add(TextSpan(text: value.substring(last), style: base));
     }
     if (spans.isEmpty) {
-      return Text(text, style: base);
+      return Text(value, style: base);
     }
     return Text.rich(TextSpan(children: spans));
   }
@@ -48,7 +90,9 @@ class FormattedText extends StatelessWidget {
 typedef CardActionCallback = void Function(Map<String, dynamic> action);
 
 class ChatScreen extends StatefulWidget {
-  const ChatScreen({super.key});
+  final String userId;
+
+  const ChatScreen({super.key, required this.userId});
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
@@ -68,6 +112,7 @@ class _ChatScreenState extends State<ChatScreen> {
   int _connectionEpoch = 0;
   String? _pendingContinuationToken;
   bool _proactiveLoaded = false;
+  bool _hasConnectedOnce = false;
 
   static String get wsUrl => AppConfig.webSocketUrl;
   static const String baseUrl = AppConfig.apiBaseUrl;
@@ -122,7 +167,15 @@ class _ChatScreenState extends State<ChatScreen> {
       _channel = channel;
       await channel.ready.timeout(const Duration(seconds: 5));
       if (!mounted || epoch != _connectionEpoch) return;
-      setState(() => _connected = true);
+      final restored = _hasConnectedOnce && !_connected;
+      setState(() {
+        _connected = true;
+        _hasConnectedOnce = true;
+      });
+      if (restored) {
+        _addSystemMessage(
+            'Conexão restabelecida. As operações estão disponíveis novamente.');
+      }
       _resumeContinuationIfReady();
       if (!_proactiveLoaded) {
         _proactiveLoaded = true;
@@ -185,6 +238,14 @@ class _ChatScreenState extends State<ChatScreen> {
   void _send([String? preset]) {
     final text = (preset ?? _controller.text).trim();
     if (text.isEmpty || _sending) return;
+    if (_channel == null || !_connected) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Sem conexão. A mensagem não foi enviada.'),
+        ),
+      );
+      return;
+    }
 
     setState(() {
       _messages.add(ChatMessage(text: text, isUser: true));
@@ -193,13 +254,7 @@ class _ChatScreenState extends State<ChatScreen> {
     });
     _scrollToBottom();
 
-    if (_channel != null && _connected) {
-      _channel!.sink.add(jsonEncode({'text': text, 'user_id': 'demo'}));
-    } else {
-      setState(() => _sending = false);
-      _addSystemMessage(
-          'Backend offline. Suba o uvicorn e toque no ícone de nuvem.');
-    }
+    _channel!.sink.add(jsonEncode({'text': text, 'user_id': widget.userId}));
   }
 
   void _sendAction(Map<String, dynamic> action) {
@@ -214,7 +269,7 @@ class _ChatScreenState extends State<ChatScreen> {
     final payload = Map<String, dynamic>.from(action)
       ..['request_id'] = DateTime.now().microsecondsSinceEpoch.toString();
     _channel!.sink.add(jsonEncode({
-      'user_id': 'demo',
+      'user_id': widget.userId,
       'action': payload,
     }));
   }
@@ -233,7 +288,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Future<void> _loadDashboard() async {
     try {
-      final res = await http.get(Uri.parse('$baseUrl/user/demo/dashboard'));
+      final res =
+          await http.get(Uri.parse('$baseUrl/user/${widget.userId}/dashboard'));
       if (res.statusCode == 200) {
         final data = jsonDecode(res.body) as Map<String, dynamic>;
         setState(() {
@@ -263,7 +319,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Future<void> _loadPatterns() async {
     try {
-      final res = await http.get(Uri.parse('$baseUrl/user/demo/patterns'));
+      final res =
+          await http.get(Uri.parse('$baseUrl/user/${widget.userId}/patterns'));
       if (res.statusCode == 200) {
         final data = jsonDecode(res.body) as Map<String, dynamic>;
         final patterns = data['patterns'] as List? ?? [];
@@ -306,8 +363,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Future<void> _loadProactive({bool silentWhenEmpty = false}) async {
     try {
-      final res =
-          await http.post(Uri.parse('$baseUrl/user/demo/proactive/scan'));
+      final res = await http
+          .post(Uri.parse('$baseUrl/user/${widget.userId}/proactive/scan'));
       if (res.statusCode != 200) throw Exception('HTTP ${res.statusCode}');
       final data = jsonDecode(res.body) as Map<String, dynamic>;
       final results = (data['results'] as List? ?? [])
@@ -315,7 +372,33 @@ class _ChatScreenState extends State<ChatScreen> {
           .where((item) => item['enviado'] == true)
           .toList();
       if (results.isEmpty) {
-        if (!silentWhenEmpty) {
+        final candidates = (data['results'] as List? ?? [])
+            .map((item) => Map<String, dynamic>.from(item as Map))
+            .where((item) =>
+                item['mensagem'] != null &&
+                item['motivo'] != 'sem_consentimento' &&
+                item['motivo'] != 'muted')
+            .toList();
+        if (candidates.isNotEmpty) {
+          final preview = Map<String, dynamic>.from(candidates.first)
+            ..['preview'] = true;
+          if (!mounted) return;
+          setState(() {
+            _messages.add(ChatMessage(
+              text:
+                  'Prévia de alerta proativo — ${_previewReason(preview['motivo']?.toString())}',
+              isUser: false,
+              cards: [
+                {
+                  'type': 'proactive',
+                  'title': 'Notificação inteligente (prévia)',
+                  'data': preview,
+                }
+              ],
+            ));
+          });
+          _scrollToBottom();
+        } else if (!silentWhenEmpty) {
           _addSystemMessage(
             'Nenhuma nova sugestão agora. Os controles de consentimento, limite diário e intervalo entre avisos estão ativos.',
           );
@@ -347,6 +430,19 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
+  String _previewReason(String? reason) {
+    if (reason == 'fora_da_janela') {
+      return 'o envio automático está reservado à janela das 9h às 20h.';
+    }
+    if (reason == 'cap_diario') {
+      return 'o limite de duas notificações no dia já foi atingido.';
+    }
+    if (reason == 'cooldown') {
+      return 'o intervalo de segurança dessa categoria ainda está ativo.';
+    }
+    return 'o envio real respeita consentimento, horário, limite diário e intervalo entre avisos.';
+  }
+
   Future<void> _pickAndScanBill() async {
     final source = await showModalBottomSheet<ImageSource>(
       context: context,
@@ -376,17 +472,21 @@ class _ChatScreenState extends State<ChatScreen> {
       if (image == null) return;
       if (mounted) setState(() => _sending = true);
       final request = http.MultipartRequest(
-        'POST', Uri.parse('$baseUrl/user/demo/boleto/scan'),
+        'POST',
+        Uri.parse('$baseUrl/user/${widget.userId}/boleto/scan'),
       );
       request.files.add(http.MultipartFile.fromBytes(
-        'file', await image.readAsBytes(), filename: image.name,
+        'file',
+        await image.readAsBytes(),
+        filename: image.name,
       ));
       final streamed = await request.send();
       final body = await streamed.stream.bytesToString();
       if (streamed.statusCode != 200) throw Exception(body);
       final data = jsonDecode(body) as Map<String, dynamic>;
       final cards = (data['cards'] as List? ?? [])
-          .map((c) => Map<String, dynamic>.from(c as Map)).toList();
+          .map((c) => Map<String, dynamic>.from(c as Map))
+          .toList();
       if (!mounted) return;
       setState(() {
         _sending = false;
@@ -400,7 +500,54 @@ class _ChatScreenState extends State<ChatScreen> {
       _scrollToBottom();
     } catch (_) {
       if (mounted) setState(() => _sending = false);
-      _addSystemMessage('Não consegui ler essa imagem. Tente uma foto mais nítida.');
+      _addSystemMessage(
+          'Não consegui ler essa imagem. Tente uma foto mais nítida.');
+    }
+  }
+
+  Future<void> _resetDemo() async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Reiniciar demonstração?'),
+        content: const Text(
+          'Pagamentos, transferências, conversas e limites de alertas voltarão ao estado inicial. Seus consentimentos serão mantidos.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('Cancelar'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(context, true),
+            child: const Text('Reiniciar'),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true) return;
+    if (mounted) setState(() => _sending = true);
+    try {
+      await DemoSession.reset(widget.userId);
+      _channel?.sink.close();
+      if (!mounted) return;
+      setState(() {
+        _messages.clear();
+        _sending = false;
+        _connected = false;
+        _proactiveLoaded = false;
+      });
+      _addSystemMessage(
+        'Demonstração reiniciada. As contas estão novamente disponíveis e você pode repetir qualquer jornada.',
+      );
+      _connect();
+    } catch (_) {
+      if (!mounted) return;
+      setState(() => _sending = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+            content: Text('Não foi possível reiniciar a demonstração.')),
+      );
     }
   }
 
@@ -447,9 +594,11 @@ class _ChatScreenState extends State<ChatScreen> {
               if (v == 'dashboard') _loadDashboard();
               if (v == 'patterns') _loadPatterns();
               if (v == 'proactive') _loadProactive();
+              if (v == 'reset') _resetDemo();
               if (v == 'privacy') {
                 Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const PrivacyScreen()),
+                  MaterialPageRoute(
+                      builder: (_) => PrivacyScreen(userId: widget.userId)),
                 );
               }
             },
@@ -459,6 +608,8 @@ class _ChatScreenState extends State<ChatScreen> {
               PopupMenuItem(
                   value: 'proactive', child: Text('Sugestões proativas')),
               PopupMenuItem(
+                  value: 'reset', child: Text('Reiniciar demonstração')),
+              PopupMenuItem(
                   value: 'privacy', child: Text('Privacidade / LGPD')),
             ],
           ),
@@ -466,6 +617,23 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
       body: Column(
         children: [
+          if (!_connected)
+            Semantics(
+              liveRegion: true,
+              label:
+                  'Aplicativo sem conexão. Operações financeiras bloqueadas.',
+              child: Container(
+                width: double.infinity,
+                color: const Color(0xFFFFF3E0),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                child: const Text(
+                  'Sem conexão. Consultas e operações estão bloqueadas enquanto reconectamos.',
+                  style: TextStyle(
+                      color: Color(0xFFE65100), fontWeight: FontWeight.w600),
+                ),
+              ),
+            ),
           Expanded(
             child: ListView.builder(
               controller: _scrollController,
@@ -538,7 +706,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 controller: _controller,
                 textInputAction: TextInputAction.send,
                 onSubmitted: (_) => _send(),
-                enabled: !_sending,
+                enabled: !_sending && _connected,
                 decoration: InputDecoration(
                   hintText: 'Pergunte sobre saldo, padrões, boletos…',
                   filled: true,
@@ -613,6 +781,7 @@ class ChatMessage {
   final bool isSystem;
   final String? intent;
   final List<Map<String, dynamic>> cards;
+  final DateTime createdAt;
 
   ChatMessage({
     required this.text,
@@ -620,7 +789,8 @@ class ChatMessage {
     this.isSystem = false,
     this.intent,
     this.cards = const [],
-  });
+    DateTime? createdAt,
+  }) : createdAt = createdAt ?? DateTime.now();
 }
 
 class MessageBubble extends StatelessWidget {
@@ -672,6 +842,13 @@ class MessageBubble extends StatelessWidget {
                 style: const TextStyle(fontSize: 15, height: 1.4),
               ),
             ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 6),
+            child: Text(
+              '${TimeOfDay.fromDateTime(message.createdAt).format(context)}${message.cards.isNotEmpty ? '  |  ${message.isUser ? 'enviado' : 'resposta recebida'}' : ''}',
+              style: const TextStyle(fontSize: 10, color: Colors.black45),
+            ),
+          ),
           ...message.cards.map((c) => _buildCard(context, c)),
         ],
       ),
@@ -722,7 +899,7 @@ class MessageBubble extends StatelessWidget {
   }
 }
 
-class _CardShell extends StatelessWidget {
+class _CardShell extends StatefulWidget {
   final String title;
   final IconData icon;
   final Color accent;
@@ -738,7 +915,15 @@ class _CardShell extends StatelessWidget {
   });
 
   @override
+  State<_CardShell> createState() => _CardShellState();
+}
+
+class _CardShellState extends State<_CardShell> {
+  bool _expanded = true;
+
+  @override
   Widget build(BuildContext context) {
+    final accent = widget.accent;
     return Container(
       width: MediaQuery.of(context).size.width * 0.88,
       margin: const EdgeInsets.only(top: 6, bottom: 8),
@@ -766,11 +951,11 @@ class _CardShell extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Icon(icon, size: 18, color: accent),
+                Icon(widget.icon, size: 18, color: accent),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
-                    title,
+                    widget.title,
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: accent,
@@ -778,17 +963,27 @@ class _CardShell extends StatelessWidget {
                     ),
                   ),
                 ),
+                IconButton(
+                  visualDensity: VisualDensity.compact,
+                  tooltip: _expanded ? 'Recolher detalhes' : 'Ver detalhes',
+                  onPressed: () => setState(() => _expanded = !_expanded),
+                  icon: Icon(
+                    _expanded ? Icons.expand_less : Icons.expand_more,
+                    color: accent,
+                  ),
+                ),
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(14, 12, 14, 8),
-            child: child,
-          ),
-          if (actions != null && actions!.isNotEmpty)
+          if (_expanded)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(14, 12, 14, 8),
+              child: widget.child,
+            ),
+          if (_expanded && widget.actions != null && widget.actions!.isNotEmpty)
             Padding(
               padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
-              child: Wrap(spacing: 8, runSpacing: 6, children: actions!),
+              child: Wrap(spacing: 8, runSpacing: 6, children: widget.actions!),
             ),
         ],
       ),
@@ -974,14 +1169,16 @@ class _PaymentComparisonCardState extends State<_PaymentComparisonCard> {
                 childrenPadding: EdgeInsets.zero,
                 dense: true,
                 title: const Text('Premissas da comparação',
-                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600)),
+                    style:
+                        TextStyle(fontSize: 12, fontWeight: FontWeight.w600)),
                 children: (widget.data['premissas'] as List)
                     .map((item) => Align(
                           alignment: Alignment.centerLeft,
                           child: Padding(
                             padding: const EdgeInsets.only(bottom: 4),
                             child: Text('• $item',
-                                style: const TextStyle(fontSize: 11, color: Colors.black54)),
+                                style: const TextStyle(
+                                    fontSize: 11, color: Colors.black54)),
                           ),
                         ))
                     .toList(),
@@ -1092,7 +1289,8 @@ class _BillScanCard extends StatelessWidget {
   const _BillScanCard({required this.title, required this.data, this.onAction});
 
   String _fmt(dynamic value) {
-    final number = value is num ? value.toDouble() : double.tryParse('$value') ?? 0;
+    final number =
+        value is num ? value.toDouble() : double.tryParse('$value') ?? 0;
     return number.toStringAsFixed(2).replaceAll('.', ',');
   }
 
@@ -1111,7 +1309,8 @@ class _BillScanCard extends StatelessWidget {
             'forma': 'Pix',
             'boleto_id': data['id'],
           }),
-          style: FilledButton.styleFrom(backgroundColor: const Color(0xFFFF6200)),
+          style:
+              FilledButton.styleFrom(backgroundColor: const Color(0xFFFF6200)),
           icon: const Icon(Icons.lock_outline_rounded),
           label: const Text('Confirmar no app'),
         ),
@@ -1119,16 +1318,21 @@ class _BillScanCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(data['beneficiario']?.toString() ?? 'Beneficiário não identificado',
-              style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 17)),
+          Text(
+              data['beneficiario']?.toString() ??
+                  'Beneficiário não identificado',
+              style:
+                  const TextStyle(fontWeight: FontWeight.w700, fontSize: 17)),
           const SizedBox(height: 4),
           Text('R\$ ${_fmt(data['valor'])}',
-              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w800)),
+              style:
+                  const TextStyle(fontSize: 22, fontWeight: FontWeight.w800)),
           Text('Vencimento: ${data['vencimento'] ?? 'não identificado'}'),
           if (data['linha_digitavel'] != null) ...[
             const SizedBox(height: 8),
             Text('Linha: ${data['linha_digitavel']}',
-                maxLines: 2, style: const TextStyle(fontSize: 11, color: Colors.black54)),
+                maxLines: 2,
+                style: const TextStyle(fontSize: 11, color: Colors.black54)),
           ],
           const SizedBox(height: 10),
           Container(
@@ -1350,6 +1554,7 @@ class _ProactiveCardState extends State<_ProactiveCard>
   @override
   Widget build(BuildContext context) {
     if (_dismissed) return const SizedBox.shrink();
+    final isPreview = widget.data['preview'] == true;
 
     return SizeTransition(
       sizeFactor: _anim,
@@ -1368,7 +1573,9 @@ class _ProactiveCardState extends State<_ProactiveCard>
               )
             : _CardShell(
                 title: widget.title,
-                icon: Icons.lightbulb_outline_rounded,
+                icon: isPreview
+                    ? Icons.notifications_active_outlined
+                    : Icons.lightbulb_outline_rounded,
                 accent: const Color(0xFFFF6200),
                 actions: [
                   if (widget.data['action'] is Map)
@@ -1383,13 +1590,14 @@ class _ProactiveCardState extends State<_ProactiveCard>
                         widget.data['acao_sugerida']?.toString() ?? 'Continuar',
                       ),
                     ),
-                  TextButton(
-                    onPressed: _mute,
-                    child: const Text(
-                      'Não me avise mais',
-                      style: TextStyle(color: Colors.black54),
+                  if (!isPreview)
+                    TextButton(
+                      onPressed: _mute,
+                      child: const Text(
+                        'Não me avise mais',
+                        style: TextStyle(color: Colors.black54),
+                      ),
                     ),
-                  ),
                 ],
                 child: Text(
                   widget.data['mensagem']?.toString() ?? '',
@@ -1471,7 +1679,7 @@ class _BalanceCard extends StatelessWidget {
   }
 }
 
-class _InvestmentCard extends StatelessWidget {
+class _InvestmentCard extends StatefulWidget {
   final String title;
   final Map<String, dynamic> data;
   final CardActionCallback? onAction;
@@ -1479,75 +1687,235 @@ class _InvestmentCard extends StatelessWidget {
   const _InvestmentCard(
       {required this.title, required this.data, this.onAction});
 
-  String _fmt(dynamic v) {
-    if (v == null) return '-';
-    final n = (v is num) ? v.toDouble() : double.tryParse(v.toString()) ?? 0;
-    return n.toStringAsFixed(2).replaceAll('.', ',');
+  @override
+  State<_InvestmentCard> createState() => _InvestmentCardState();
+}
+
+class _InvestmentCardState extends State<_InvestmentCard> {
+  late final TextEditingController _valueController;
+  bool _reviewing = false;
+  bool _submitting = false;
+  bool _cancelled = false;
+  String? _error;
+
+  Map<String, dynamic> get data => widget.data;
+
+  @override
+  void initState() {
+    super.initState();
+    final value = (data['valor_sugerido'] as num?)?.toDouble();
+    _valueController = TextEditingController(
+      text: value?.toStringAsFixed(2).replaceAll('.', ',') ?? '',
+    );
+  }
+
+  @override
+  void dispose() {
+    _valueController.dispose();
+    super.dispose();
+  }
+
+  String _fmt(dynamic value) {
+    final number = value is num
+        ? value.toDouble()
+        : double.tryParse(value?.toString() ?? '') ?? 0;
+    return number.toStringAsFixed(2).replaceAll('.', ',');
+  }
+
+  double? _value() => double.tryParse(
+        _valueController.text.trim().replaceAll('.', '').replaceAll(',', '.'),
+      );
+
+  void _review() {
+    final value = _value();
+    final balance = (data['saldo_disponivel'] as num?)?.toDouble() ?? 0;
+    if (value == null || value <= 0) {
+      setState(() => _error = 'Informe um valor maior que zero.');
+      return;
+    }
+    if (value > balance) {
+      setState(() => _error = 'O valor supera o saldo disponível.');
+      return;
+    }
+    setState(() {
+      _error = null;
+      _reviewing = true;
+    });
+  }
+
+  Future<void> _confirm() async {
+    if (_submitting) return;
+    setState(() => _submitting = true);
+    final auth = await DeviceAuth.authenticate();
+    if (!mounted) return;
+    if (!auth.authenticated) {
+      setState(() {
+        _submitting = false;
+        _error = auth.message;
+      });
+      return;
+    }
+    widget.onAction?.call({
+      'type': 'apply_investment',
+      'produto': data['produto'] ?? widget.title,
+      'produto_id': data['produto_id'],
+      'valor': _value(),
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    final hasSuggestion = data['valor_sugerido'] != null && !_cancelled;
+    final balance = (data['saldo_disponivel'] as num?)?.toDouble() ?? 0;
+    final reserve = (data['reserva_seguranca'] as num?)?.toDouble() ?? 0;
+    final value = _value() ?? 0;
+    final origin = data['valor_origem'] == 'valor_informado'
+        ? 'Valor solicitado por você'
+        : data['valor_origem'] == 'saldo_integral'
+            ? 'Todo o saldo solicitado por você'
+            : 'Valor sugerido pelo assistente';
+
     return _CardShell(
-      title: title,
+      title: widget.title,
       icon: Icons.trending_up_rounded,
       accent: const Color(0xFF00695C),
-      actions: [
-        FilledButton(
-          onPressed: () {
-            onAction?.call({
-              'type': 'apply_investment',
-              'produto': data['produto'] ?? title,
-              'produto_id': data['produto_id'],
-              'valor': data['valor_sugerido'] ?? 800,
-            });
-          },
-          style:
-              FilledButton.styleFrom(backgroundColor: const Color(0xFFFF6200)),
-          child: Text('Aplicar R\$ ${_fmt(data['valor_sugerido'] ?? 800)}'),
-        ),
-      ],
+      actions: !hasSuggestion
+          ? null
+          : _reviewing
+              ? [
+                  TextButton(
+                    onPressed: _submitting
+                        ? null
+                        : () => setState(() {
+                              _reviewing = false;
+                              _cancelled = true;
+                              _error = null;
+                            }),
+                    child: const Text('Cancelar'),
+                  ),
+                  OutlinedButton(
+                    onPressed: _submitting
+                        ? null
+                        : () => setState(() => _reviewing = false),
+                    child: const Text('Editar valor'),
+                  ),
+                  FilledButton(
+                    onPressed: _submitting ? null : _confirm,
+                    style: FilledButton.styleFrom(
+                        backgroundColor: const Color(0xFFFF6200)),
+                    child: Text(
+                        _submitting ? 'Confirmando...' : 'Confirmar aplicação'),
+                  ),
+                ]
+              : [
+                  FilledButton(
+                    onPressed: _review,
+                    style: FilledButton.styleFrom(
+                        backgroundColor: const Color(0xFFFF6200)),
+                    child: const Text('Revisar aplicação'),
+                  ),
+                ],
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+            decoration: BoxDecoration(
+              color: const Color(0xFFE0F2F1),
+              borderRadius: BorderRadius.circular(6),
+            ),
+            child: Text(origin,
+                style: const TextStyle(
+                    fontSize: 12,
+                    color: Color(0xFF004D40),
+                    fontWeight: FontWeight.w600)),
+          ),
+          const SizedBox(height: 10),
           Text(data['descricao']?.toString() ?? '',
               style: const TextStyle(fontSize: 14)),
-          if (data['rendimento_estimado'] != null) ...[
-            const SizedBox(height: 6),
+          if (data['rendimento_estimado'] != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 6),
+              child: Text('Rendimento estimado: ${data['rendimento_estimado']}',
+                  style: const TextStyle(
+                      fontSize: 13, fontWeight: FontWeight.w500)),
+            ),
+          const SizedBox(height: 10),
+          if (hasSuggestion && !_reviewing) ...[
+            TextField(
+              controller: _valueController,
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
+              decoration: InputDecoration(
+                labelText: 'Valor da aplicação',
+                prefixText: 'R\$ ',
+                errorText: _error,
+                border: const OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 8),
             Text(
-              'Rendimento estimado: ${data['rendimento_estimado']}',
-              style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
+              'Saldo atual: R\$ ${_fmt(balance)}  |  Reserva: R\$ ${_fmt(reserve)}',
+              style: const TextStyle(fontSize: 12, color: Colors.black54),
             ),
           ],
-          const SizedBox(height: 8),
-          Wrap(
-            spacing: 8,
-            children: [
-              _chip('Risco: ${data['risco'] ?? '-'}', const Color(0xFF00695C)),
-              _chip(
-                  'Perfil: ${data['perfil'] ?? '-'}', const Color(0xFF455A64)),
-            ],
-          ),
-          const SizedBox(height: 8),
+          if (_reviewing)
+            Semantics(
+              label: 'Resumo financeiro antes da confirmação',
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: value == balance
+                      ? const Color(0xFFFFF3E0)
+                      : const Color(0xFFE8F5E9),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('Resumo antes de confirmar',
+                        style: TextStyle(fontWeight: FontWeight.w700)),
+                    const SizedBox(height: 6),
+                    Text('Valor: R\$ ${_fmt(value)}'),
+                    Text('Saldo atual: R\$ ${_fmt(balance)}'),
+                    Text('Saldo depois: R\$ ${_fmt(balance - value)}'),
+                    Text('Reserva configurada: R\$ ${_fmt(reserve)}'),
+                    if (value == balance)
+                      const Padding(
+                        padding: EdgeInsets.only(top: 6),
+                        child: Text(
+                          'Esta aplicação deixará o saldo disponível zerado.',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xFFE65100)),
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ),
+          if (_reviewing && _error != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 6),
+              child: Text(_error!,
+                  style: const TextStyle(color: Colors.red, fontSize: 12)),
+            ),
+          if (!hasSuggestion)
+            Text(
+              _cancelled
+                  ? 'Aplicação cancelada. Nenhuma movimentação foi realizada.'
+                  : 'Informe um valor no chat para preparar uma aplicação.',
+              style: const TextStyle(fontSize: 13, color: Colors.black54),
+            ),
+          const SizedBox(height: 10),
           Text(
             data['disclaimer']?.toString() ??
                 'Projeção estimada. Rentabilidade passada não garante rentabilidade futura.',
-            style: const TextStyle(fontSize: 11, color: Colors.black45),
+            style: const TextStyle(fontSize: 12, color: Colors.black54),
           ),
         ],
       ),
-    );
-  }
-
-  Widget _chip(String label, Color color) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(6),
-      ),
-      child: Text(label,
-          style: TextStyle(
-              fontSize: 11, color: color, fontWeight: FontWeight.w500)),
     );
   }
 }
@@ -1986,7 +2354,8 @@ class _SecurityCard extends StatelessWidget {
     }
     if (result.available) {
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(result.message)));
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text(result.message)));
       }
       return;
     }

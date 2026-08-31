@@ -127,9 +127,9 @@ def format_reply(response: Dict[str, Any]) -> str:
                 recommended = " — recomendado" if option.get("recomendado") else ""
                 reply += f"\n• {option.get('forma')}: {option.get('motivo')}{recommended}"
         elif kind == "proactive":
-            reply += f"\n\n💡 {data.get('mensagem', title)}"
+            reply += f"\n\nSugestão: {data.get('mensagem', title)}"
         elif kind == "pattern":
-            reply += f"\n\n📌 {title}: R$ {data.get('valor_medio')} ({data.get('frequencia')}x)"
+            reply += f"\n\n{title}: R$ {data.get('valor_medio')} ({data.get('frequencia')}x)"
         elif kind == "bills":
             reply += f"\n\n{title}"
             for bill in data.get("boletos") or []:

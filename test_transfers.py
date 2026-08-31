@@ -30,7 +30,12 @@ from transfers import (
     mute_category,
     is_muted,
 )
-from main import process_message, _handle_card_action, classify_intent
+from main import (
+    process_message,
+    _handle_card_action,
+    _resolve_investment_amount,
+    classify_intent,
+)
 from proactive import run_proactive_scan
 
 
@@ -51,6 +56,20 @@ async def run():
     ok("parse joao", d.favorecido == "João Silva")
     ok("detect pix", detect_transfer_intent("quero fazer um pix"))
     ok("classify transferir", classify_intent("pix de 80 pro João") == "transferir")
+    ok(
+        "classify guardar como investimento",
+        classify_intent("guardar o restante do saldo") == "investir",
+    )
+
+    print("== valores de investimento ==")
+    explicit = _resolve_investment_amount("guardo 2000 no cdb", 7992.61)
+    ok("valor explícito prevalece", explicit["valor"] == 2000.0, str(explicit))
+    remaining = _resolve_investment_amount("guardar o restante do saldo", 2000.0)
+    ok("restante usa saldo integral", remaining["valor"] == 2000.0, str(remaining))
+    no_excess = _resolve_investment_amount("aplicar em cdb", 1200.0)
+    ok("sem excedente não inventa R$ 800", no_excess["valor"] is None, str(no_excess))
+    custom_reserve = _resolve_investment_amount("aplicar em cdb", 5000.0, 3500.0)
+    ok("reserva configurável", custom_reserve["valor"] == 1500.0, str(custom_reserve))
 
     set_last_transfer("demo", {"tipo": "pix", "valor": 200.0, "favorecido": "João Silva"})
     d2 = parse_transfer("manda de novo", user_id="demo")
