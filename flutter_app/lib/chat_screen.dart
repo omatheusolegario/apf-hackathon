@@ -321,8 +321,9 @@ class _ChatScreenState extends State<ChatScreen> {
     if (text.isEmpty || !mounted) return;
     setState(() => _speakingMessage = message);
     try {
-      final result = await _tts.speak(text);
-      if (result != 1) _finishSpeaking(showError: true);
+      // Na web, o plugin inicia a fala e retorna null; conclusão e falhas são
+      // informadas pelos handlers configurados acima.
+      await _tts.speak(text);
     } catch (_) {
       _finishSpeaking(showError: true);
     }
