@@ -5,7 +5,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'app_config.dart';
 
 class PrivacyScreen extends StatefulWidget {
-  const PrivacyScreen({super.key});
+  final String userId;
+
+  const PrivacyScreen({super.key, required this.userId});
 
   @override
   State<PrivacyScreen> createState() => _PrivacyScreenState();
@@ -28,13 +30,14 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
   Future<void> _load() async {
     final prefs = await SharedPreferences.getInstance();
     try {
-      final response =
-          await http.get(Uri.parse('$baseUrl/user/demo/preferences'));
+      final response = await http
+          .get(Uri.parse('$baseUrl/user/${widget.userId}/preferences'));
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body) as Map<String, dynamic>;
         final reserva = (data['reserva_seguranca'] as num?)?.toDouble();
         if (reserva != null) {
-          reservaController.text = reserva.toStringAsFixed(2).replaceAll('.', ',');
+          reservaController.text =
+              reserva.toStringAsFixed(2).replaceAll('.', ',');
         }
       }
     } catch (_) {
@@ -58,7 +61,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
         throw const FormatException('Reserva inválida');
       }
       final response = await http.post(
-        Uri.parse('$baseUrl/user/demo/consent'),
+        Uri.parse('$baseUrl/user/${widget.userId}/consent'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           'consent_padroes_pagamento': consentPadroes,
@@ -70,7 +73,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
         throw Exception('HTTP ${response.statusCode}');
       }
       final preferenceResponse = await http.post(
-        Uri.parse('$baseUrl/user/demo/preferences'),
+        Uri.parse('$baseUrl/user/${widget.userId}/preferences'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'reserva_seguranca': reserva}),
       );
@@ -128,7 +131,8 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
     );
     if (ok != true) return;
     try {
-      final response = await http.delete(Uri.parse('$baseUrl/user/demo/data'));
+      final response =
+          await http.delete(Uri.parse('$baseUrl/user/${widget.userId}/data'));
       if (response.statusCode < 200 || response.statusCode >= 300) {
         throw Exception('HTTP ${response.statusCode}');
       }
@@ -208,7 +212,8 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
             decoration: const InputDecoration(
               labelText: 'Reserva que desejo manter disponível',
               prefixText: 'R\$ ',
-              helperText: 'Usada apenas para calcular sugestões de investimento.',
+              helperText:
+                  'Usada apenas para calcular sugestões de investimento.',
               border: OutlineInputBorder(),
             ),
           ),

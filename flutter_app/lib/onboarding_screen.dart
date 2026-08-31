@@ -6,7 +6,9 @@ import 'chat_screen.dart';
 import 'app_config.dart';
 
 class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({super.key});
+  final String userId;
+
+  const OnboardingScreen({super.key, required this.userId});
 
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
@@ -23,7 +25,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse('${AppConfig.apiBaseUrl}/user/demo/consent'),
+        Uri.parse('${AppConfig.apiBaseUrl}/user/${widget.userId}/consent'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           'consent_padroes_pagamento': consentPadroes,
@@ -54,7 +56,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
     if (!mounted) return;
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => const ChatScreen()),
+      MaterialPageRoute(builder: (_) => ChatScreen(userId: widget.userId)),
     );
   }
 

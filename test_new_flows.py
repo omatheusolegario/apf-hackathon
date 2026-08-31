@@ -15,7 +15,7 @@ from database import _async_database_url
 from document_intelligence import scan_boleto
 from main import _handle_card_action, continue_in_app, process_message
 from llm import sanitize_user_facing
-from seed import seed
+from seed import seed, seed_user
 from telegram_integration import (
     consume_continuation,
     create_link_code,
@@ -23,7 +23,7 @@ from telegram_integration import (
     resolve_user,
     telegram_payload,
 )
-from transfers import clear_pending, get_pending, hydrate_flow_state
+from transfers import clear_pending, get_pending, hydrate_flow_state, open_boletos
 
 
 def check(label: str, condition: bool) -> None:
@@ -60,6 +60,34 @@ async def run() -> None:
     )
     await init_db()
     await seed()
+
+    # Cada avaliador recebe uma jornada independente e pode repeti-la.
+    await seed_user("demo_judgea", reset=False, initial_consents=False)
+    await seed_user("demo_judgeb", reset=False, initial_consents=False)
+    async with AsyncSessionLocal() as session:
+        bills_a = await open_boletos(session, "demo_judgea")
+        bills_b = await open_boletos(session, "demo_judgeb")
+        await _handle_card_action(
+            session,
+            {
+                "type": "confirm_payment",
+                "forma": "Pix",
+                "boleto_id": bills_a[0]["id"],
+                "beneficiario": bills_a[0]["beneficiario"],
+            },
+            "demo_judgea",
+        )
+        check(
+            "pagamento isolado por visitante",
+            len(await open_boletos(session, "demo_judgea")) == 2
+            and len(await open_boletos(session, "demo_judgeb")) == 3,
+        )
+    await seed_user("demo_judgea", reset=True)
+    async with AsyncSessionLocal() as session:
+        check(
+            "reinício restaura jornada completa",
+            len(await open_boletos(session, "demo_judgea")) == 3,
+        )
 
     async with AsyncSessionLocal() as session:
         scan = await scan_boleto(

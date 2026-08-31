@@ -758,6 +758,44 @@ async def root():
     }
 
 
+def _validate_demo_session_id(user_id: str) -> None:
+    if not re.fullmatch(r"demo_[a-z0-9]{6,40}", user_id):
+        raise HTTPException(status_code=400, detail="Sessão de demonstração inválida")
+
+
+@app.post("/demo/session/{user_id}")
+async def initialize_demo_session(user_id: str, payload: Optional[dict] = None):
+    """Prepara uma conta sintética isolada sem apagar uma jornada já iniciada."""
+    _validate_demo_session_id(user_id)
+    async with AsyncSessionLocal() as session:
+        exists = await session.get(User, user_id) is not None
+    if not exists:
+        from seed import seed_user
+
+        name = str((payload or {}).get("name") or "Maria Silva")[:120]
+        await seed_user(
+            user_id=user_id,
+            user_name=name,
+            reset=False,
+            initial_consents=False,
+        )
+    return {"ok": True, "user_id": user_id, "created": not exists}
+
+
+@app.post("/demo/session/{user_id}/reset")
+async def reset_demo_session(user_id: str):
+    """Restaura a demo do visitante, preservando seus consentimentos LGPD."""
+    _validate_demo_session_id(user_id)
+    async with AsyncSessionLocal() as session:
+        if await session.get(User, user_id) is None:
+            raise HTTPException(status_code=404, detail="Sessão não encontrada")
+    from seed import seed_user
+
+    await seed_user(user_id=user_id, reset=True)
+    clear_pending(user_id)
+    return {"ok": True, "user_id": user_id, "message": "Demonstração reiniciada"}
+
+
 @app.websocket("/ws")
 async def websocket_chat(websocket: WebSocket):
     await websocket.accept()

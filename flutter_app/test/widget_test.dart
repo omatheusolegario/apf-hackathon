@@ -5,6 +5,7 @@ import 'package:apf_flutter/main.dart';
 void main() {
   testWidgets('onboarding mostra consentimentos granulares', (tester) async {
     await tester.pumpWidget(const ApfApp(showOnboarding: true));
+    await tester.pump();
 
     expect(find.text('Assistente Pessoal\nFinanceiro'), findsOneWidget);
     expect(find.text('Consentimento LGPD (granular)'), findsOneWidget);
